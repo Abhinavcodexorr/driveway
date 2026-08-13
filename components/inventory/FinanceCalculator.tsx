@@ -245,7 +245,7 @@ const FinanceCalculator = ({ vehiclePrice, inventoryId = "2851" }: FinanceCalcul
                   type="number"
                   value={purchasePrice}
                   onChange={(e) => handlePurchasePriceChange(e.target.value)}
-                  className="w-full px-4 py-4 rounded-xl [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border border-gray-200 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/10 transition-all text-gray-800 font-medium text-base"
+                  className="w-full px-4 py-4 rounded-xl [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border border-gray-200 outline-none focus:border-brand-green focus:ring-2 focus:ring-brand-green/10 transition-all text-gray-800 font-medium text-base"
                   placeholder="$ 25,000"
                 />
               </div>
@@ -256,7 +256,7 @@ const FinanceCalculator = ({ vehiclePrice, inventoryId = "2851" }: FinanceCalcul
                   type="number"
                   value={depositAmount}
                   onChange={(e) => handleDepositAmountChange(e.target.value)}
-                  className="w-full px-4 py-4 rounded-xl [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border border-gray-200 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/10 transition-all text-gray-800 font-medium text-base"
+                  className="w-full px-4 py-4 rounded-xl [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none border border-gray-200 outline-none focus:border-brand-green focus:ring-2 focus:ring-brand-green/10 transition-all text-gray-800 font-medium text-base"
                   placeholder="$ 0"
                 />
               </div>
@@ -277,7 +277,7 @@ const FinanceCalculator = ({ vehiclePrice, inventoryId = "2851" }: FinanceCalcul
                     >
                       {isActive && (
                         <motion.div 
-                          className="absolute inset-0 border-2 border-emerald-500 bg-emerald-50/20 rounded-xl pointer-events-none"
+                          className="absolute inset-0 border-2 border-brand-green bg-sky-50/20 rounded-xl pointer-events-none"
                           transition={{ type: "spring" }}
                         />
                       )}
@@ -298,7 +298,7 @@ const FinanceCalculator = ({ vehiclePrice, inventoryId = "2851" }: FinanceCalcul
                   <p className="text-base text-black">Slide between 6% and 15%</p>
                 </div>
 
-                <div className="border border-gray-200 bg-white rounded-xl px-5 py-3 font-bold text-gray-900 flex items-center gap-0.5 shadow-sm text-xl focus-within:border-emerald-500 focus-within:ring-2 focus-within:ring-emerald-500/10 transition-all">
+                <div className="border border-gray-200 bg-white rounded-xl px-5 py-3 font-bold text-gray-900 flex items-center gap-0.5 shadow-sm text-xl focus-within:border-brand-green focus-within:ring-2 focus-within:ring-brand-green/10 transition-all">
                   <input
                     type="text"
                     inputMode="decimal"

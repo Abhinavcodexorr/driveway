@@ -4,7 +4,7 @@
     Displays three action cards:
     - Shop all cars → /inventory
     - Start with a trade-in
-    - Get pre-qualified
+    - Get pre-approved
     Each card has an image, title, subtitle, and arrow icon.
   ========================= */
 

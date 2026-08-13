@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 44" fill="none" role="img" aria-label="Carma Credit">
+  <rect width="44" height="44" rx="12" fill="#00af66"/>
+  <path d="M14 34.5c3.2-6.8 8.6-11.2 14.8-11.2 3.4 0 6.1 1.4 7.6 3.6" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M16.5 28.5h10.5a3.5 3.5 0 0 1 0 7H22" stroke="#FF8D7D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="33.5" cy="22" r="2.4" fill="#FF8D7D"/>
+  <text x="56" y="30" fill="#00af66" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" letter-spacing="-0.4">Carma</text>
+  <text x="132" y="30" fill="#353535" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="600" letter-spacing="-0.3">Credit</text>
+</svg>

@@ -24,37 +24,37 @@ const CARDS: Card[] = [
   {
     heading: "Finance",
     title: "No commitment required.",
-    subheading: "Get pre-qualified to see rates and terms for cars that fit your budget.",
+    subheading: "Get pre-approved to see rates and terms for cars that fit your budget.",
     color: "#FF8D7D",
     orientation: "vertical",
     image: "/driveway/drivers-seat/finance.jpg",
-    imageAlt: "Woman Looking At Driveway.com on her mobile cell phone",
+    imageAlt: "Woman looking at Carma Credit on her mobile phone",
     listItems: [
       "100% online lending",
       "We help you get approved",
-      "Pre-qualification does not impact your credit score",
+      "Pre-approval does not impact your credit score",
     ],
     ctas: [
-      { label: "Get Pre-Qualified", href: "/financing", variant: "primary" },
+      { label: "Get Pre-Approved", href: "/financing", variant: "primary" },
       { label: "Learn More", href: "/financing", variant: "tertiary" },
     ],
   },
   {
-    heading: "Shop",
-    title: "Create the moments that count.",
-    subheading: "Adventure starts with buying online.",
+    heading: "Pre-Approve",
+    title: "Know your budget before you buy.",
+    subheading: "See real rates and terms with no impact to your credit score.",
     color: "#EBE3D5",
     orientation: "horizontal",
     image: "/driveway/drivers-seat/shop.jpg",
-    imageAlt: "Two Kids In Back of SUV",
+    imageAlt: "Family ready for their next vehicle adventure",
     listItems: [
-      "Browse one of the nation's largest privately-owned inventories",
-      "Choose from new, used, and certified pre-owned (CPO) vehicles",
-      "Enjoy no-haggle pricing and a money-back guarantee",
+      "Fast online pre-approval",
+      "Personalized financing options for your situation",
+      "Transparent terms with no obligation",
     ],
     ctas: [
-      { label: "Shop Used Cars", href: "/inventory", variant: "primary" },
-      { label: "Shop New Cars", href: "/inventory", variant: "secondary" },
+      { label: "Get Pre-Approved", href: "/financing", variant: "primary" },
+      { label: "Payment Calculator", href: "/payment-calculator", variant: "secondary" },
     ],
   },
   {
@@ -64,7 +64,7 @@ const CARDS: Card[] = [
     color: "#184F56",
     orientation: "vertical",
     image: "/driveway/drivers-seat/sell.jpg",
-    imageAlt: "Woman Handing Keys To Her Sold Car To A Driveway Valet",
+    imageAlt: "Woman handing keys to her sold car to a Carma Credit valet",
     listItems: [
       "Instant offer, valid for 7 days",
       "Quick vehicle verification from the comfort of your home.",
@@ -75,14 +75,14 @@ const CARDS: Card[] = [
   {
     heading: "Service",
     title: "Protect your ride, nationwide",
-    subheading: "Service through My Driveway makes car maintenance a breeze.",
+    subheading: "Service through Carma Credit makes car maintenance a breeze.",
     color: "#6D94D6",
     orientation: "horizontal",
     image: "/driveway/drivers-seat/service.png",
-    imageAlt: "img-driveway-service-worker-helping-customer",
+    imageAlt: "Carma Credit service worker helping a customer",
     listItems: [
       "Locations across the country",
-      "Set your preferred Lithia service center with a My Driveway account",
+      "Set your preferred service center with a Carma Credit account",
       "Schedule routine maintenance and in-warranty work",
     ],
     ctas: [{ label: "Log In & Get Started", href: "/service", variant: "primary" }],
@@ -121,7 +121,7 @@ const DriversSeat = () => {
             type="button"
             aria-label="Previous slide"
             onClick={() => setIndex((i) => (i - 1 + total) % total)}
-            className="absolute left-1 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-[#d0d0d0] bg-white text-[#1451B5] shadow-sm transition-colors hover:bg-[#1451B5] hover:text-white md:left-4 xl:left-12"
+            className="absolute left-1 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-[#d0d0d0] bg-white text-[#00af66] shadow-sm transition-colors hover:bg-[#00af66] hover:text-white md:left-4 xl:left-12"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
@@ -130,7 +130,7 @@ const DriversSeat = () => {
             type="button"
             aria-label="Next slide"
             onClick={() => setIndex((i) => (i + 1) % total)}
-            className="absolute right-1 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-[#d0d0d0] bg-white text-[#1451B5] shadow-sm transition-colors hover:bg-[#1451B5] hover:text-white md:right-4 xl:right-12"
+            className="absolute right-1 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-[#d0d0d0] bg-white text-[#00af66] shadow-sm transition-colors hover:bg-[#00af66] hover:text-white md:right-4 xl:right-12"
           >
             <ChevronRight className="h-5 w-5" />
           </button>
@@ -208,7 +208,7 @@ const DriversSeat = () => {
                       <Link
                         key={cta.label}
                         href={cta.href}
-                        className="text-[15px] font-semibold text-[#1451B5] underline underline-offset-4"
+                        className="text-[15px] font-semibold text-[#00af66] underline underline-offset-4"
                       >
                         {cta.label}
                       </Link>
@@ -219,7 +219,7 @@ const DriversSeat = () => {
                       <Link
                         key={cta.label}
                         href={cta.href}
-                        className="inline-flex items-center justify-center rounded-full border-2 border-[#1451B5] px-8 py-3 text-[16px] font-semibold text-[#1451B5]"
+                        className="inline-flex items-center justify-center rounded-full border-2 border-[#00af66] px-8 py-3 text-[16px] font-semibold text-[#00af66]"
                       >
                         {cta.label}
                       </Link>
@@ -229,7 +229,7 @@ const DriversSeat = () => {
                     <Link
                       key={cta.label}
                       href={cta.href}
-                      className={`inline-flex items-center justify-center rounded-full bg-[#1451B5] px-8 py-3 text-[16px] font-semibold text-white hover:bg-[#104191] ${
+                      className={`inline-flex items-center justify-center rounded-full bg-[#00af66] px-8 py-3 text-[16px] font-semibold text-white hover:bg-[#009554] ${
                         i === 0 ? "mr-4 max-w-[200px]" : ""
                       }`}
                     >
@@ -254,7 +254,7 @@ const DriversSeat = () => {
               onClick={() => setIndex(i)}
               className={`h-2 cursor-pointer transition-all duration-300 ${
                 i === index
-                  ? "w-6 rounded-[20px] bg-[#1451B5]"
+                  ? "w-6 rounded-[20px] bg-[#00af66]"
                   : "w-2 rounded-full bg-[#c5c5c5]"
               }`}
             />

@@ -43,7 +43,7 @@ export const FinanceAdCard = () => {
 
       {/* Heading */}
       <h3 className="text-[22px] font-bold tracking-tight text-[#051329]">
-        Finance with Cardora
+        Finance with Carma Credit
       </h3>
 
       {/* Subtext */}
@@ -54,7 +54,7 @@ export const FinanceAdCard = () => {
 
       {/* Call to Action Button */}
       <span className="mt-2 inline-block rounded-lg bg-brand text-white text-[14px] px-6 py-2.5 hover:opacity-90 transition-opacity transition-colors cursor-pointer">
-        Get pre-qualified
+        Get pre-approved
       </span>
     </CardShell>
   );
@@ -109,14 +109,14 @@ export const GreatDealsAdCard = () => {
       <div className="w-full flex items-center justify-center my-4 bg-white">
         <img
           src={AdCard3?.src}
-          alt="Cardora Certified"
+          alt="Carma Credit Certified"
           className="w-72 h-auto object-contain transform -rotate-12 bg-white transition-transform duration-300"
         />
       </div>
 
       {/* Heading with Info Icon */}
       <h3 className="text-[22px] font-bold tracking-tight text-[#051329] leading-[26px] flex items-center justify-center gap-1.5 flex-wrap">
-        <span>Every vehicle you see is Cardora Certified.</span>
+        <span>Every vehicle you see is Carma Credit Certified.</span>
 
       </h3>
 

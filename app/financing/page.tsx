@@ -62,7 +62,7 @@ const Finance = () => {
               id="financing_form"
               src={`${SITE_CONFIG.urls.financeRenderApiUrl}?`}
               name="iframe_a"
-              title="Cardora financing application"
+              title="Carma Credit financing application"
               scrolling="no"
               className="w-full block transition-[height] duration-300 ease-out border-0"
               style={{

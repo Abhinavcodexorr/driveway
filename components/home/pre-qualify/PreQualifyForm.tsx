@@ -19,7 +19,7 @@ const PreQualifyForm = ({
   return (
     <div className="w-full">
       <h2 className="text-[26px] sm:text-[30px] lg:text-[36px] font-bold text-neutral-darkGray2 leading-tight tracking-tight ">
-        Pre-qualify with no impact to your credit
+        Pre-approve with no impact to your credit
       </h2>
 
       <div className="mt-6 sm:mt-7 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">

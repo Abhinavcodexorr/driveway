@@ -80,7 +80,7 @@ const SellSection = () => {
   };
 
   return (
-    <section className="dw-font w-full bg-[#0C316D] px-6 py-12 lg:px-[180px] lg:pb-8 lg:pt-12">
+    <section className="dw-font w-full bg-[#00af66] px-6 py-12 lg:px-[180px] lg:pb-8 lg:pt-12">
       <div className="mx-auto flex max-w-[1100px] flex-col items-center gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
         <Reveal className="max-w-[480px] text-center lg:text-left" x={-24}>
           <h2 className="mb-4 text-[32px] font-bold leading-tight text-white md:text-[40px]">
@@ -105,7 +105,7 @@ const SellSection = () => {
               aria-selected={tab === "plate"}
               onClick={() => setTab("plate")}
               className={`flex-1 py-4 text-[15px] font-semibold transition-colors ${
-                tab === "plate" ? "text-[#1451B5]" : "text-[#666]"
+                tab === "plate" ? "text-[#00af66]" : "text-[#666]"
               }`}
             >
               License Plate
@@ -116,13 +116,13 @@ const SellSection = () => {
               aria-selected={tab === "vin"}
               onClick={() => setTab("vin")}
               className={`flex-1 py-4 text-[15px] font-semibold transition-colors ${
-                tab === "vin" ? "text-[#1451B5]" : "text-[#666]"
+                tab === "vin" ? "text-[#00af66]" : "text-[#666]"
               }`}
             >
               VIN
             </button>
             <span
-              className="absolute bottom-0 h-[3px] bg-[#1451B5] transition-all duration-200"
+              className="absolute bottom-0 h-[3px] bg-[#00af66] transition-all duration-200"
               style={{
                 width: "50%",
                 left: tab === "plate" ? "0%" : "50%",
@@ -142,7 +142,7 @@ const SellSection = () => {
                     value={plate}
                     onChange={(e) => setPlate(e.target.value)}
                     placeholder="ABCD46"
-                    className="h-12 w-full rounded-md border border-gray-300 bg-white px-3 text-[15px] outline-none focus:border-[#1451B5]"
+                    className="h-12 w-full rounded-md border border-gray-300 bg-white px-3 text-[15px] outline-none focus:border-[#00af66]"
                   />
                 </div>
                 <div>
@@ -153,7 +153,7 @@ const SellSection = () => {
                     id="state"
                     value={state}
                     onChange={(e) => setState(e.target.value)}
-                    className="h-12 w-full rounded-md border border-gray-300 bg-white px-3 text-[15px] outline-none focus:border-[#1451B5]"
+                    className="h-12 w-full rounded-md border border-gray-300 bg-white px-3 text-[15px] outline-none focus:border-[#00af66]"
                   >
                     <option value="">State</option>
                     {STATES.map((s) => (
@@ -174,14 +174,14 @@ const SellSection = () => {
                   value={vin}
                   onChange={(e) => setVin(e.target.value)}
                   placeholder="Enter 17-character VIN"
-                  className="h-12 w-full rounded-md border border-gray-300 bg-white px-3 text-[15px] outline-none focus:border-[#1451B5]"
+                  className="h-12 w-full rounded-md border border-gray-300 bg-white px-3 text-[15px] outline-none focus:border-[#00af66]"
                 />
               </div>
             )}
 
             <button
               type="submit"
-              className="inline-flex h-12 w-full items-center justify-center rounded-full bg-[#1451B5] text-[14px] font-semibold text-white transition-opacity hover:opacity-90"
+              className="inline-flex h-12 w-full items-center justify-center rounded-full bg-[#00af66] text-[14px] font-semibold text-white transition-opacity hover:opacity-90"
             >
               Get an Offer
             </button>

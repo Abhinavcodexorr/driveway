@@ -137,10 +137,10 @@ const HeroSearchPanelContent = () => {
                   <button
                     key={index}
                     onClick={() => handleSuggestionClick(suggestion)}
-                    className="w-full text-left px-4 py-3 hover:bg-green-50 transition-colors text-base font-medium text-gray-800 border-b border-gray-200 last:border-b-0"
+                    className="w-full text-left px-4 py-3 hover:bg-sky-50 transition-colors text-base font-medium text-gray-800 border-b border-gray-200 last:border-b-0"
                   >
                     <div className="flex cursor-pointer items-center gap-3">
-                      <Search size={16} className="text-green-600" />
+                      <Search size={16} className="text-brand-green" />
                       <span>{suggestion}</span>
                     </div>
                   </button>

@@ -51,7 +51,7 @@ const OwnershipSimplified = () => {
             </h2>
             <p className="mb-8 max-w-[520px] text-[16px] leading-relaxed text-[#353535] md:text-[18px]">
               From your parking spot to the miles of road ahead, navigate every aspect of your
-              vehicle ownership journey all in one place with Cardora.
+              vehicle ownership journey all in one place with Carma Credit.
             </p>
           </Reveal>
 
@@ -79,9 +79,9 @@ const OwnershipSimplified = () => {
           <Reveal delay={0.15}>
             <Link
               href="/service"
-              className="inline-flex h-[52px] items-center justify-center rounded-full bg-[#1451B5] px-10 text-[16px] font-semibold text-white transition-transform duration-300 hover:scale-[1.03] hover:opacity-90"
+              className="inline-flex h-[52px] items-center justify-center rounded-full bg-[#00af66] px-10 text-[16px] font-semibold text-white transition-transform duration-300 hover:scale-[1.03] hover:opacity-90"
             >
-              Join My Driveway
+              Join Carma Credit
             </Link>
           </Reveal>
         </div>

@@ -2,9 +2,8 @@ export const defineAppConfig = (config: any) => config;
 
 export const defaultAppConfig = defineAppConfig({
   dealership: {
-    dealership_name: "Demo Dealership",
-    dealership_logo:
-      "https://zopsoftware-asset.b-cdn.net/phaeton/themes/theme-1/images/demo_dealership_2_cropped.png",
+    dealership_name: "Carma Credit",
+    dealership_logo: "/logo-carma.jpg",
     full_address_1: "1 Yonge St #1801",
     city_1: "Toronto",
     province_1: "Ontario",
@@ -29,9 +28,9 @@ export const defaultAppConfig = defineAppConfig({
     country_3: "USA",
     address_3_bar: "https://maps.app.goo.gl/6t8TafUNTrZ6Gvp8A",
     address_map_url_3: "",
-    toll_free_number_1: "1-888-879-0000",
+    toll_free_number_1: "(855) 514-5500",
     toll_free_number_2: "",
-    sales_number_1: "416-840-6606",
+    sales_number_1: "(855) 514-5500",
     sales_number_2: "",
     cell_phone_1: "",
     cell_phone_2: "",
@@ -303,8 +302,16 @@ export async function getAppConfig(): Promise<AppConfig> {
     const mergedConfig = deepMerge(defaultAppConfig, apiConfig);
     
     // Apply fallback logic to all config sections to ensure null/undefined/"" values use defaults
+    const dealership = getSafeDealershipConfig(mergedConfig.dealership);
+
+    // Local brand override for Carma Credit
+    dealership.dealership_name = "Carma Credit";
+    dealership.dealership_logo = "/logo-carma.jpg";
+    dealership.sales_number_1 = "(855) 514-5500";
+    dealership.toll_free_number_1 = "(855) 514-5500";
+
     return {
-      dealership: getSafeDealershipConfig(mergedConfig.dealership),
+      dealership,
       site: getSafeSiteConfig(mergedConfig.site),
       schema_org: getSafeSchemaOrgConfig(mergedConfig.schema_org),
       payment_calculator: getSafePaymentCalculatorConfig(mergedConfig.payment_calculator),

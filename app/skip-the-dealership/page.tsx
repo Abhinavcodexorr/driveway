@@ -109,7 +109,7 @@ export default function SkipTheDealership() {
                                 ].map((text, idx) => (
                                     <li key={idx} className="flex items-center justify-between border-b border-gray-100 py-4">
                                         <span className="font-medium">{text}</span>
-                                        <Check className="w-5 h-5 text-emerald-500 stroke-[3]" />
+                                        <Check className="w-5 h-5 text-brand-green stroke-[3]" />
                                     </li>
                                 ))}
                             </ul>

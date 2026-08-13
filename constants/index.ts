@@ -17,9 +17,9 @@ export const NAV_ITEMS = [
   { label: "Shop", to: "/inventory" },
   { label: "Sell/Trade", to: "/trade-in-my-car" },
   { label: "Finance", to: "/financing" },
-  { label: "Protection Plans", to: "/protection-plans" },
+  { label: "Resources", to: "/how-it-works" },
   { label: "Service", to: "/service" },
-  { label: "Why Cardora?", to: "/about-us" },
+  { label: "Why Carma Credit?", to: "/about-us" },
 ] as const;
 
 

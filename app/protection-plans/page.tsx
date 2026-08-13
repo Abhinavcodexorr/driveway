@@ -205,7 +205,7 @@ const ProtectionPlans = () => {
                   key={label}
                   className="flex items-center gap-3 rounded-full px-5 py-4 w-full sm:w-80 shadow-[0_2px_18px_rgba(0,0,0,0.1)] bg-[#e6f4ff]"
                 >
-                  <Check className="h-6 w-6 text-emerald-500 shrink-0" strokeWidth={2} />
+                  <Check className="h-6 w-6 text-brand-green shrink-0" strokeWidth={2} />
                   <span className="text-base font-medium text-neutral-800">{label}</span>
                 </motion.div>
               ))}
@@ -258,7 +258,7 @@ const ProtectionPlans = () => {
                 className="flex items-center justify-between py-3.5 text-left"
               >
                 <span className="text-base font-medium text-neutral-800">{item}</span>
-                <Check className="h-4 w-4 text-emerald-500 shrink-0" strokeWidth={2.5} />
+                <Check className="h-4 w-4 text-brand-green shrink-0" strokeWidth={2.5} />
               </motion.div>
             ))}
           </motion.div>
@@ -365,7 +365,7 @@ const ProtectionPlans = () => {
           <div className="mt-12 max-w-4xl mx-auto">
             <p className="uppercase mb-1 font-medium">Example</p>
             <p className="text-xl font-normal my-1">If You Owed on Your Vehicle</p>
-            <p className="text-3xl md:text-3xl font-black text-emerald-600 mt-1">$15,000</p>
+            <p className="text-3xl md:text-3xl font-black text-brand-green mt-1">$15,000</p>
 
             <motion.div
               initial={{ opacity: 0, y: 25 }}
@@ -377,13 +377,13 @@ const ProtectionPlans = () => {
               {/* Left Column: Payout */}
               <div className="pt-6 md:pt-10 pb-6 md:pb-0 border-b border-gray-300 md:border-b-0">
                 <p className="text-lg text-gray-800">Insurance Payout</p>
-                <p className="text-xl md:text-2xl font-black text-emerald-600 mt-1">$11,000</p>
+                <p className="text-xl md:text-2xl font-black text-brand-green mt-1">$11,000</p>
               </div>
 
               {/* Right Column: Gap */}
               <div className="pt-8 md:pt-10 md:border-l md:border-gray-300 md:pl-10">
                 <p className="text-lg text-gray-800">Amount Owed (GAP)</p>
-                <p className="text-xl md:text-2xl font-black text-emerald-600 mt-1">$4,000</p>
+                <p className="text-xl md:text-2xl font-black text-brand-green mt-1">$4,000</p>
                 <p className="mt-2 text-md mx-auto leading-normal max-w-sm md:max-w-none text-gray-600">
                   GAP coverage protects you from the amount still owed.
                 </p>
@@ -414,13 +414,13 @@ const ProtectionPlans = () => {
               {/* Left Column: Payout */}
               <div className="pt-6 md:pt-10 pb-6 md:pb-0 border-b border-gray-300 md:border-b-0">
                 <p className="text-lg font-bold text-gray-800">Insurance Payout</p>
-                <p className="text-xl md:text-2xl font-black text-emerald-600 mt-1">$15,000</p>
+                <p className="text-xl md:text-2xl font-black text-brand-green mt-1">$15,000</p>
               </div>
 
               {/* Right Column: Gap */}
               <div className="pt-8 md:pt-10 md:border-l md:border-gray-300 md:pl-10">
                 <p className="text-lg font-bold text-gray-800">Amount Owed (GAP)</p>
-                <p className="text-xl md:text-2xl font-black text-emerald-600 mt-1">$3,000</p>
+                <p className="text-xl md:text-2xl font-black text-brand-green mt-1">$3,000</p>
                 <p className="mt-2 text-md mx-auto leading-normal max-w-sm md:max-w-none">
                   GAP coverage protects you from the amount still owed.
                 </p>

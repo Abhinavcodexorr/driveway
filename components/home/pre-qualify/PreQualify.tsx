@@ -5,7 +5,7 @@
    credit score (maps to APR), optional trade-in value.
    Calculates estimated bi-weekly payment in real time
    using standard amortization formula.
-   Links to /financing for the full pre-qualification flow.
+   Links to /financing for the full pre-approval flow.
 ========================= */
 
 "use client";

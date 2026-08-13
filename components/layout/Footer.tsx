@@ -1,7 +1,7 @@
 /* =========================
    Footer Component (Layout)
    Renders the site-wide footer with:
-   - Link columns (Popular Makes, Car Types, About Us, Follow Us)
+   - Link columns (Resources, About Us, Follow Us)
    - Contact / address block
    - Copyright bar with privacy/terms links
 ========================= */
@@ -16,8 +16,8 @@ import { useAppConfig } from "@/app/providers";
 import { usePathname } from "next/navigation";
 import { fallbackValue, defaultAppConfig } from "@/lib/appConfig";
 
-import { POPULAR_MAKES, POPULAR_CAR_TYPES, getMakeUrl, getInventoryUrlByRefinement } from "@/lib/inventoryUrls";
 import { getConstants } from "@/constants";
+import { Reveal } from "@/components/common/motion";
 
 
 /* Component */
@@ -47,30 +47,23 @@ const Footer = () => {
   
   const columns = [
     {
-      title: "Popular Makes",
-      links: POPULAR_MAKES.map(({ label, make }) => ({
-        label,
-        href: getMakeUrl(make, appConfig),
-        external: false,
-      })),
-    },
-    {
-      title: "Popular Car Types",
-      links: POPULAR_CAR_TYPES.map(({ label, bodyType }) => ({
-        label,
-        href: getInventoryUrlByRefinement("body_type", bodyType, appConfig),
-        external: false,
-      })),
+      title: "Resources",
+      links: [
+        { label: "How It Works", href: "/how-it-works", external: false },
+        { label: "Rebuild Your Credit", href: "/rebuild-your-credit", external: false },
+        { label: "Understanding Auto Financing", href: "/understanding-auto-financing", external: false },
+        { label: "FAQ", href: "/faq", external: false },
+        { label: "What do I need", href: "/what-do-i-need", external: false },
+      ],
     },
     {
       title: "About Us",
       links: [
         { label: "Home", href: "/", external: false },
-        { label: "Find Your Car", href: "/inventory", external: false },
+        { label: "Get Pre-Approved", href: "/financing", external: false },
         { label: "Sell or Trade In", href: "/trade-in-my-car", external: false },
         { label: "Car Finance", href: "/financing", external: false },
         { label: "Payment Calculator", href: "/payment-calculator", external: false },
-        { label: "Skip the Dealership", href: "/skip-the-dealership", external: false },
         { label: "About Us", href: "/about-us", external: false },
         { label: "Contact Us", href: "/contact-us", external: false },
       ],
@@ -91,11 +84,11 @@ const Footer = () => {
   const pathname = usePathname();
 
   return (
-    <footer className={`w-full border-t-0 -mt-5 bg-neutral-charcoal`}>
-      <div className="mx-auto max-w-[1600px] px-5 lg:px-10 pb-5">
+    <footer className="w-full border-t-0 bg-neutral-charcoal font-[Lato,sans-serif]">
+      <Reveal y={20} className="mx-auto max-w-[1600px] px-5 pt-12 lg:px-10 lg:pt-14 pb-5">
 
         {/* Link columns grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
           {columns.map((col) => (
             <div key={col.title}>
               <h3 className="text-[18px] font-bold tracking-[1px] uppercase mb-5 text-white">
@@ -163,44 +156,44 @@ const Footer = () => {
           </div>
         </div>
 
-      </div>
-      <div className="mt-12">
-        <hr className="border-dark-border" />
-      </div>
-
-      {/* Copyright bar */}
-      <div className="pt-6 px-10 pb-5 flex flex-col md:flex-row gap-4 justify-between max-[767px]:justify-center max-[767px]:items-center">
-        <div className="text-[13px] text-white uppercase text-center md:text-start">
-          © {new Date().getFullYear()} {safeD.dealership_name}. <br />
-          <span className="flex items-center gap-2">
-            All rights reserved. Powered by
-            <a
-              href="https://www.zopdealer.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image 
-                src={zlogo} 
-                alt="Zop Dealer" 
-                width={20} 
-                height={20}
-                style={{
-                  width: "auto",
-                  height: "auto",
-                  maxWidth: "100%",
-                }}
-              />
-            </a>
-          </span>
+        <div className="mt-12">
+          <hr className="border-dark-border" />
         </div>
-        <p className="text-[12.5px] text-white uppercase">
-          <Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
-          {" | "}
-          <Link href="/terms-conditions" className="hover:text-white">Terms & Conditions</Link>
-          {" | "}
-          <Link target="_blank" href={`/sitemap`} className="hover:text-white">Site Map</Link>
-        </p>
-      </div>
+
+        {/* Copyright bar */}
+        <div className="pt-6 px-10 pb-5 flex flex-col md:flex-row gap-4 justify-between max-[767px]:justify-center max-[767px]:items-center">
+          <div className="text-[13px] text-white uppercase text-center md:text-start">
+            © {new Date().getFullYear()} {safeD.dealership_name}. <br />
+            <span className="flex items-center gap-2">
+              All rights reserved. Powered by
+              <a
+                href="https://www.zopdealer.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image 
+                  src={zlogo} 
+                  alt="Zop Dealer" 
+                  width={20} 
+                  height={20}
+                  style={{
+                    width: "auto",
+                    height: "auto",
+                    maxWidth: "100%",
+                  }}
+                />
+              </a>
+            </span>
+          </div>
+          <p className="text-[12.5px] text-white uppercase">
+            <Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
+            {" | "}
+            <Link href="/terms-conditions" className="hover:text-white">Terms & Conditions</Link>
+            {" | "}
+            <Link target="_blank" href={`/sitemap`} className="hover:text-white">Site Map</Link>
+          </p>
+        </div>
+      </Reveal>
     </footer>
   );
 };

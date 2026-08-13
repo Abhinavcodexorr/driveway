@@ -9,14 +9,14 @@
 :root {
   /* Primary Colors */
   --color-primary-green: #00af66;
-  --color-primary-green-dark: #05B169;
+  --color-primary-green-dark: #00af66;
   
   /* Neutral Colors */
   --color-neutral-white: #ffffff;
   
   /* Semantic Colors */
-  --color-slider-thumb: #10b981;
-  --color-shadow-green: rgba(16, 185, 129, 0.2);
+  --color-slider-thumb: #00af66;
+  --color-shadow-green: rgba(0, 175, 102, 0.2);
   --color-shadow-dark: rgba(0, 0, 0, 0.08);
 }
 
@@ -234,4 +234,33 @@
 
 .animate-dollar-count {
   animation: dollarCount 2.4s ease-in-out infinite;
+}
+
+/* Sitewide polish — smooth interactive motion */
+@media (prefers-reduced-motion: no-preference) {
+  a,
+  button {
+    transition:
+      color 0.2s ease,
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      opacity 0.2s ease,
+      transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.25s ease;
+  }
+
+  img {
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

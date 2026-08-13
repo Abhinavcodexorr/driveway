@@ -195,14 +195,14 @@ const Service = () => {
                       href={safeD.address_map_url_1 || safeD.address_1_bar}
                       target="_blank"
                       rel="noreferrer"
-                      className="hover:text-emerald-500 transition-colors"
+                      className="hover:text-brand-green transition-colors"
                     >
                       {safeD.full_address_1}
                     </a>
                   </div>
                   <div className="flex items-center gap-2 text-lg">
                     <Phone className="h-5 w-5 shrink-0" />
-                    <a href={PHONE_HREF} className="hover:text-emerald-500 transition-colors">
+                    <a href={PHONE_HREF} className="hover:text-brand-green transition-colors">
                       {PHONE_NUMBER}
                     </a>
                   </div>
@@ -295,7 +295,7 @@ const Service = () => {
 
                     <div className="flex justify-end items-center px-3 mt-4">
                       <div className="shrink-0 group-hover:translate-x-1 transition-transform duration-200">
-                        <ArrowRight className="h-5 w-5 text-emerald-600" strokeWidth={3} />
+                        <ArrowRight className="h-5 w-5 text-brand-green" strokeWidth={3} />
                       </div>
                     </div>
                   </div>

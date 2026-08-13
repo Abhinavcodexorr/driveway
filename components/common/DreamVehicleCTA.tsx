@@ -3,7 +3,7 @@
    Reusable call-to-action banner used at the
    bottom of several pages (Service, Protection Plans,
    About Us). Prompts users to browse inventory
-   or get pre-qualified for financing.
+   or get pre-approved for financing.
 ========================= */
 
 import { ArrowRight } from "lucide-react";
@@ -16,7 +16,7 @@ const DreamVehicleCTA = () => {
           Your dream vehicle is close...
         </h2>
         <p className="mt-4 text-[17px] text-foreground/80 max-w-2xl mx-auto">
-          Browse our full inventory or get pre-qualified in minutes — no impact to your credit.
+          Browse our full inventory or get pre-approved in minutes — no impact to your credit.
         </p>
 
         <div className="mt-8 flex flex-wrap justify-center gap-4">
@@ -29,12 +29,12 @@ const DreamVehicleCTA = () => {
             <ArrowRight className="h-5 w-5" strokeWidth={2.5} />
           </a>
 
-          {/* Pre-qualify CTA */}
+          {/* Pre-approve CTA */}
           <a
             href="/financing"
             className="inline-flex items-center gap-2 rounded-md border-2 border-foreground/80 text-foreground px-7 py-4 font-semibold text-[16px] hover:bg-foreground hover:text-background transition-colors"
           >
-            Get pre-qualified
+            Get pre-approved
           </a>
         </div>
       </div>

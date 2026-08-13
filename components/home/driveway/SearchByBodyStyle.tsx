@@ -2,8 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useAppConfig } from "@/app/providers";
-import { getInventoryUrlByRefinement, getInventoryUrlByMake } from "@/lib/inventoryUrls";
 import { Reveal, Stagger, StaggerItem } from "./motion";
 
 const BODY_STYLES = [
@@ -101,8 +99,6 @@ const MODELS = [
 ] as const;
 
 const SearchByBodyStyle = () => {
-  const appConfig = useAppConfig();
-
   return (
     <section className="dw-font w-full bg-white px-4 py-12 md:px-10 md:py-16 xl:px-[120px] xl:py-24">
       <div className="mx-auto w-full max-w-[1075px] space-y-12 md:space-y-16">
@@ -120,7 +116,7 @@ const SearchByBodyStyle = () => {
             {BODY_STYLES.map((item) => (
               <StaggerItem key={item.title} as="li">
                 <Link
-                  href={getInventoryUrlByRefinement("body_type", item.bodyType, appConfig)}
+                  href="/financing"
                   className="group flex cursor-pointer flex-col items-center text-center no-underline transition-transform duration-300 hover:-translate-y-1"
                 >
                   <Image
@@ -130,7 +126,7 @@ const SearchByBodyStyle = () => {
                     height={51}
                     className="mb-3 h-[51px] w-[109px] object-contain transition-transform duration-300 group-hover:scale-105"
                   />
-                  <span className="text-[15px] font-normal text-[#1451B5] underline underline-offset-2 md:text-[16px]">
+                  <span className="text-[15px] font-normal text-[#00af66] underline underline-offset-2 md:text-[16px]">
                     {item.title}
                   </span>
                 </Link>
@@ -153,10 +149,10 @@ const SearchByBodyStyle = () => {
             {BRANDS.map((brand) => (
               <StaggerItem key={brand.title} as="li">
                 <Link
-                  href={getInventoryUrlByMake(brand.title, appConfig)}
+                  href="/financing"
                   className="group flex cursor-pointer flex-col items-center text-center no-underline"
                 >
-                  <div className="mb-2 flex aspect-square w-full items-center justify-center rounded-lg border border-[#E1E1E1] bg-white p-3 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-[#1451B5]">
+                  <div className="mb-2 flex aspect-square w-full items-center justify-center rounded-lg border border-[#E1E1E1] bg-white p-3 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-[#00af66]">
                     <Image
                       src={brand.image}
                       alt={brand.title}
@@ -188,8 +184,8 @@ const SearchByBodyStyle = () => {
             {MODELS.map((model) => (
               <StaggerItem key={model} as="li">
                 <Link
-                  href={`/inventory?q=${encodeURIComponent(model)}`}
-                  className="cursor-pointer text-[15px] font-normal text-[#1451B5] underline underline-offset-2 transition-colors hover:text-[#0C316D] md:text-[16px]"
+                  href="/financing"
+                  className="cursor-pointer text-[15px] font-normal text-[#00af66] underline underline-offset-2 transition-colors hover:text-[#0C316D] md:text-[16px]"
                 >
                   {model}
                 </Link>

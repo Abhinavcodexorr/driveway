@@ -36,12 +36,12 @@ const DeliveredByDriveway = () => {
     <section className="dw-font w-full overflow-hidden bg-[#F9F7F2] px-4 pb-5 pt-12 sm:px-6 md:px-10 md:pb-11 md:pt-16 xl:px-12 xl:pt-24">
       <Reveal className="mx-auto mb-6 max-w-[904px] text-left md:mb-8 md:text-center">
         <h2 className="mb-4 text-[28px] font-bold leading-[1.2] tracking-[-0.5px] text-[#353535] md:mb-6 md:text-[32px] xl:text-[39px] xl:tracking-[-1.2px]">
-          Delivered by Driveway
+          Delivered by Carma Credit
         </h2>
         <p className="m-0 text-[16px] leading-relaxed text-[#353535] md:text-[18px]">
           Chronicles of the moment the keys are handed over in your driveway, the
           daily drive, or feeling your vacation vibes. Use{" "}
-          <strong className="font-bold">#DeliveredByDriveway</strong> for a chance
+          <strong className="font-bold">#DeliveredByCarmaCredit</strong> for a chance
           to be featured in our happy drivers gallery.
         </p>
       </Reveal>
@@ -51,7 +51,7 @@ const DeliveredByDriveway = () => {
           type="button"
           aria-label="Previous slide"
           onClick={() => scrollBy(-1)}
-          className="absolute left-0 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-[#d0d0d0] bg-white text-[#1451B5] shadow-sm transition-colors hover:bg-[#1451B5] hover:text-white md:flex xl:left-2"
+          className="absolute left-0 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-[#d0d0d0] bg-white text-[#00af66] shadow-sm transition-colors hover:bg-[#00af66] hover:text-white md:flex xl:left-2"
         >
           <ChevronLeft className="h-7 w-7" strokeWidth={1.5} />
         </button>
@@ -60,7 +60,7 @@ const DeliveredByDriveway = () => {
           type="button"
           aria-label="Next slide"
           onClick={() => scrollBy(1)}
-          className="absolute right-0 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-[#d0d0d0] bg-white text-[#1451B5] shadow-sm transition-colors hover:bg-[#1451B5] hover:text-white md:flex xl:right-2"
+          className="absolute right-0 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-[#d0d0d0] bg-white text-[#00af66] shadow-sm transition-colors hover:bg-[#00af66] hover:text-white md:flex xl:right-2"
         >
           <ChevronRight className="h-7 w-7" strokeWidth={1.5} />
         </button>
@@ -80,7 +80,7 @@ const DeliveredByDriveway = () => {
             >
               <Image
                 src={src}
-                alt="#DeliveredByDriveway"
+                alt="#DeliveredByCarmaCredit"
                 fill
                 sizes="225px"
                 className="object-cover transition-transform duration-300 hover:scale-[1.03]"

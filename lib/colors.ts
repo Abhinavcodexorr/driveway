@@ -15,15 +15,15 @@ export const COLORS = {
   // PRIMARY / BRAND COLORS
   // ═══════════════════════════════════════════════════════════════════════════
   primary: {
-    // Main brand green - used for CTAs, buttons, and primary actions
+    // Main brand accent - used for CTAs, buttons, and primary actions
     green: '#00af66',
-    greenLight: '#A8E5CC',    // Light variant for gradients
-    greenMedium: '#85DBB8',   // Medium variant for gradients  
-    greenDark: '#05B169',     // Dark variant for hover states
-    green2: '#00b074',        // Secondary green variant
-    green3: '#00b872',        // Tertiary green variant (SVG stroke)
-    greenAlt: '#01a960',      // Alternative green shade
-    greenAlpha: 'rgba(0, 175, 102, 0.65)', // With 65% opacity (#00af66a6)
+    greenLight: '#00af66',
+    greenMedium: '#00af66',
+    greenDark: '#00af66',
+    green2: '#00af66',
+    green3: '#00af66',
+    greenAlt: '#00af66',
+    greenAlpha: 'rgba(0, 175, 102, 0.65)',
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -56,16 +56,16 @@ export const COLORS = {
     // Blue variants
     heroBlue: '#c4eafa',       // Hero section background
     lightBlue: '#eaf5ff',      // Vehicle info header, light backgrounds
-    prequalifyBlue: '#00573326', // Pre-qualify card backgrounds
+    prequalifyBlue: '#00af6626', // Pre-approve card backgrounds
     reviewBlue: '#eaeff5',     // Reviews section background
     
-    // Green gradient backgrounds
-    greenGradientStart: '#dff8ed',   // Trade-in gradient start
-    greenGradientMid: '#a8ebc9',     // Trade-in gradient middle
-    greenGradientEnd: '#7ee0af',     // Trade-in gradient end
-    greenGradientBorder: '#b2edd1',  // Trade-in border
-    greenCard: '#cdf5e3',            // Valuation card background
-    greenTrack: '#DCEBE6',           // Finance slider track
+    // Brand-tint gradient backgrounds
+    greenGradientStart: '#dff3fc',   // Trade-in gradient start
+    greenGradientMid: '#a8dff8',     // Trade-in gradient middle
+    greenGradientEnd: '#7ecff4',     // Trade-in gradient end
+    greenGradientBorder: '#b2e4f8',  // Trade-in border
+    greenCard: '#cdf0fb',            // Valuation card background
+    greenTrack: '#DCEAF1',           // Finance slider track
     
     // Light backgrounds
     lightBeige: '#faf9f8',            // Finance calculator section
@@ -92,7 +92,7 @@ export const COLORS = {
   semantic: {
     // Success
     success: '#00af66',
-    successLight: '#A8E5CC',
+    successLight: '#00af66',
     
     // Error
     error: 'hsl(0 84.2% 60.2%)',
@@ -122,7 +122,7 @@ export const COLORS = {
   // ═══════════════════════════════════════════════════════════════════════════
   special: {
     // Price display
-    price: 'hsl(145 75% 40%)', // Price green
+    price: '#00af66',
     
     // Rating / Stars
     star: 'hsl(45 100% 51%)',  // Gold/yellow for star ratings
@@ -133,11 +133,11 @@ export const COLORS = {
     avatarPurple: '#512da8',   // Deep purple avatar background
     
     // Accents
-    accent: '#005dff',         // Blue accent color
-    accentAlt: '#0090FF',      // Alternative blue accent
+    accent: '#00af66',
+    accentAlt: '#00af66',
     
     // Indicators
-    indicatorGreen: '#1D8B68', // Slider dot indicator
+    indicatorGreen: '#00af66', // Slider dot indicator
     
     // Sold Overlay
     sold: '#5f5f5f',           // Sold ribbon background
@@ -172,7 +172,7 @@ export const COLORS = {
     button: {
       primary: '#00af66',
       primaryHover: '#00af66',
-      border: '#00b066',
+      border: '#00af66',
       secondary: '#ffffff',
       secondaryBorder: 'rgba(0, 175, 102, 0.65)',
     },
@@ -186,8 +186,8 @@ export const COLORS = {
     
     // Accordion / FAQ
     accordion: {
-      header: '#00a651',
-      checkmark: '#00a651',
+      header: '#00af66',
+      checkmark: '#00af66',
       text: '#ffffff',
     },
     
@@ -207,8 +207,8 @@ export const COLORS = {
       hover: 'rgba(0, 0, 0, 0.03)',
       buttonPress: '0 4px 0 0 #00af66',
       lightBlue: 'rgba(244, 249, 252, 1.3)',
-      brandGreen: 'rgba(16, 185, 129, 0.2)', // Finance slider shadow
-      brandGreenDark: 'rgba(16, 185, 129, 0.1)', // Lighter green shadow
+      brandGreen: 'rgba(0, 175, 102, 0.2)',
+      brandGreenDark: 'rgba(0, 175, 102, 0.1)',
     },
   },
 
@@ -218,9 +218,9 @@ export const COLORS = {
   // ═══════════════════════════════════════════════════════════════════════════
   tailwind: {
     'brand-green': '#00af66',
-    'brand-green-light': '#A8E5CC',
-    'brand-green-medium': '#85DBB8',
-    'brand-green-dark': '#05B169',
+    'brand-green-light': '#00af66',
+    'brand-green-medium': '#00af66',
+    'brand-green-dark': '#00af66',
     'hero-bg': '#c4eafa',
     'light-blue': '#eaf5ff',
     'review-blue': '#eaeff5',

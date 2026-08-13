@@ -12,19 +12,15 @@ const SearchCars = () => {
 
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
-    const q = query.trim();
-    if (!q) {
-      router.push("/inventory/");
-      return;
-    }
-    router.push(`/inventory/?q=${encodeURIComponent(q)}`);
+    // Carma Credit focuses on financing — route search to pre-approval
+    router.push("/financing");
   };
 
   return (
     <section className="dw-font w-full bg-[#081848] px-6 py-12">
       <Reveal className="mx-auto max-w-[1100px]">
         <h2 className="mb-8 text-center text-[28px] font-bold text-white md:text-[32px]">
-          Search Cars
+          Get Pre-Approved
         </h2>
 
         <form
@@ -72,8 +68,8 @@ const SearchCars = () => {
             />
             <button
               type="submit"
-              aria-label="search"
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-[#353535] transition-colors hover:text-[#1451B5]"
+              aria-label="Get Pre-Approved"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-[#353535] transition-colors hover:text-[#00af66]"
             >
               <Search className="h-5 w-5" strokeWidth={2} />
             </button>

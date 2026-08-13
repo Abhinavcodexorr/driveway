@@ -204,7 +204,7 @@ export default function SitemapPage() {
           {/* Page Header */}
           <div className="mb-12">
             <h1 className="text-4xl font-bold text-gray-900 mb-2">Site Map</h1>
-            <p className="text-gray-600">Browse all pages and listings on Cardora</p>
+            <p className="text-gray-600">Browse all pages and listings on Carma Credit</p>
           </div>
 
           {/* Sitemap Groups */}
@@ -219,7 +219,7 @@ export default function SitemapPage() {
                     <a
                       key={idx}
                       href={link.url}
-                      className="text-brand-green font-lg text-sm hover:text-green-800"
+                      className="text-brand-green font-lg text-sm hover:text-brand-green-dark"
                       title={`Updated: ${new Date(link.lastmod).toLocaleDateString()}`}
                       target='_blank'
                     >

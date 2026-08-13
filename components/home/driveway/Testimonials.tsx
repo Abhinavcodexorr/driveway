@@ -20,8 +20,8 @@ const Testimonials = () => {
 
   return (
     <section
-      id="driveway-reviews"
-      className="dw-font relative w-full bg-[#184F56] px-4 py-12 text-white md:px-6 md:py-14"
+      id="carma-reviews"
+      className="dw-font relative w-full bg-[#00af66] px-4 py-12 text-white md:px-6 md:py-14"
     >
       <div className="relative mx-auto max-w-[1100px] px-10 md:px-[60px]">
         <button

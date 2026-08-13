@@ -35,8 +35,8 @@ const RecommendedCars = () => {
                   />
                 </div>
                 <h3 className="mb-2 text-[20px] font-bold text-[#121212]">{car.name}</h3>
-                <span className="text-[15px] font-medium text-[#1451B5] underline-offset-2 group-hover:underline">
-                  See Vehicles Available
+                <span className="text-[15px] font-medium text-[#00af66] underline-offset-2 group-hover:underline">
+                  Get Pre-Approved
                 </span>
               </Link>
             </StaggerItem>

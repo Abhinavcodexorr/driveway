@@ -28,7 +28,7 @@ export default function CoverageModal() {
       {/* Trigger Link */}
       <button
         onClick={() => setIsOpen(true)}
-        className="font-semibold text-black underline cursor-pointer hover:text-emerald-500 transition-colors duration-150 inline-block ml-1 bg-transparent border-none p-0 outline-none align-baseline text-[15px]"
+        className="font-semibold text-black underline cursor-pointer hover:text-brand-green transition-colors duration-150 inline-block ml-1 bg-transparent border-none p-0 outline-none align-baseline text-[15px]"
       >
         Learn more
       </button>
@@ -70,7 +70,7 @@ export default function CoverageModal() {
           <div className="space-y-6">
             {/* Perk 1 */}
             <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 mt-0.5 bg-emerald-500 text-white rounded-full p-0.5">
+              <div className="flex-shrink-0 mt-0.5 bg-brand-green text-white rounded-full p-0.5">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                 </svg>
@@ -87,7 +87,7 @@ export default function CoverageModal() {
 
             {/* Perk 2 */}
             <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 mt-0.5 bg-emerald-500 text-white rounded-full p-0.5">
+              <div className="flex-shrink-0 mt-0.5 bg-brand-green text-white rounded-full p-0.5">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                 </svg>
@@ -104,7 +104,7 @@ export default function CoverageModal() {
 
             {/* Perk 3 */}
             <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 mt-0.5 bg-emerald-500 text-white rounded-full p-0.5">
+              <div className="flex-shrink-0 mt-0.5 bg-brand-green text-white rounded-full p-0.5">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                 </svg>

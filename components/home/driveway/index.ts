@@ -1,6 +1,7 @@
 export { default as HomeHeader } from "./HomeHeader";
 export { default as DrivewayHero } from "./DrivewayHero";
 export { default as SearchCars } from "./SearchCars";
+export { default as ShopWithConfidence } from "./ShopWithConfidence";
 export { default as RecommendedCars } from "./RecommendedCars";
 export { default as OwnershipSimplified } from "./OwnershipSimplified";
 export { default as SellSection } from "./SellSection";

@@ -21,7 +21,7 @@ export const CARDS: Card[] = [
   {
     image: preQualified,
     alt: "Smiling woman holding phone with approval",
-    title: "Get pre-qualified",
+    title: "Get pre-approved",
     subtitle: "No impact to your credit",
     to: "/financing/",
   },

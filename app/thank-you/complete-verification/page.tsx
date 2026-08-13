@@ -62,7 +62,7 @@ export default function CarLoanLanding() {
               </h1>
 
               <p className="text-sm md:text-base mb-8">
-                Complete our online car loan application in minutes to pre-qualify for the car of your choice. We offer financing options for all credit situations.
+                Complete our online car loan application in minutes to pre-approve for the car of your choice. We offer financing options for all credit situations.
               </p>
 
               <Link className="w-fit text-white text-sm font-semibold py-3 px-8 cursor-pointer rounded-xl transition duration-200 hover:opacity-90 bg-brand" href={"/finance"}>
