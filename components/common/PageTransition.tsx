@@ -10,7 +10,13 @@ export default function PageTransition({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const reduce = useReducedMotion();
 
-  if (reduce) {
+  // No page transition on sell/trade or finance pages
+  if (
+    reduce ||
+    pathname?.startsWith("/trade-in-my-car") ||
+    pathname?.startsWith("/financing") ||
+    pathname?.startsWith("/finance")
+  ) {
     return <>{children}</>;
   }
 

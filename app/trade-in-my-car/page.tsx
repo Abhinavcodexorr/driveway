@@ -12,7 +12,6 @@
 
 import { useState } from "react";
 import { ChevronDown, FileText, Mail, CalendarCheck, CarFrontIcon } from "lucide-react";
-import { motion, AnimatePresence, Variants } from "framer-motion";
 import Image from "next/image";
 
 // Layout
@@ -89,77 +88,11 @@ const faqs = [
   },
 ];
 
-/* Animation Variants */
-const heroTextContainer: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15 }
-  }
-};
-
-const heroTextItem: Variants = {
-  hidden: { opacity: 0, y: 25 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.6, ease: [0.215, 0.610, 0.355, 1.0] } 
-  }
-};
-
-const heroFormVariants: Variants = {
-  hidden: { opacity: 0, y: 30, scale: 0.98 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.65, delay: 0.3, ease: "easeOut" }
-  }
-};
-
-const graphicVariants: Variants = {
-  hidden: { opacity: 0, scaleY: 0.8 },
-  visible: {
-    opacity: 1,
-    scaleY: 1,
-    transition: { duration: 0.8, delay: 0.4, ease: "easeOut" }
-  }
-};
-
-const slideInLeft: Variants = {
-  hidden: { opacity: 0, x: -30 },
-  visible: { 
-    opacity: 1, 
-    x: 0, 
-    transition: { duration: 0.65, ease: "easeOut" } 
-  }
-};
-
-const fadeInUp: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.5, ease: "easeOut" } 
-  }
-};
-
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { 
-      staggerChildren: 0.08, 
-      delayChildren: 0.05 
-    }
-  }
-};
-
 /* Page Component */
 const TradeIn = () => {
   const appConfig = useAppConfig();
   const { SITE_CONFIG } = getConstants(appConfig);
-  const [mode, setMode]       = useState<"vehicle" | "vin">("vehicle");
+  const [mode, setMode] = useState<"vehicle" | "vin">("vehicle");
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const TRADE_FORMS = {
@@ -174,47 +107,28 @@ const TradeIn = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden bg-background">
       <Header />
 
-      {/* Hero / Quote form — Animated on Initial Page Entry */}
-      <section className="w-full relative px-4 lg:px-24 lg:mt-18">
-        <div className="mx-auto max-w-[1400px] px-2 md:px-9 pt-10 lg:pt-20 items-center lg:items-start relative z-10 flex flex-col lg:flex-row justify-between gap-6 lg:gap-10 pb-5">
-
-          {/* Left: Animated Heading Typography Complex */}
-          <motion.div 
-            initial="hidden"
-            animate="visible"
-            variants={heroTextContainer}
-            className="w-full lg:w-auto text-left"
-          >
-            <motion.h1 
-              variants={heroTextItem}
-              className="font-bold text-gray-950 leading-[1.08] tracking-tight text-[38px] md:text-[44px] lg:text-[66px] md:w-xl"
-            >
+      {/* Hero / Quote form */}
+      <section className="relative w-full px-4 lg:mt-18 lg:px-24">
+        <div className="relative z-10 mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-6 px-2 pb-5 pt-10 md:px-9 lg:flex-row lg:items-start lg:gap-10 lg:pt-20">
+          <div className="w-full text-left lg:w-auto">
+            <h1 className="text-[38px] font-bold leading-[1.08] tracking-tight text-gray-950 md:w-xl md:text-[44px] lg:text-[66px]">
               Sell my car the easy way.
-            </motion.h1>
-            <motion.p 
-              variants={heroTextItem}
-              className="mt-4 lg:mt-6 text-[18px] lg:text-[23px] text-black max-w-xl leading-relaxed"
-            >
-              Fast, seamless and secure. It's the way everyone <br className="hidden lg:inline" /> deserves.
-            </motion.p>
-          </motion.div>
+            </h1>
+            <p className="mt-4 max-w-xl text-[18px] leading-relaxed text-black lg:mt-6 lg:text-[23px]">
+              Fast, seamless and secure. It&apos;s the way everyone{" "}
+              <br className="hidden lg:inline" /> deserves.
+            </p>
+          </div>
 
-          {/* Dynamic Wave, Axis Tracking Graphic and Tag for Mobile View */}
-          <motion.div 
-            initial="hidden"
-            animate="visible"
-            variants={graphicVariants}
-            className="block lg:hidden w-full relative pointer-events-none px-4"
-          >
-            <div className="w-full h-[180px] relative overflow-visible flex flex-col items-center justify-center">
-
-              {/* Background Landscape Wave Line Vector */}
-              <div className="absolute inset-x-0 top-14 -translate-y-1/2 w-full flex justify-center z-10">
+          {/* Mobile graphic */}
+          <div className="relative block w-full px-4 pointer-events-none lg:hidden">
+            <div className="relative flex h-[180px] w-full flex-col items-center justify-center overflow-visible">
+              <div className="absolute inset-x-0 top-14 z-10 flex w-full -translate-y-1/2 justify-center">
                 <svg
-                  className=" w-full h-full"
+                  className="h-full w-full"
                   viewBox="0 0 1440 500"
                   preserveAspectRatio="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -229,11 +143,8 @@ const TradeIn = () => {
                 </svg>
               </div>
 
-              {/* Center Connected Data Badge Tracker Complex */}
               <div className="relative flex flex-col items-center">
-
-                {/* Vertical Transparent Connector Bar Structure */}
-                <div className="relative h-28 w-[38px] flex items-center justify-center z-0">
+                <div className="relative z-0 flex h-28 w-[38px] items-center justify-center">
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary-green2/15 to-primary-green2/20" />
                   <div className="absolute inset-y-0 w-full bg-trade-gradient" />
                   <div className="absolute inset-y-4 w-[2px]">
@@ -246,34 +157,27 @@ const TradeIn = () => {
                     />
                   </div>
                 </div>
-                
-                {/* Anchor Marker Circle Dot */}
+
                 <div className="absolute top-[37%] z-20 flex items-center justify-center">
-                  <div className="h-6 w-6 rounded-full bg-white border-[3.5px] border-primary-green2 shadow-md" />
+                  <div className="h-6 w-6 rounded-full border-[3.5px] border-primary-green2 bg-white shadow-md" />
                 </div>
 
-                {/* Valuation Floating Popup Tag */}
-                <div className="bg-background-greenCard text-center px-8 py-3 rounded-xl shadow-md border border-background-greenGradientBorder/40 mt-1 z-20">
-                  <div className="text-[9px] text-gray-500 font-bold uppercase tracking-wider">Jan 9, 2026</div>
-                  <div className="text-xl font-black text-gray-900 mt-0.5">$18,400</div>
+                <div className="z-20 mt-1 rounded-xl border border-background-greenGradientBorder/40 bg-background-greenCard px-8 py-3 text-center shadow-md">
+                  <div className="text-[9px] font-bold uppercase tracking-wider text-gray-500">
+                    Jan 9, 2026
+                  </div>
+                  <div className="mt-0.5 text-xl font-black text-gray-900">$18,400</div>
                 </div>
-
               </div>
-
             </div>
-          </motion.div>
+          </div>
 
-          {/* Right: Quote Form Card Container */}
-          <motion.div 
-            initial="hidden"
-            animate="visible"
-            variants={heroFormVariants}
-            className="rounded-2xl shadow-xl lg:mr-7 p-5 md:p-8 pb-12 md:pb-24 w-full max-w-[440px] lg:justify-self-end z-10 bg-white border border-border-lightGray/80"
-          >
-            <div className="flex mb-6 cursor-pointer border-b border-border-standard">
+          {/* Quote Form */}
+          <div className="z-10 w-full max-w-[440px] rounded-2xl border border-border-lightGray/80 bg-white p-5 pb-12 shadow-xl md:p-8 md:pb-24 lg:mr-7 lg:justify-self-end">
+            <div className="mb-6 flex cursor-pointer border-b border-border-standard">
               <button
                 onClick={() => setMode("vehicle")}
-                className={`flex-1 text-center pb-3 text-[16px] md:text-[18px] font-bold transition-all relative cursor-pointer ${
+                className={`relative flex-1 cursor-pointer pb-3 text-center text-[16px] font-bold transition-all md:text-[18px] ${
                   mode === "vehicle" ? "text-gray-900" : "text-gray-500"
                 }`}
               >
@@ -285,13 +189,13 @@ const TradeIn = () => {
 
               <button
                 onClick={() => setMode("vin")}
-                className={`flex-1 text-center pb-3 text-[16px] md:text-[18px] font-bold transition-all relative cursor-pointer ${
+                className={`relative flex-1 cursor-pointer pb-3 text-center text-[16px] font-bold transition-all md:text-[18px] ${
                   mode === "vin" ? "text-gray-900" : "text-gray-500"
                 }`}
               >
                 VIN
                 {mode === "vin" && (
-                  <div className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-primary-green2 rounded-full" />
+                  <div className="absolute bottom-0 left-0 right-0 h-[2.5px] rounded-full bg-primary-green2" />
                 )}
               </button>
             </div>
@@ -301,24 +205,19 @@ const TradeIn = () => {
               src={TRADE_FORMS[mode].url}
               title={mode === "vehicle" ? "Trade Form By Vehicle" : "Trade Form By VIN"}
               width="100%"
-              className="border-0 cursor-pointer"
+              className="cursor-pointer border-0"
               style={{
                 minHeight: `${TRADE_FORMS[mode].minHeight}px`,
               }}
             />
-          </motion.div>
+          </div>
         </div>
 
-        {/* Desktop Only Background Wave & Axis Graphic Overlays */}
-        <motion.div 
-          initial="hidden"
-          animate="visible"
-          variants={graphicVariants}
-          className="hidden lg:block absolute bottom-0 left-0 right-0 w-full pointer-events-none z-0"
-        >
-          <div className="absolute xl:-bottom-14 2xl:-bottom-20 lg:-bottom-5 w-full z-10">
+        {/* Desktop wave graphic */}
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-0 hidden w-full lg:block">
+          <div className="absolute z-10 w-full lg:-bottom-5 xl:-bottom-14 2xl:-bottom-20">
             <svg
-              className=" w-full h-full z-10 pointer-events-none"
+              className="pointer-events-none z-10 h-full w-full"
               viewBox="0 0 1440 500"
               preserveAspectRatio="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -333,9 +232,8 @@ const TradeIn = () => {
             </svg>
           </div>
 
-          <div className="absolute bottom-0 left-1/2 -translate-x-16 flex flex-col items-center z-10">
-            {/* Vertical Transparent Connector Bar */}
-            <div className="relative h-96 w-[44px] flex items-end justify-center ">
+          <div className="absolute bottom-0 left-1/2 z-10 flex -translate-x-16 flex-col items-center">
+            <div className="relative flex h-96 w-[44px] items-end justify-center">
               <div className="absolute inset-0 rounded-full bg-gradient-to-b from-transparent via-primary-green2/15 to-primary-green2/20" />
               <div className="absolute inset-y-0 rounded-full bg-trade-gradient" />
               <div className="absolute inset-y-6 w-[2px]">
@@ -349,48 +247,37 @@ const TradeIn = () => {
               </div>
             </div>
 
-            {/* Marker */}
             <div className="absolute bottom-[29%] z-20 flex items-center justify-center">
-              <div className="h-8 w-8 rounded-full bg-white border-[4px] border-primary-green2 shadow-md" />
+              <div className="h-8 w-8 rounded-full border-[4px] border-primary-green2 bg-white shadow-md" />
             </div>
 
-            <div className="absolute top-full left-1/2 -mt-5 -translate-x-1/2 w-[44px] h-32 bg-gradient-to-b from-background-greenGradientMid/50 to-transparent" />
+            <div className="absolute top-full left-1/2 -mt-5 h-32 w-[44px] -translate-x-1/2 bg-gradient-to-b from-background-greenGradientMid/50 to-transparent" />
 
-            {/* Valuation Floating Popup Tag */}
-            <div className="bg-background-greenCard text-center px-9 py-4 rounded-xl shadow-md -translate-y-4 z-20">
-              <div className="text-[10px] text-gray-500 uppercase tracking-wider">Jan 9, 2026</div>
-              <div className="text-2xl font-semibold font-black text-gray-900 mt-0.5">$18,400</div>
+            <div className="z-20 -translate-y-4 rounded-xl bg-background-greenCard px-9 py-4 text-center shadow-md">
+              <div className="text-[10px] uppercase tracking-wider text-gray-500">Jan 9, 2026</div>
+              <div className="mt-0.5 text-2xl font-black text-gray-900">$18,400</div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
-      {/* How it works — Image slides from left, right text block remains static */}
-      <section className="w-full lg:px-24 mx-auto -mt-5 lg:-mt-0">
-        <div className="mx-auto lg:max-w-[1400px] px-4 lg:px-0 py-10 lg:py-24">
-          <div className="grid grid-cols-1 items-start gap-6 lg:gap-0 lg:pl-10 lg:grid-cols-[1fr_1.1fr] lg:gap-12 xl:min-h-180">
-            
-            {/* Left Column: Animated Image Block */}
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={slideInLeft}
-              className="w-full h-[500px] md:h-full"
-            >
+      {/* How it works */}
+      <section className="mx-auto w-full -mt-5 lg:mt-0 lg:px-24">
+        <div className="mx-auto px-4 py-10 lg:max-w-[1400px] lg:px-0 lg:py-24">
+          <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[1fr_1.1fr] lg:gap-12 lg:pl-10 xl:min-h-180">
+            <div className="h-[500px] w-full md:h-full">
               <Image
                 src={sell}
                 alt="Customer trading in their car at Dealership"
                 width={1280}
                 height={1896}
                 loading="lazy"
-                className="h-full w-full rounded-[24px] md:rounded-[32px] object-cover"
+                className="h-full w-full rounded-[24px] object-cover md:rounded-[32px]"
               />
-            </motion.div>
+            </div>
 
-            {/* Right Column: Static Content Block */}
             <div className="lg:pr-16">
-              <h2 className="text-[28px] md:text-[36px] font-bold tracking-tight text-zinc-900 lg:text-[44px]">
+              <h2 className="text-[28px] font-bold tracking-tight text-zinc-900 md:text-[36px] lg:text-[44px]">
                 How it works
               </h2>
 
@@ -400,18 +287,18 @@ const TradeIn = () => {
                   return (
                     <div
                       key={step.title}
-                      className="flex items-start justify-between rounded-2xl border border-zinc-100 bg-white px-4 md:px-6 py-4 shadow-lg gap-4"
+                      className="flex items-start justify-between gap-4 rounded-2xl border border-zinc-100 bg-white px-4 py-4 shadow-lg md:px-6"
                     >
                       <div>
-                        <h3 className="text-[19px] md:text-[22px] font-bold text-zinc-900">
+                        <h3 className="text-[19px] font-bold text-zinc-900 md:text-[22px]">
                           {step.title}
                         </h3>
-                        <p className="text-[15px] md:text-[17px] leading-relaxed text-black mt-1">
+                        <p className="mt-1 text-[15px] leading-relaxed text-black md:text-[17px]">
                           {step.description}
                         </p>
                       </div>
 
-                      <div className="flex h-8 w-8 md:h-9 md:w-9 flex-shrink-0 items-center justify-center text-zinc-500">
+                      <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center text-zinc-500 md:h-9 md:w-9">
                         <Icon className="h-full w-full stroke-[1.5]" />
                       </div>
                     </div>
@@ -419,74 +306,52 @@ const TradeIn = () => {
                 })}
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* FAQs — Header layout remains static, list nodes stagger into viewport view */}
-      <section className="w-full lg:mb-18 mb-2 lg:mt-10 px-3 lg:px-24">
-        <div className="mx-auto max-w-[1400px] px-2 md:px-9 py-8 lg:py-0">
-          <div className="flex items-center gap-3 mb-6 md:mb-10">
-            <h2 className="text-[28px] md:text-[36px] lg:text-[44px] font-semibold text-foreground leading-tight">
+      {/* FAQs */}
+      <section className="mb-2 w-full px-3 lg:mb-18 lg:mt-10 lg:px-24">
+        <div className="mx-auto max-w-[1400px] px-2 py-8 md:px-9 lg:py-0">
+          <div className="mb-6 flex items-center gap-3 md:mb-10">
+            <h2 className="text-[28px] font-semibold leading-tight text-foreground md:text-[36px] lg:text-[44px]">
               Popular sell or trade in questions
             </h2>
           </div>
 
-          {/* Staggered Row Entry Container */}
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-60px" }}
-            variants={containerVariants}
-            className="space-y-1"
-          >
+          <div className="space-y-1">
             {faqs.map((faq, i) => (
-              <motion.div 
-                key={faq.q} 
-                variants={fadeInUp}
-                className="border overflow-hidden bg-white border-border-light"
-              >
+              <div key={faq.q} className="overflow-hidden border border-border-light bg-white">
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className={`w-full flex items-center justify-between px-4 md:px-6 text-left cursor-pointer transition-colors duration-200 ${
+                  className={`flex w-full cursor-pointer items-center justify-between px-4 text-left md:px-6 ${
                     openFaq !== i ? "bg-background-light" : "bg-white"
                   }`}
                 >
-                  <span className={`font-bold leading-none transition-colors duration-200 ${
-                    openFaq !== i ? "py-5 md:py-6 text-neutral-darkGray4" : "py-4 md:py-5 text-neutral-darkGray2"
-                  } text-[18px] md:text-[20px] pr-4`}>
+                  <span
+                    className={`pr-4 text-[18px] font-bold leading-none md:text-[20px] ${
+                      openFaq !== i
+                        ? "py-5 text-neutral-darkGray4 md:py-6"
+                        : "py-4 text-neutral-darkGray2 md:py-5"
+                    }`}
+                  >
                     {faq.q}
                   </span>
-                  <motion.div
-                    animate={{ rotate: openFaq === i ? 180 : 0 }}
-                    transition={{ duration: 0.2, ease: "easeInOut" }}
-                    className="flex-shrink-0 text-foreground/60"
-                  >
-                    <ChevronDown className="h-5 w-5" />
-                  </motion.div>
+                  <ChevronDown
+                    className={`h-5 w-5 flex-shrink-0 text-foreground/60 ${
+                      openFaq === i ? "rotate-180" : ""
+                    }`}
+                  />
                 </button>
 
-                {/* Accordion Expansion Drawer */}
-                <AnimatePresence initial={false}>
-                  {openFaq === i && (
-                    <motion.div
-                      key="content"
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25, ease: "easeInOut" }}
-                      className="overflow-hidden bg-white"
-                    >
-                      <div className="px-4 md:px-6 pb-5 text-[16px] md:text-[16px] leading-normal text-neutral-darkGray3">
-                        {faq.a}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
+                {openFaq === i && (
+                  <div className="bg-white px-4 pb-5 text-[16px] leading-normal text-neutral-darkGray3 md:px-6">
+                    {faq.a}
+                  </div>
+                )}
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
