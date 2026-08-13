@@ -1,49 +1,44 @@
 /* =========================
    Home Page
-   Root page of the Cardora website.
-   Composes all homepage sections in order:
-   Hero → CategoryPills → PreQualify → NextRide →
-   FeaturedVehicles → Reviews → CardoraDifference →
-   GetInTouch → Footer
+   Driveway-inspired redesign:
+   Header → Hero → Search → Recommended → Ownership → Sell → Drivers Seat → Testimonials → Explore → Guides → About → Delivered → Body Style → Footer
 ========================= */
 
 "use client";
 
-// Layout components
-import { Header, Footer } from "@/components/layout";
-
-// Home-specific sections
+import { Footer } from "@/components/layout";
 import {
-  Hero,
-  CategoryPills,
-  PreQualify,
-  NextRide,
-  FeaturedVehicles,
-  Reviews,
-  DealershipDifference,
-} from "@/components/home";
+  HomeHeader,
+  DrivewayHero,
+  SearchCars,
+  RecommendedCars,
+  OwnershipSimplified,
+  SellSection,
+  DriversSeat,
+  Testimonials,
+  MoreWaysToExplore,
+  GuidesTips,
+  AboutDriveway,
+  DeliveredByDriveway,
+  SearchByBodyStyle,
+} from "@/components/home/driveway";
 
-// Shared/reusable sections
-import { GetInTouch } from "@/components/common";
-
-/*  Page Component */
 const HomePage = () => {
   return (
-    <main className="min-h-screen bg-background overflow-hidden">
-      {/* Hero section has a blue background */}
-      <div className="bg-hero-bg ">
-        <Header />
-        <Hero />
-      </div>
-
-      {/* Homepage sections */}
-      <CategoryPills />
-      <PreQualify />
-      <NextRide />
-      <FeaturedVehicles />
-      <Reviews />
-      <DealershipDifference />
-      <GetInTouch />
+    <main className="dw-font min-h-screen overflow-hidden bg-white">
+      <HomeHeader />
+      <DrivewayHero />
+      <SearchCars />
+      <RecommendedCars />
+      <OwnershipSimplified />
+      <SellSection />
+      <DriversSeat />
+      <Testimonials />
+      <MoreWaysToExplore />
+      <GuidesTips />
+      <AboutDriveway />
+      <DeliveredByDriveway />
+      <SearchByBodyStyle />
       <Footer />
     </main>
   );
