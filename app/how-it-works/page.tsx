@@ -30,7 +30,13 @@ const BENEFITS = [
   },
 ] as const;
 
-const STEPS = [
+type Step = {
+  title: string;
+  text: string;
+  link?: { href: string; label: string };
+};
+
+const STEPS: Step[] = [
   {
     title: "Step 1: Get Your Instant Online Offer",
     text: "Complete our online appraisal form in minutes to see your offer. No lowball offers here!",
@@ -44,7 +50,7 @@ const STEPS = [
     title: "Step 3: Drop Off Your Car, Get Paid",
     text: "If you’re happy with your offer, we’ll schedule a convenient date and location for drop-off — and you’ll get paid!",
   },
-] as const;
+];
 
 export default function HowItWorksPage() {
   return (
