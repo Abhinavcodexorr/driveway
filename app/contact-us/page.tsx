@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { GetInTouch } from "@/components/common";
 import { Footer, Header } from "@/components/layout";
 import Image from "next/image";
@@ -9,86 +10,102 @@ import { getConstants } from "@/constants";
 import { useAppConfig } from "@/app/providers";
 import Link from "next/link";
 
+/** Match cardora.ca contact embed (~580px), then auto-fit to form content */
+const MIN_HEIGHT = 480;
+const DEFAULT_HEIGHT = 580;
+
 export default function ContactUs() {
   const appConfig = useAppConfig();
   const SITE_CONFIG = getConstants(appConfig).SITE_CONFIG;
   const contactFormUrl = SITE_CONFIG?.urls.contactUsBaseUrl;
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const [height, setHeight] = useState(DEFAULT_HEIGHT);
+
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      const data = event.data;
+      if (
+        data &&
+        typeof data === "object" &&
+        data.type === "css" &&
+        (data.element_id === "contact_us" || data.element_id === "contact_form") &&
+        typeof data.value === "number"
+      ) {
+        setHeight(Math.max(MIN_HEIGHT, Math.ceil(data.value) + 8));
+      }
+    };
+
+    window.addEventListener("message", handleMessage);
+    return () => window.removeEventListener("message", handleMessage);
+  }, []);
 
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-white px-3 py-10 font-sans text-gray-900 lg:mt-24 lg:px-24">
-        <div className="mx-auto grid w-full max-w-[1200px] grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
-          {/* Left Side */}
-          <div className="space-y-8">
-            <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl md:text-[42px] lg:mt-10 lg:max-w-xl">
+      <div className="bg-white px-4 py-8 font-sans text-gray-900 sm:px-6 lg:mt-16 lg:px-24 lg:py-12">
+        <div className="mx-auto grid w-full max-w-[1100px] grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-10">
+          {/* Left — same pattern as cardora.ca */}
+          <div className="space-y-6 lg:space-y-8">
+            <h1 className="max-w-xl text-[28px] font-bold leading-tight text-gray-900 sm:text-[36px] lg:text-[42px]">
               Got a question? We’re here to help.
             </h1>
-            <div className="space-y-7 lg:w-[480px] lg:space-y-4">
-              {/* Call Card */}
+
+            <div className="flex max-w-[480px] flex-col gap-4">
               <Link
-                href={`tel:${appConfig.dealership.sales_number_1}`}
-                className="group relative flex cursor-pointer justify-between overflow-hidden rounded-md border border-gray-200 bg-white p-6"
+                href={`tel:${appConfig.dealership.sales_number_1 || "+18555145500"}`}
+                className="group relative flex items-center justify-between overflow-hidden rounded-md border border-gray-200 bg-white p-5 sm:p-6"
               >
                 <div className="absolute inset-0 bg-[#2f413936] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-
                 <div className="relative z-10">
-                  <h2 className="mb-1 text-xl font-bold text-gray-900">Call us</h2>
-                  <p className="text-gray-600">Call Us Anytime Now</p>
+                  <h2 className="mb-0.5 text-lg font-bold text-gray-900 sm:text-xl">Call us</h2>
+                  <p className="text-[15px] text-gray-600">Call Us Anytime Now</p>
                 </div>
-
-                <div className="relative z-10 flex h-[55px] w-[55px] items-center justify-center rounded-full bg-brand-green">
-                  <Image
-                    src={callIcon}
-                    alt="Call icon"
-                    width={27}
-                    height={27}
-                    className="object-contain"
-                  />
+                <div className="relative z-10 flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-full bg-brand-green sm:h-[55px] sm:w-[55px]">
+                  <Image src={callIcon} alt="" width={26} height={26} className="object-contain" />
                 </div>
               </Link>
 
-              {/* Email Card */}
               <Link
-                href={`mailto:${appConfig.dealership.email_1}`}
-                className="group relative flex cursor-pointer justify-between overflow-hidden rounded-md border border-gray-200 bg-white p-6"
+                href={`mailto:${appConfig.dealership.email_1 || ""}`}
+                className="group relative flex items-center justify-between overflow-hidden rounded-md border border-gray-200 bg-white p-5 sm:p-6"
               >
                 <div className="absolute inset-0 bg-[#2f413936] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-
                 <div className="relative z-10">
-                  <h2 className="mb-1 text-xl font-bold text-gray-900">Email</h2>
-                  <p className="text-gray-600">Send Us an Email</p>
+                  <h2 className="mb-0.5 text-lg font-bold text-gray-900 sm:text-xl">Email</h2>
+                  <p className="text-[15px] text-gray-600">Send Us an Email</p>
                 </div>
-
-                <div className="relative z-10 flex h-[55px] w-[55px] items-center justify-center rounded-full bg-brand-green">
-                  <Image
-                    src={envelopIcon}
-                    alt="Email icon"
-                    width={27}
-                    height={27}
-                    className="object-contain"
-                  />
+                <div className="relative z-10 flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-full bg-brand-green sm:h-[55px] sm:w-[55px]">
+                  <Image src={envelopIcon} alt="" width={26} height={26} className="object-contain" />
                 </div>
               </Link>
             </div>
           </div>
 
-          {/* Right Side: Form Container */}
-          <div className="rounded-2xl border border-gray-100 bg-white px-4 pb-8 pt-8 shadow-[0_2px_18px_rgba(0,0,0,0.1)] sm:p-6">
-            <h2 className="mb-6 text-2xl font-bold text-gray-900 sm:text-3xl">
+          {/* Right — form card sized like cardora.ca */}
+          <div className="rounded-2xl border border-gray-100 bg-white p-5 shadow-[0_2px_18px_rgba(0,0,0,0.08)] sm:p-6">
+            <h2 className="mb-4 text-[22px] font-bold text-gray-900 sm:mb-5 sm:text-[28px]">
               Let’s Get You on the Road
             </h2>
-            <div className="h-[520px] w-full overflow-hidden rounded-2xl sm:h-[600px]">
+
+            <div className="w-full overflow-hidden">
               {contactFormUrl ? (
                 <iframe
-                  src={contactFormUrl}
+                  ref={iframeRef}
+                  id="contact_form"
+                  name="iframe_a"
+                  src={`${contactFormUrl}?`}
                   title="Contact Us"
+                  scrolling="no"
                   allow="payment"
-                  className="block h-full w-full rounded-2xl border-0"
-                  style={{ height: "100%", minHeight: "520px" }}
+                  className="contact-us block w-full border-0"
+                  style={{
+                    height: `${height}px`,
+                    minHeight: MIN_HEIGHT,
+                    border: "none",
+                  }}
                 />
               ) : (
-                <div className="flex h-full items-center justify-center text-gray-500">
+                <div className="flex h-[280px] items-center justify-center text-gray-500">
                   Contact form is temporarily unavailable.
                 </div>
               )}
