@@ -81,7 +81,7 @@ export default function WhatDoINeedPage() {
         </section>
 
         {/* Save thousands */}
-        <section className="bg-white px-4 py-14 md:px-8 md:py-20">
+        <section className="bg-white px-4 py-10 md:px-8 md:py-14">
           <div className="mx-auto grid max-w-[1140px] items-center gap-10 lg:grid-cols-2 lg:gap-14">
             <div>
               <p className="mb-3 text-[16px] font-semibold uppercase tracking-wide text-[#008765]">
@@ -127,7 +127,7 @@ export default function WhatDoINeedPage() {
 
         {/* 6 steps */}
         <section className="bg-white px-4 pb-8 md:px-8">
-          <div className="mx-auto max-w-[1140px] space-y-16 md:space-y-20">
+          <div className="mx-auto max-w-[1140px] space-y-12 md:space-y-14">
             {STEPS.map((item) => (
               <div
                 key={item.step}
@@ -167,7 +167,7 @@ export default function WhatDoINeedPage() {
         </section>
 
         {/* Bottom testimonial CTA */}
-        <section className="bg-white px-4 py-14 md:px-8 md:py-20">
+        <section className="bg-white px-4 py-10 md:px-8 md:py-14">
           <div className="mx-auto grid max-w-[1140px] items-center gap-10 lg:grid-cols-2 lg:gap-14">
             <div className="overflow-hidden rounded-[28px]">
               <Image

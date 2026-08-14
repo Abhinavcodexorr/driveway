@@ -14,9 +14,9 @@ export const CARDS: Card[] = [
   {
     image: tradeIn,
     alt: "Person handing over car keys",
-    title: "Start with a trade-in",
+    title: "Sell my Car",
     subtitle: "Get an offer in under 2 mins.",
-    to: "/trade-in",
+    to: "/trade-in-my-car",
   },
   {
     image: preQualified,

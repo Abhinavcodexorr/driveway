@@ -38,7 +38,7 @@ export default function RebuildYourCreditPage() {
         </section>
 
         {/* Things you can do + image */}
-        <section className="bg-white px-4 py-14 md:px-8 md:py-20">
+        <section className="bg-white px-4 py-10 md:px-8 md:py-14">
           <div className="mx-auto grid max-w-[1140px] items-center gap-10 lg:grid-cols-2 lg:gap-14">
             <div>
               <p className="mb-3 text-[16px] font-semibold uppercase tracking-wide text-[#008765]">
@@ -80,7 +80,7 @@ export default function RebuildYourCreditPage() {
         </section>
 
         {/* How long does bad credit last */}
-        <section className="bg-white px-4 py-14 md:px-8 md:py-20">
+        <section className="bg-white px-4 py-10 md:px-8 md:py-14">
           <div className="mx-auto max-w-[1140px]">
             <h2 className="mb-10 text-center text-[28px] font-bold leading-tight md:text-[42px]">
               How Long Does ‘Bad Credit’ Last?
@@ -130,7 +130,7 @@ export default function RebuildYourCreditPage() {
         </section>
 
         {/* Key things — mint section */}
-        <section className="bg-[#c8efe5] px-4 py-14 md:px-8 md:py-20">
+        <section className="bg-[#c8efe5] px-4 py-10 md:px-8 md:py-14">
           <div className="mx-auto max-w-[1140px]">
             <h2 className="mb-10 text-center text-[28px] font-bold leading-tight md:text-[42px]">
               There are a few key things you can do to start rebuilding your credit:
@@ -149,7 +149,7 @@ export default function RebuildYourCreditPage() {
           </div>
         </section>
 
-        <section className="bg-white px-4 py-14 md:px-8 md:py-20">
+        <section className="bg-white px-4 py-10 md:px-8 md:py-14">
           <Stagger className="mx-auto grid max-w-[1140px] gap-6 sm:grid-cols-2">
             {[
               {

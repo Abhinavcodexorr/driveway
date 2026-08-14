@@ -88,8 +88,7 @@ const SellSection = () => {
           </h2>
           <p className="text-[15px] leading-relaxed text-white/95 sm:text-[16px] md:text-[18px]">
             We’ve got a tried-and-true system for getting you a guaranteed, no-haggle
-            price for your vehicle. Trade in and trade up, or collect some cash for
-            your ride.
+            price for your vehicle. Sell with confidence and collect cash for your ride.
           </p>
         </Reveal>
 

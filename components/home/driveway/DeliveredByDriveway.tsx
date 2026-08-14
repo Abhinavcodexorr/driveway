@@ -33,7 +33,7 @@ const DeliveredByDriveway = () => {
   };
 
   return (
-    <section className="dw-font w-full overflow-hidden bg-[#F9F7F2] px-4 pb-5 pt-12 sm:px-6 md:px-10 md:pb-11 md:pt-16 xl:px-12 xl:pt-24">
+    <section className="dw-font w-full overflow-hidden bg-[#F9F7F2] px-4 pb-5 pt-10 sm:px-6 md:px-10 md:pb-10 md:pt-14 xl:px-12 xl:pt-16">
       <Reveal className="mx-auto mb-6 max-w-[904px] text-left md:mb-8 md:text-center">
         <h2 className="mb-4 text-[28px] font-bold leading-[1.2] tracking-[-0.5px] text-[#353535] md:mb-6 md:text-[32px] xl:text-[39px] xl:tracking-[-1.2px]">
           Delivered by Carma Credit

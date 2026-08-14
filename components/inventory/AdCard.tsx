@@ -60,33 +60,33 @@ export const FinanceAdCard = () => {
   );
 };
 /* -------------------------------------------------------------------------
-   2) Trade-In ad — links to Trade-In page
+   2) Sell my Car ad — links to sell page
 ------------------------------------------------------------------------- */
 export const TradeInAdCard = () => {
-  const tradeInUrl = "/trade-in-my-car";
+  const sellUrl = "/trade-in-my-car";
 
   return (
     <CardShell
       onClick={() => {
-        window.location.href = tradeInUrl;
+        window.location.href = sellUrl;
       }}
       className="bg-white text-[#0B1A30] justify-center items-center gap-4 px-6 py-8 text-center border border-gray-200 rounded-2xl shadow-sm"
     >
       {/* Graphic / Image */}
       <img
         src={AdCard2?.src}
-        alt="Trade in your car"
+        alt="Sell my car"
         className="w-48 h-auto mx-auto mb-2"
       />
 
       {/* Heading */}
       <h3 className="text-[22px] font-bold tracking-tight text-[#051329]">
-        Trade in your car
+        Sell my Car
       </h3>
 
       {/* Subtext */}
       <p className="text-[14px] text-gray-500 leading-snug max-w-[240px] mx-auto">
-        Get a real offer in less than 2 minutes. Sell, trade or track your value.
+        Get a real cash offer in less than 2 minutes.
       </p>
 
       {/* Call to Action Button */}

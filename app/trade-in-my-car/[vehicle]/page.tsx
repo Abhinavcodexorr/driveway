@@ -19,12 +19,12 @@ const TradeInVehicle = () => {
       <Header />
 
       {/* Vehicle Trade-In Content Section */}
-      <section className="w-full relative px-4 lg:px-24 mt-10 lg:mt-28">
+      <section className="w-full relative px-4 lg:px-24 mt-6 lg:mt-10">
         <div className="mx-auto max-w-[900px] px-2 md:px-9 md:py-5 md:pb-14 pb-5 ">
           {/* Iframe Container */}
             <iframe
               src={SITE_CONFIG.urls.tradeInMyCarVehicle}
-              title="Trade In Vehicle Form"
+              title="Sell my Car form"
               width="100%"
               height="600"
               className="border-0 cursor-pointer rounded-lg"

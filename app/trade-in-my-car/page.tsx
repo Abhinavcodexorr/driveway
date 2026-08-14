@@ -11,7 +11,7 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, FileText, Mail, CalendarCheck, CarFrontIcon } from "lucide-react";
+import { FileText, Mail, CalendarCheck, CarFrontIcon } from "lucide-react";
 import Image from "next/image";
 
 // Layout
@@ -19,18 +19,20 @@ import { Header, Footer } from "@/components/layout";
 
 // Shared components
 import { GetInTouch } from "@/components/common";
+import FaqAccordion from "@/components/common/FaqAccordion";
 
 // Assets
 import { getConstants } from "@/constants";
 import { useAppConfig } from "@/app/providers";
-import sell from "@/assets/pages/sell.jpg";
+
+const SELL_HERO_IMAGE = "/sell-my-car-carma-offer-hd.png";
 
 /* Static Data */
 const steps = [
   {
     icon: CarFrontIcon,
     title: "Find your car",
-    description: "Enter your VIN or vehicle details to find the car you want to sell or trade.",
+    description: "Enter your VIN or vehicle details to find the car you want to sell.",
   },
   {
     icon: FileText,
@@ -51,8 +53,8 @@ const steps = [
 
 const faqs = [
   {
-    q: "How does selling my car to Dealership work?",
-    a: "Dealership makes selling your car fast and easy. Simply enter your vehicle details, get an instant online offer, schedule a quick inspection, and get paid on the spot. No obligations, no pushy salespeople.",
+    q: "How does selling my car work?",
+    a: "Selling your car is fast and easy. Simply enter your vehicle details, get an instant online offer, schedule a quick inspection, and get paid on the spot. No obligations, no pushy salespeople.",
   },
   {
     q: "What documents do I need to sell my car?",
@@ -60,31 +62,27 @@ const faqs = [
   },
   {
     q: "Do you buy cars that still have a loan or financing on them?",
-    a: "Yes! Dealership will pay off your existing loan or lease directly with the bank. If your car is worth more than the payoff, you keep the difference. If it's worth less, we'll guide you on the best options.",
+    a: "Yes! We'll pay off your existing loan or lease directly with the bank. If your car is worth more than the payoff, you keep the difference. If it's worth less, we'll guide you on the best options.",
   },
   {
     q: "How long is my online offer valid for?",
-    a: "Your Dealership offer is valid for 7 days. This gives you enough time to compare options or shop around without feeling rushed.",
+    a: "Your offer is valid for 7 days. This gives you enough time to compare options without feeling rushed.",
   },
   {
     q: "How quickly do I get paid?",
     a: "You get paid the same day you bring your car in. Payment can be made via EMT, cheque, or direct deposit—whichever is easiest for you.",
   },
   {
-    q: "Can I trade in my vehicle instead of selling it?",
-    a: "Yes! You can trade in your current vehicle and use the value toward your next purchase. We handle all paperwork and give you the highest value possible to maximize your savings.",
-  },
-  {
-    q: "Do I need to buy a car from Dealership to sell you mine?",
+    q: "Do I need to buy a car to sell you mine?",
     a: "Not at all. We buy cars even if you're not purchasing one from us. Many customers simply want cash or want to get rid of an unused vehicle.",
   },
   {
-    q: "How does Dealership determine my vehicle's value?",
+    q: "How do you determine my vehicle's value?",
     a: "We use real-time market data, vehicle history, condition reports, and recent sales in your area to give you an accurate and competitive offer. No guesswork—just transparent pricing.",
   },
   {
     q: "What if I owe more on my car than it's worth?",
-    a: "This is very common. We can still buy your car. We'll calculate the shortfall and help you determine the best way to clear the loan. If trading in, you may be able to roll the balance into your next vehicle.",
+    a: "This is very common. We can still buy your car. We'll calculate the shortfall and help you determine the best way to clear the loan.",
   },
 ];
 
@@ -93,7 +91,6 @@ const TradeIn = () => {
   const appConfig = useAppConfig();
   const { SITE_CONFIG } = getConstants(appConfig);
   const [mode, setMode] = useState<"vehicle" | "vin">("vehicle");
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const TRADE_FORMS = {
     vehicle: {
@@ -173,7 +170,7 @@ const TradeIn = () => {
           </div>
 
           {/* Quote Form */}
-          <div className="z-10 w-full max-w-[440px] rounded-2xl border border-border-lightGray/80 bg-white p-5 pb-12 shadow-xl md:p-8 md:pb-24 lg:mr-7 lg:justify-self-end">
+          <div className="z-10 w-full max-w-[440px] rounded-2xl border border-border-lightGray/80 bg-white p-5 pb-8 shadow-xl md:p-8 md:pb-10 lg:mr-7 lg:justify-self-end">
             <div className="mb-6 flex cursor-pointer border-b border-border-standard">
               <button
                 type="button"
@@ -273,16 +270,16 @@ const TradeIn = () => {
 
       {/* How it works */}
       <section className="mx-auto w-full -mt-5 lg:mt-0 lg:px-24">
-        <div className="mx-auto px-4 py-10 lg:max-w-[1400px] lg:px-0 lg:py-24">
-          <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[1fr_1.1fr] lg:gap-12 lg:pl-10 xl:min-h-180">
-            <div className="h-[240px] w-full sm:h-[360px] md:h-full">
+        <div className="mx-auto px-4 py-8 lg:max-w-[1400px] lg:px-0 lg:py-10">
+          <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-[1fr_1.1fr] lg:gap-10 lg:pl-10">
+            <div className="relative h-[300px] w-full overflow-hidden rounded-[24px] sm:h-[400px] md:rounded-[32px] lg:h-auto lg:min-h-full">
               <Image
-                src={sell}
-                alt="Customer trading in their car at Dealership"
-                width={1280}
-                height={1896}
+                src={SELL_HERO_IMAGE}
+                alt="Get a cash offer to sell my car with Carma Credit"
+                fill
+                sizes="(max-width: 1024px) 100vw, 45vw"
                 loading="lazy"
-                className="h-full w-full rounded-[24px] object-cover md:rounded-[32px]"
+                className="object-cover object-center"
               />
             </div>
 
@@ -321,47 +318,18 @@ const TradeIn = () => {
       </section>
 
       {/* FAQs */}
-      <section className="mb-2 w-full px-3 lg:mb-18 lg:mt-10 lg:px-24">
-        <div className="mx-auto max-w-[1400px] px-2 py-8 md:px-9 lg:py-0">
-          <div className="mb-6 flex items-center gap-3 md:mb-10">
+      <section className="mb-2 w-full px-3 lg:mb-12 lg:mt-0 lg:px-24">
+        <div className="mx-auto max-w-[1400px] px-2 py-4 md:px-9 lg:py-2">
+          <div className="mb-5 md:mb-6">
+            <p className="mb-2 text-[13px] font-semibold uppercase tracking-[0.14em] text-[#00af66]">
+              FAQs
+            </p>
             <h2 className="text-[28px] font-semibold leading-tight text-foreground md:text-[36px] lg:text-[44px]">
-              Popular sell or trade in questions
+              Popular selling questions
             </h2>
           </div>
 
-          <div className="space-y-1">
-            {faqs.map((faq, i) => (
-              <div key={faq.q} className="overflow-hidden border border-border-light bg-white">
-                <button
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className={`flex w-full cursor-pointer items-center justify-between px-4 text-left md:px-6 ${
-                    openFaq !== i ? "bg-background-light" : "bg-white"
-                  }`}
-                >
-                  <span
-                    className={`pr-4 text-[16px] font-bold leading-snug md:text-[20px] md:leading-snug ${
-                      openFaq !== i
-                        ? "py-5 text-neutral-darkGray4 md:py-6"
-                        : "py-4 text-neutral-darkGray2 md:py-5"
-                    }`}
-                  >
-                    {faq.q}
-                  </span>
-                  <ChevronDown
-                    className={`h-5 w-5 flex-shrink-0 text-foreground/60 ${
-                      openFaq === i ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-
-                {openFaq === i && (
-                  <div className="bg-white px-4 pb-5 text-[16px] leading-normal text-neutral-darkGray3 md:px-6">
-                    {faq.a}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+          <FaqAccordion faqs={faqs} />
         </div>
       </section>
 

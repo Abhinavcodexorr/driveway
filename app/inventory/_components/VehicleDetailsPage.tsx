@@ -212,23 +212,23 @@ export default async function VehicleDetailsPage({
                                 </div>
                             </div>
 
-                            {/* Trade In Banner */}
+                            {/* Sell my car banner */}
                             <div className="w-full lg:mb-30 max-w-[925px] -mt-3 lg:-mt-0">
                                 <div className="flex flex-col md:flex-row items-center justify-between border border-gray-200 rounded-2xl p-6 bg-white w-full gap-6 box-border font-sans">
                                     <div className="flex sm:flex-row md:gap- flex-1">
                                         <div className="flex-shrink-0">
-                                            <Image src={doller} alt="Trade Icon" className="w-[65px] h-auto block" />
+                                            <Image src={doller} alt="Sell my car" className="w-[65px] h-auto block" />
                                         </div>
                                         <div className="flex flex-col gap-1.5">
-                                            <h4 className="m-0 text-xl md:text-2xl font-semibold text-gray-900">Trade and Upgrade</h4>
-                                            <p className="m-0 text-[14px] text-black/70 md:leading-relaxed">Unlock the value of your old car. Get a quick quote today and upgrade to your dream car.</p>
+                                            <h4 className="m-0 text-xl md:text-2xl font-semibold text-gray-900">Sell my Car</h4>
+                                            <p className="m-0 text-[14px] text-black/70 md:leading-relaxed">Unlock the value of your current car. Get a quick cash offer today.</p>
                                         </div>
                                     </div>
                                     <div className="flex-shrink-0 w-full md:w-auto text-center">
                                         <div>
                                             <a href={`/trade-in-my-car?inventory_id=${vehicle.id}`}
                                                 className="inline-block w-full md:w-auto hover:opacity-90 shadow-md transition-opacity text-white text-lg font-semibold px-9 py-3.5 rounded-xl no-underline transition-all duration-200 text-center whitespace-nowrap bg-brand-btn-gradient">
-                                                Sell or trade in
+                                                Sell my Car
                                             </a>
                                         </div>
                                     </div>

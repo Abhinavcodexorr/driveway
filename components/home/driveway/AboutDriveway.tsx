@@ -31,7 +31,7 @@ const AboutDriveway = () => {
               refinancing a vehicle feels clear and stress-free.
             </p>
             <p className="m-0 text-[16px] leading-relaxed text-white md:text-[18px] md:leading-[1.5]">
-              From pre-approval to trade-in support and ongoing ownership
+              From pre-approval to selling your car and ongoing ownership
               tools, our journey is powered by people, transparency, and a
               commitment to making vehicle financing easy for everyone.
             </p>

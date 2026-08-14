@@ -54,13 +54,13 @@ const CARDS: Card[] = [
     ],
     ctas: [
       { label: "Get Pre-Approved", href: "/financing", variant: "primary" },
-      { label: "Payment Calculator", href: "/payment-calculator", variant: "secondary" },
+      // { label: "Payment Calculator", href: "/payment-calculator", variant: "secondary" },
     ],
   },
   {
-    heading: "Sell or Trade",
-    title: "Have a trade-in? We pay top dollar.",
-    subheading: "Cut out the negotiations and get an offer within minutes.",
+    heading: "Sell my Car",
+    title: "Ready to sell? We pay top dollar.",
+    subheading: "Skip the haggling and get a fair cash offer within minutes.",
     color: "#184F56",
     orientation: "vertical",
     image: "/driveway/drivers-seat/sell.jpg",
@@ -103,7 +103,7 @@ const DriversSeat = () => {
   return (
     <section
       id="drivers-seat"
-      className="dw-font w-full bg-[#F5F5F5] pt-12 pb-10 md:pt-16 lg:pt-24"
+      className="dw-font w-full bg-[#F5F5F5] pt-10 pb-8 md:pt-14 lg:pt-16"
     >
       <div className="mx-auto max-w-[1440px] px-4 md:px-6">
         <Reveal className="mx-auto max-w-[420px] md:max-w-none">

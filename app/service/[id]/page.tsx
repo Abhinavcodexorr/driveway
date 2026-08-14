@@ -454,10 +454,15 @@ export default async function ServicePage({ params }: PageProps) {
       </section>
 
       {/* SECTION 9: FAQ Section */}
-      <section className="w-full bg-white py-20 border-t border-slate-100">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-          <div className="mb-10">
-            <h2 className="text-4xl font-bold text-slate-900">Frequently Asked Questions</h2>
+      <section className="w-full border-t border-slate-100 bg-white py-14 md:py-16">
+        <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16">
+          <div className="mb-8 md:mb-10">
+            <p className="mb-2 text-[13px] font-semibold uppercase tracking-[0.14em] text-[#00af66]">
+              FAQs
+            </p>
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+              Frequently Asked Questions
+            </h2>
           </div>
           <FaqAccordion faqs={currentData.faqs || [
             { question: "How often should I get an oil change?", answer: "Typically every 5,000 to 7,500 miles for synthetic blends, or as advised by vehicle manufacturers specifications." }

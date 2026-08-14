@@ -3,7 +3,7 @@
     "Let's find your next ride" section on the homepage.
     Displays three action cards:
     - Shop all cars → /inventory
-    - Start with a trade-in
+    - Sell my Car
     - Get pre-approved
     Each card has an image, title, subtitle, and arrow icon.
   ========================= */

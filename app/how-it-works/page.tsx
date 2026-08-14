@@ -97,7 +97,7 @@ export default function HowItWorksPage() {
           </Reveal>
         </section>
 
-        <section className="bg-white px-4 py-14 md:px-8 md:py-20">
+        <section className="bg-white px-4 py-10 md:px-8 md:py-14">
           <div className="mx-auto grid max-w-[1140px] items-center gap-10 lg:grid-cols-2 lg:gap-14">
             <Reveal x={-24} scale className="overflow-hidden rounded-[28px]">
               <Image
@@ -126,7 +126,7 @@ export default function HowItWorksPage() {
           </div>
         </section>
 
-        <section className="bg-white px-4 pb-16 md:px-8 md:pb-24">
+        <section className="bg-white px-4 pb-12 md:px-8 md:pb-16">
           <div className="mx-auto grid max-w-[1140px] items-center gap-10 lg:grid-cols-2 lg:gap-14">
             <Reveal x={-24} scale className="overflow-hidden rounded-[28px]">
               <Image

@@ -10,4 +10,5 @@ export { NavLink } from "./NavLink";
 export { default as GetInTouch } from "./GetInTouch";
 export { default as DreamVehicleCTA } from "./DreamVehicleCTA";
 export { default as PageTransition } from "./PageTransition";
+export { default as FaqAccordion } from "./FaqAccordion";
 export { Reveal, Stagger, StaggerItem, easeOut, fadeUp, fadeIn, scaleIn } from "./motion";

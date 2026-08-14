@@ -100,7 +100,7 @@ const MODELS = [
 
 const SearchByBodyStyle = () => {
   return (
-    <section className="dw-font w-full bg-white px-4 py-12 md:px-10 md:py-16 xl:px-[120px] xl:py-24">
+    <section className="dw-font w-full bg-white px-4 py-10 md:px-10 md:py-14 xl:px-[120px] xl:py-16">
       <div className="mx-auto w-full max-w-[1075px] space-y-12 md:space-y-16">
         {/* Search by Body Style */}
         <div>

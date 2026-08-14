@@ -1,10 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
 import { Header, Footer } from "@/components/layout";
-import { Reveal, Stagger, StaggerItem, easeOut } from "@/components/common/motion";
+import { Reveal } from "@/components/common/motion";
+import FaqAccordion from "@/components/common/FaqAccordion";
 
 const FAQS = [
   {
@@ -22,7 +20,7 @@ const FAQS = [
     a: (
       <p>
         The amount a bank will finance is dependent on the book value. Banks in Canada use Canadian
-        Black Book to determine the car’s value.
+        Black Book to determine the car&apos;s value.
       </p>
     ),
   },
@@ -54,7 +52,7 @@ const FAQS = [
     ),
   },
   {
-    q: "Can I apply with bad credit",
+    q: "Can I apply with bad credit?",
     a: (
       <p>
         Over 50% of our approvals are for Canadians with less than perfect credit. Get pre-approved
@@ -90,7 +88,7 @@ const FAQS = [
         <p className="mb-3">
           Carma Credit works with a large network of lenders who are ready to get you financed.
         </p>
-        <p className="mb-2 font-semibold">
+        <p className="mb-2 font-semibold text-zinc-800">
           Our Clients Have Received Financing From Companies Like:
         </p>
         <ul className="list-disc space-y-1 pl-5">
@@ -112,68 +110,33 @@ const FAQS = [
 ];
 
 export default function FaqPage() {
-  const [open, setOpen] = useState(0);
-
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-white font-[Arial,Helvetica,sans-serif] text-black">
-        <section className="px-4 pb-6 pt-10 md:px-8 md:pt-14">
-          <Reveal className="mx-auto max-w-[1140px] text-center">
-            <h1 className="mb-3 text-[28px] font-bold text-[#636363] sm:text-[36px] md:text-[42px]">FAQs</h1>
-            <p className="text-[14px] text-[#636363]">
-              You’ve got questions? We’ve got answers.
+      <main className="min-h-screen bg-white">
+        <section className="relative overflow-hidden px-4 pb-8 pt-10 md:px-8 md:pb-10 md:pt-14">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-x-0 top-0 h-56 bg-[radial-gradient(ellipse_at_top,_rgba(0,175,102,0.10),_transparent_65%)]"
+          />
+          <Reveal className="relative mx-auto max-w-[900px] text-center">
+            <p className="mb-3 text-[13px] font-semibold uppercase tracking-[0.14em] text-[#00af66]">
+              Help center
+            </p>
+            <h1 className="mb-3 text-[32px] font-bold tracking-tight text-zinc-900 sm:text-[40px] md:text-[48px]">
+              Frequently asked questions
+            </h1>
+            <p className="mx-auto max-w-xl text-[15px] leading-relaxed text-zinc-500 sm:text-[16px]">
+              You&apos;ve got questions? We&apos;ve got answers about financing, credit, and getting
+              approved with Carma Credit.
             </p>
           </Reveal>
         </section>
 
-        <section className="px-4 pb-16 md:px-8 md:pb-24">
-          <Stagger className="mx-auto max-w-[1140px] space-y-[17px]">
-            {FAQS.map((faq, i) => {
-              const isOpen = open === i;
-              return (
-                <StaggerItem
-                  key={faq.q}
-                  className={`rounded-[10px] border border-[#d9d9d9] p-5 transition-colors duration-300 ${
-                    isOpen ? "bg-white shadow-sm" : "bg-[#f4f4f4]"
-                  }`}
-                >
-                  <button
-                    type="button"
-                    onClick={() => setOpen(isOpen ? -1 : i)}
-                    className="flex w-full cursor-pointer items-center justify-between gap-4 text-left"
-                    aria-expanded={isOpen}
-                  >
-                    <h2
-                      className={`pr-2 text-[18px] font-semibold md:text-[20px] ${
-                        isOpen ? "text-[#333]" : "text-[#666]"
-                      }`}
-                    >
-                      {faq.q}
-                    </h2>
-                    <ChevronDown
-                      className={`h-5 w-5 shrink-0 text-[#666] transition-transform duration-300 ${
-                        isOpen ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: easeOut }}
-                        className="overflow-hidden"
-                      >
-                        <div className="pt-5 text-[14px] leading-[1.7] text-[#333]">{faq.a}</div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </StaggerItem>
-              );
-            })}
-          </Stagger>
+        <section className="px-4 pb-14 md:px-8 md:pb-20">
+          <div className="mx-auto max-w-[900px]">
+            <FaqAccordion faqs={FAQS} />
+          </div>
         </section>
       </main>
       <Footer />

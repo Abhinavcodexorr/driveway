@@ -67,11 +67,11 @@ export default function NextRideCard() {
           </div>
         </Link>
 
-        {/* Card 2: Trade-in / Jeep card */}
+        {/* Card 2: Sell my Car card */}
       <Link
   href="/trade-in-my-car"
   className="card w-full min-h-[480px] sm:min-h-[200px] bg-white rounded-[14px] border border-[#e5e7eb] shadow-[0_1px_3px_rgba(0,0,0,0.06)] overflow-hidden cursor-pointer transition-all duration-200 ease text-inherit flex flex-col h-full hover:-translate-y-[2px] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] group"
-  aria-label="Start with a trade-in — get an offer in under 2 minutes"
+  aria-label="Sell my Car — get an offer in under 2 minutes"
 >
   <div className="visual trade relative min-h-[300px] sm:min-h-[200px] bg-[#e8f6ff] overflow-hidden flex flex-col items-center justify-center pb-4 pt-6">
     
@@ -103,7 +103,7 @@ export default function NextRideCard() {
 
   <div className="footer flex items-center justify-between gap-4 p-[18px_20px_20px] bg-white shrink-0 min-h-[84px]">
     <div className="footer-copy">
-      <h2 className="text-[1.05rem] font-bold text-[#1a1a1a] leading-[1.25] tracking-[-0.01em]">Start with a trade-in</h2>
+      <h2 className="text-[1.05rem] font-bold text-[#1a1a1a] leading-[1.25] tracking-[-0.01em]">Sell my Car</h2>
       <p className="mt-[4px] text-[0.875rem] font-medium text-[#6b7280] leading-[1.35]">Get an offer in under 2 mins.</p>
     </div>
     <span className="arrow shrink-0 w-[22px] h-[22px] text-[#00af66] transition-transform duration-200 ease group-hover:translate-x-[4px]" aria-hidden="true">

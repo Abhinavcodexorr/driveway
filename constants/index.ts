@@ -15,7 +15,7 @@ import { AppConfig, fallbackValue, defaultAppConfig } from "@/lib/appConfig";
 // ─── Navigation ───────────────────────────────────────────────────────────────
 export const NAV_ITEMS = [
   { label: "Shop", to: "/inventory" },
-  { label: "Sell/Trade", to: "/trade-in-my-car" },
+  { label: "Sell my Car", to: "/trade-in-my-car" },
   { label: "Finance", to: "/financing" },
   { label: "Resources", to: "/how-it-works" },
   { label: "Service", to: "/service" },

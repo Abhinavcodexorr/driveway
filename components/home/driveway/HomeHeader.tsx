@@ -1,16 +1,52 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ComponentType } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown, Menu, Phone, X } from "lucide-react";
+import {
+  BookOpen,
+  Building2,
+  ChevronDown,
+  CircleHelp,
+  ClipboardList,
+  FileText,
+  Menu,
+  Phone,
+  Settings2,
+  Star,
+  X,
+} from "lucide-react";
 import Logo from "@/components/common/Logo";
 import { DW_NAV } from "./constants";
 import { easeOut } from "./motion";
 
 const PHONE_DISPLAY = "(855) 514-5500";
 const PHONE_HREF = "tel:+18555145500";
+
+type NavIcon =
+  | "howItWorks"
+  | "credit"
+  | "financing"
+  | "faq"
+  | "docs"
+  | "about"
+  | "reviews"
+  | "contact";
+
+const NAV_ICONS: Record<
+  NavIcon,
+  ComponentType<{ className?: string; strokeWidth?: number }>
+> = {
+  howItWorks: Settings2,
+  credit: ClipboardList,
+  financing: BookOpen,
+  faq: CircleHelp,
+  docs: FileText,
+  about: Building2,
+  reviews: Star,
+  contact: Phone,
+};
 
 const HomeHeader = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -39,7 +75,7 @@ const HomeHeader = () => {
 
   const scheduleClose = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
-    closeTimer.current = setTimeout(() => setActiveNav(null), 160);
+    closeTimer.current = setTimeout(() => setActiveNav(null), 140);
   };
 
   const navLinkClass =
@@ -53,10 +89,7 @@ const HomeHeader = () => {
           <Logo />
         </Link>
 
-        <nav
-          className="flex min-w-0 flex-1 items-center justify-start gap-0.5 xl:gap-2"
-          onMouseLeave={scheduleClose}
-        >
+        <nav className="flex min-w-0 flex-1 items-center justify-start gap-0.5 xl:gap-2">
           {DW_NAV.map((item) => {
             const hasMenu = item.items.length > 0;
             const isOpen = activeNav === item.label;
@@ -74,6 +107,7 @@ const HomeHeader = () => {
                 key={item.label}
                 className="relative"
                 onMouseEnter={() => openMenu(item.label)}
+                onMouseLeave={scheduleClose}
               >
                 <button
                   type="button"
@@ -86,15 +120,69 @@ const HomeHeader = () => {
                 >
                   {item.label}
                   <ChevronDown
-                    className={`h-3.5 w-3.5 xl:h-4 xl:w-4 transition-transform duration-200 ${
+                    className={`h-3.5 w-3.5 transition-transform duration-200 xl:h-4 xl:w-4 ${
                       isOpen ? "rotate-180" : ""
                     }`}
                     strokeWidth={2}
                   />
-                  {isOpen && (
-                    <span className="absolute bottom-[14px] left-2 right-2 h-[3px] rounded-full bg-[#00af66] xl:bottom-[18px] xl:left-3 xl:right-3" />
-                  )}
                 </button>
+
+                {/* Compact dropdown card (Canada Drives style) */}
+                <AnimatePresence>
+                  {isOpen && (
+                    <motion.div
+                      key={item.label}
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 6 }}
+                      transition={{ duration: 0.18, ease: easeOut }}
+                      className="absolute left-1/2 top-full z-50 w-[min(360px,calc(100vw-2rem))] -translate-x-1/2 pt-2"
+                      onMouseEnter={() => openMenu(item.label)}
+                      onMouseLeave={scheduleClose}
+                    >
+                      {/* Caret */}
+                      <div
+                        aria-hidden
+                        className="absolute left-1/2 top-[2px] z-10 h-3.5 w-3.5 -translate-x-1/2 rotate-45 rounded-[2px] border-l border-t border-[#E8E8E8] bg-white shadow-[-2px_-2px_4px_rgba(0,0,0,0.03)]"
+                      />
+
+                      <div className="relative rounded-2xl border border-[#E8E8E8] bg-white p-3 shadow-[0_12px_40px_rgba(0,0,0,0.12)]">
+                        <ul className="m-0 flex list-none flex-col gap-0.5 p-0">
+                          {item.items.map((sub) => {
+                            const Icon =
+                              NAV_ICONS[(sub as { icon?: NavIcon }).icon as NavIcon] || FileText;
+                            const description =
+                              (sub as { description?: string }).description || "";
+
+                            return (
+                              <li key={sub.label}>
+                                <Link
+                                  href={sub.href}
+                                  onClick={() => setActiveNav(null)}
+                                  className="flex items-start gap-3 rounded-xl px-3 py-3 no-underline transition-colors hover:bg-[#F5F7F8]"
+                                >
+                                  <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#EEF8F3] text-[#00af66]">
+                                    <Icon className="h-[18px] w-[18px]" strokeWidth={2} />
+                                  </span>
+                                  <span className="min-w-0">
+                                    <span className="block text-[15px] font-semibold leading-snug text-[#2B2B2B]">
+                                      {sub.label}
+                                    </span>
+                                    {description ? (
+                                      <span className="mt-0.5 block text-[13px] font-normal leading-snug text-[#6B7280]">
+                                        {description}
+                                      </span>
+                                    ) : null}
+                                  </span>
+                                </Link>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             );
           })}
@@ -112,49 +200,6 @@ const HomeHeader = () => {
         </div>
       </div>
 
-      {/* Desktop dropdown */}
-      <AnimatePresence>
-        {activeNav &&
-          (DW_NAV.find((n) => n.label === activeNav)?.items.length ?? 0) > 0 && (
-            <motion.div
-              key={activeNav}
-              initial={{ opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -6 }}
-              transition={{ duration: 0.22, ease: easeOut }}
-              className="absolute left-0 right-0 top-[64px] z-40 hidden border-t border-[#E6E6E6] bg-[#F4F6F7] shadow-[0_8px_24px_rgba(0,0,0,0.08)] lg:block xl:top-[77px]"
-              onMouseEnter={() => activeNav && openMenu(activeNav)}
-              onMouseLeave={scheduleClose}
-            >
-              <div className="mx-auto flex max-w-[1440px] gap-10 px-4 py-6 xl:px-10 xl:py-8">
-                <div>
-                  <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#8A8A8A] xl:mb-4">
-                    {activeNav}
-                  </p>
-                  <ul className="m-0 flex list-none flex-col gap-3 p-0">
-                    {DW_NAV.find((n) => n.label === activeNav)?.items.map((sub, i) => (
-                      <motion.li
-                        key={sub.label}
-                        initial={{ opacity: 0, x: -8 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.25, delay: 0.04 * i, ease: easeOut }}
-                      >
-                        <Link
-                          href={sub.href}
-                          onClick={() => setActiveNav(null)}
-                          className="text-[16px] font-semibold text-[#00af66] no-underline transition-opacity hover:underline hover:opacity-80 xl:text-[18px]"
-                        >
-                          {sub.label}
-                        </Link>
-                      </motion.li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </motion.div>
-          )}
-      </AnimatePresence>
-
       {/* Mobile / tablet */}
       <div className="flex h-[56px] items-center justify-between gap-3 px-3 sm:px-4 lg:hidden">
         <button
@@ -166,7 +211,7 @@ const HomeHeader = () => {
           {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
 
-        <Link href="/" aria-label="Carma Credit home" className="min-w-0 flex-1 flex justify-center">
+        <Link href="/" aria-label="Carma Credit home" className="flex min-w-0 flex-1 justify-center">
           <span className="max-w-[160px] sm:max-w-[200px]">
             <Logo />
           </span>
@@ -214,17 +259,35 @@ const HomeHeader = () => {
                   />
                 </button>
                 {expanded && (
-                  <div className="flex flex-col gap-3 pb-4 pl-2">
-                    {item.items.map((sub) => (
-                      <Link
-                        key={sub.label}
-                        href={sub.href}
-                        onClick={() => setMobileOpen(false)}
-                        className="text-[15px] font-medium text-[#00af66]"
-                      >
-                        {sub.label}
-                      </Link>
-                    ))}
+                  <div className="flex flex-col gap-1 pb-4">
+                    {item.items.map((sub) => {
+                      const Icon =
+                        NAV_ICONS[(sub as { icon?: NavIcon }).icon as NavIcon] || FileText;
+                      const description =
+                        (sub as { description?: string }).description || "";
+                      return (
+                        <Link
+                          key={sub.label}
+                          href={sub.href}
+                          onClick={() => setMobileOpen(false)}
+                          className="flex items-start gap-3 rounded-xl px-2 py-2.5 hover:bg-[#F5F7F8]"
+                        >
+                          <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#EEF8F3] text-[#00af66]">
+                            <Icon className="h-4 w-4" strokeWidth={2} />
+                          </span>
+                          <span>
+                            <span className="block text-[15px] font-semibold text-[#2B2B2B]">
+                              {sub.label}
+                            </span>
+                            {description ? (
+                              <span className="mt-0.5 block text-[13px] text-[#6B7280]">
+                                {description}
+                              </span>
+                            ) : null}
+                          </span>
+                        </Link>
+                      );
+                    })}
                   </div>
                 )}
               </div>

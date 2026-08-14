@@ -95,7 +95,7 @@ const GuidesTips = () => {
   const [featured, medium, ...smalls] = DW_GUIDES;
 
   return (
-    <section className="dw-font flex w-full flex-col items-center bg-[#F5F5F5] px-4 py-12 sm:px-6 md:px-10 md:py-16 xl:px-[72px] xl:py-24">
+    <section className="dw-font flex w-full flex-col items-center bg-[#F5F5F5] px-4 py-10 sm:px-6 md:px-10 md:py-14 xl:px-[72px] xl:py-16">
       <Reveal className="mb-8 w-full max-w-[1320px] text-center md:mb-12 xl:mb-14">
         <h2 className="mb-4 text-[29px] font-bold leading-[1.2] tracking-[-0.6px] text-[#353535] md:text-[33px] xl:mb-5 xl:text-[39px] xl:tracking-[-1.2px]">
           Guides & Tips

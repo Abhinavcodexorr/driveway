@@ -27,8 +27,8 @@ export default function AboutUsPage() {
           </section>
         </Reveal>
 
-        <section className="bg-[#f7f7f7] px-4 py-14 md:px-8 md:py-20">
-          <div className="mx-auto max-w-[1140px] space-y-16 md:space-y-20">
+        <section className="bg-[#f7f7f7] px-4 py-10 md:px-8 md:py-14">
+          <div className="mx-auto max-w-[1140px] space-y-12 md:space-y-14">
             <div className="grid items-center gap-10 lg:grid-cols-5 lg:gap-12">
               <Reveal x={-24} className="lg:col-span-2">
                 <h2 className="mb-5 text-[22px] font-bold uppercase leading-snug tracking-wide md:text-[26px]">

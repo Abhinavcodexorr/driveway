@@ -82,9 +82,9 @@ export const defaultAppConfig = defineAppConfig({
     contact_us_page_title: "Contact Us",
     contact_us_page_description:
       "Call %dealership_name %city_1, %province_1 at %sales_number_1 and our team will help you schedule a test drive or answer your questions. You can also drop us an email at %email_1.",
-    trade_in_appraisal_page_title: "Trade In or Appraise Your Vehicle",
+    trade_in_appraisal_page_title: "Sell My Car | Get a Cash Offer",
     trade_in_appraisal_page_description:
-      "Vehicle appraisal for used cars, trucks and SUVs in  %city_1, %province_1 at %dealership_name. Find out what your trade in worth with our vehicle appraisal form.",
+      "Sell your used car, truck or SUV in %city_1, %province_1 at %dealership_name. Get a fast cash offer with our simple online appraisal form.",
     home_page_title: "Used Cars, SUVs, Trucks for Sale in %city_1, %province_1",
     home_page_description:
       "At %dealership_name, we have a great variety of used cars, trucks, SUVs, and vans that we are sure you will find the right fit for you! Visit us today in %city_1, %province_1",
