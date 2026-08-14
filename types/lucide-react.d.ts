@@ -53,6 +53,10 @@ declare module 'lucide-react' {
   export const CarFrontIcon: Icon;
   export const CarFront: Icon;
   export const Settings2: Icon;
+  export const BookOpen: Icon;
+  export const Building2: Icon;
+  export const CircleHelp: Icon;
+  export const ClipboardList: Icon;
   export const Cpu: Icon;
   export const Zap: Icon;
   export const Activity: Icon;

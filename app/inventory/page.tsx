@@ -1175,7 +1175,8 @@ const InventoryContent = () => {
       <SyncModelMakeMap />
       <SyncOrphanedModels />
       <ScrollToTopOnSearch />
-      <Configure hitsPerPage={21} />
+      {/* types omit hitsPerPage without algoliasearch peer; still valid InstantSearch param */}
+      <Configure {...({ hitsPerPage: 21 } as Record<string, unknown>)} />
 
       {/* Put the layout wrapper here, safe inside InstantSearch context! */}
       <MainLayoutWrapper>
