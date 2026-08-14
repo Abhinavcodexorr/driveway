@@ -180,7 +180,7 @@ const SellSection = () => {
 
             <button
               type="submit"
-              className="inline-flex h-12 w-full items-center justify-center rounded-full bg-[#00af66] text-[14px] font-semibold text-white transition-opacity hover:opacity-90"
+              className="inline-flex h-12 w-full items-center justify-center rounded-full border-2 border-[#00af66] bg-[#00af66] text-[14px] font-semibold text-white transition-opacity hover:opacity-90"
             >
               Get an Offer
             </button>

@@ -2,89 +2,190 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight, BadgeCheck, Handshake, ShieldCheck } from "lucide-react";
 import { Header, Footer } from "@/components/layout";
-import { Reveal } from "@/components/common/motion";
+import { Reveal, Stagger, StaggerItem } from "@/components/common/motion";
+
+const CTA_PRIMARY =
+  "inline-flex items-center justify-center rounded-full border-2 border-[#00af66] bg-[#00af66] px-8 py-3.5 text-[16px] font-semibold text-white transition-all duration-300 hover:scale-[1.03] hover:opacity-90";
+
+const CTA_SECONDARY =
+  "inline-flex items-center justify-center rounded-full border-2 border-white bg-transparent px-8 py-3.5 text-[16px] font-semibold text-white transition-all duration-300 hover:scale-[1.03] hover:bg-white/10";
+
+const PILLARS = [
+  {
+    icon: ShieldCheck,
+    title: "Trusted Service",
+    text: "We make selling your car simple and straightforward — with clear offers, honest communication, and a process built around getting you paid fairly.",
+    href: "/trade-in-my-car",
+    cta: "Get Your Offer",
+  },
+  {
+    icon: Handshake,
+    title: "Fair Cash Offers",
+    text: "Get a real online offer based on your vehicle and local market data. No private-sale stress, no endless tire-kickers, no guessing games.",
+    href: "/trade-in-my-car",
+    cta: "Sell My Car",
+  },
+  {
+    icon: BadgeCheck,
+    title: "Simple Process",
+    text: "Enter your details, receive an offer, book a quick inspection, and get paid. We keep selling your car easy, safe, and stress-free.",
+    href: "/how-it-works",
+    cta: "How It Works",
+  },
+] as const;
 
 export default function AboutUsPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-white font-[Arial,Helvetica,sans-serif] text-black">
-        <Reveal y={16}>
-          <section
-            className="relative flex min-h-[220px] items-center bg-cover bg-center px-4 py-12 md:min-h-[280px] md:px-8 md:py-16"
-            style={{ backgroundImage: "url('/about-us/hero.png')" }}
-          >
-            <div className="absolute inset-0 bg-black/50" />
-            <div className="relative z-10 mx-auto w-full max-w-[1140px] text-white">
-              <h1 className="mb-3 text-[26px] font-bold leading-tight sm:text-[32px] md:text-[36px]">
-                About Carma
-              </h1>
-              <p className="max-w-[640px] text-[14px] leading-[1.7] text-white/95 md:text-[16px]">
-                A fast and convenient way to research and find a vehicle that is right for you.
+      <main className="dw-font min-h-screen overflow-hidden bg-white text-[#121212]">
+        {/* Hero — Canada Drives style, Carma green */}
+        <section className="relative bg-[#00af66] px-4 pb-14 pt-14 sm:px-6 md:px-10 md:pb-20 md:pt-20">
+          <div className="mx-auto max-w-[1100px]">
+            <Reveal y={18}>
+              <p className="mb-4 text-[15px] font-semibold tracking-wide text-white/90 md:text-[16px]">
+                About Us
               </p>
-            </div>
-          </section>
-        </Reveal>
+              <h1 className="max-w-[920px] text-[clamp(2rem,5.2vw,3.75rem)] font-bold leading-[1.12] tracking-[-0.03em] text-white">
+                Our Mission Is To Be the Easiest Place To Sell Your Car in
+                Canada.
+              </h1>
+            </Reveal>
+          </div>
+        </section>
 
-        <section className="bg-[#f7f7f7] px-4 py-10 md:px-8 md:py-14">
-          <div className="mx-auto max-w-[1140px] space-y-12 md:space-y-14">
-            <div className="grid items-center gap-10 lg:grid-cols-5 lg:gap-12">
-              <Reveal x={-24} className="lg:col-span-2">
-                <h2 className="mb-5 text-[22px] font-bold uppercase leading-snug tracking-wide md:text-[26px]">
-                  Your Gateway to Great Deals from Trusted Dealerships
-                </h2>
-                <p className="mb-4 text-[14px] leading-[1.7] text-[#333]">
-                  Carma is not a car dealership — we help you find the best deals by connecting you
-                  with dealerships in your area.
-                </p>
-                <p className="text-[14px] leading-[1.7] text-[#333]">
-                  Carma is a lead generation company. We do not sell vehicles directly. Instead, we
-                  help customers by matching them with verified and licensed car dealerships across
-                  Canada to ensure a safe and trusted car buying experience.
-                </p>
-              </Reveal>
-              <Reveal x={24} delay={0.1} scale className="overflow-hidden rounded-[12px] lg:col-span-3">
+        {/* Pillars — white cards on dark band, clear of green */}
+        <section className="relative bg-[#121212] px-4 pb-16 pt-10 sm:px-6 md:px-10 md:pb-24 md:pt-14">
+          <div className="mx-auto max-w-[1100px]">
+            <Stagger className="grid gap-5 md:grid-cols-3 md:gap-6">
+              {PILLARS.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <StaggerItem key={item.title}>
+                    <article className="flex h-full flex-col rounded-2xl bg-white p-7 shadow-[0_16px_40px_rgba(0,0,0,0.18)] md:p-8">
+                      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-[#EEF8F3] text-[#00af66]">
+                        <Icon className="h-6 w-6" strokeWidth={2.25} />
+                      </div>
+                      <h2 className="mb-3 text-[22px] font-bold tracking-[-0.02em] text-[#121212] md:text-[24px]">
+                        {item.title}
+                      </h2>
+                      <p className="mb-6 flex-1 text-[15px] leading-[1.65] text-[#555] md:text-[16px]">
+                        {item.text}
+                      </p>
+                      <Link
+                        href={item.href}
+                        className="inline-flex items-center gap-1.5 text-[15px] font-semibold text-[#00af66] underline decoration-[#00af66]/40 underline-offset-4 transition-opacity hover:opacity-80"
+                      >
+                        {item.cta}
+                        <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
+                      </Link>
+                    </article>
+                  </StaggerItem>
+                );
+              })}
+            </Stagger>
+          </div>
+
+          {/* Story */}
+          <div className="mx-auto mt-16 grid max-w-[1100px] items-center gap-10 md:mt-24 lg:grid-cols-2 lg:gap-14">
+            <Reveal x={-24}>
+              <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold leading-[1.15] tracking-[-0.03em] text-white">
+                We&apos;re Changing the Car Selling Experience
+              </h2>
+              <p className="mt-5 text-[16px] leading-[1.7] text-white/80 md:text-[18px]">
+                Our focus is on making selling your car easy, efficient, and
+                enjoyable — without the hassle of private sales.
+              </p>
+              <p className="mt-4 text-[16px] leading-[1.7] text-white/80 md:text-[18px]">
+                Sell directly to Carma Credit for a safe, convenient alternative
+                to listing privately. Get an instant online offer, book an
+                inspection, and walk away paid — often the same day.
+              </p>
+              <Link href="/trade-in-my-car" className={`${CTA_PRIMARY} mt-8`}>
+                Get Your Instant Offer
+              </Link>
+            </Reveal>
+
+            <Reveal x={24} delay={0.1} className="relative">
+              <div className="overflow-hidden rounded-2xl bg-[#1c1c1c] shadow-[0_20px_50px_rgba(0,0,0,0.35)]">
                 <Image
                   src="/about-us/who-we-are.png"
-                  alt="About Carma Credit"
+                  alt="Customer completing a sell-my-car offer on their phone"
                   width={806}
                   height={729}
                   className="h-auto w-full object-cover"
                   priority
                 />
-              </Reveal>
-            </div>
+              </div>
+            </Reveal>
+          </div>
+        </section>
 
-            <div className="grid items-center gap-10 lg:grid-cols-5 lg:gap-12">
-              <Reveal x={-24} scale className="order-2 overflow-hidden rounded-[12px] lg:order-1 lg:col-span-3">
-                <Image
-                  src="/about-us/our-customers.png"
-                  alt="Our customers"
-                  width={806}
-                  height={729}
-                  className="h-auto w-full object-cover"
-                />
-              </Reveal>
-              <Reveal x={24} delay={0.1} className="order-1 lg:order-2 lg:col-span-2">
-                <h2 className="mb-5 text-[22px] font-bold uppercase leading-snug tracking-wide md:text-[26px]">
-                  Our customers
-                </h2>
-                <p className="mb-6 text-[14px] leading-[1.7] text-[#333]">
-                  We put integrity and transparency at the heart of every interaction with you,
-                  whether that interaction is online, on the phone, or in person. We are committed
-                  to bringing clarity to each decision you make so you can feel confident about
-                  buying the car you love – and enjoy the ride while you do it.
-                </p>
-                <Link
-                  href="/contact-us"
-                  className="inline-flex items-center justify-center rounded-[3px] border-[1.6px] border-[#00af66] bg-[#00af66] px-5 py-2.5 text-[16px] font-normal uppercase tracking-wide text-white transition-all duration-300 hover:scale-[1.03] hover:opacity-90"
-                >
+        {/* Customers / trust strip */}
+        <section className="bg-white px-4 py-16 sm:px-6 md:px-10 md:py-24">
+          <div className="mx-auto grid max-w-[1100px] items-center gap-10 lg:grid-cols-2 lg:gap-14">
+            <Reveal x={-24} className="order-2 overflow-hidden rounded-2xl lg:order-1">
+              <Image
+                src="/about-us/our-customers.png"
+                alt="Carma Credit customers selling their vehicles with confidence"
+                width={806}
+                height={729}
+                className="h-auto w-full object-cover"
+              />
+            </Reveal>
+
+            <Reveal x={24} delay={0.1} className="order-1 lg:order-2">
+              <p className="mb-3 text-[14px] font-semibold uppercase tracking-[0.08em] text-[#00af66]">
+                Our customers
+              </p>
+              <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold leading-[1.15] tracking-[-0.03em] text-[#121212]">
+                Integrity and transparency in every sale
+              </h2>
+              <p className="mt-5 text-[16px] leading-[1.7] text-[#454545] md:text-[18px]">
+                We put honesty at the heart of every interaction — online, on
+                the phone, or in person. You get clear offers and a process you
+                can trust, so selling your car feels confident from start to
+                finish.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link href="/contact-us" className={CTA_PRIMARY}>
                   Contact Us
                 </Link>
-              </Reveal>
-            </div>
+                <Link
+                  href="/faq"
+                  className="inline-flex items-center justify-center rounded-full border-2 border-[#121212] bg-transparent px-8 py-3.5 text-[16px] font-semibold text-[#121212] transition-all duration-300 hover:scale-[1.03] hover:bg-[#121212] hover:text-white"
+                >
+                  Read FAQs
+                </Link>
+              </div>
+            </Reveal>
           </div>
+        </section>
+
+        {/* Bottom CTA */}
+        <section className="bg-[#00af66] px-4 py-16 sm:px-6 md:px-10 md:py-20">
+          <Reveal className="mx-auto max-w-[900px] text-center">
+            <h2 className="text-[clamp(1.85rem,4vw,3rem)] font-bold leading-[1.15] tracking-[-0.03em] text-white">
+              The Easiest Way to Sell Your Car
+            </h2>
+            <p className="mx-auto mt-4 max-w-[560px] text-[16px] leading-relaxed text-white/90 md:text-[18px]">
+              Get a real offer online in minutes — no listings, no lowball
+              strangers, no pressure.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+              <Link
+                href="/financing"
+                className="inline-flex items-center justify-center rounded-full border-2 border-white bg-white px-8 py-3.5 text-[16px] font-semibold text-[#00af66] transition-all duration-300 hover:scale-[1.03] hover:opacity-90"
+              >
+                Get Pre-Approved
+              </Link>
+              <Link href="/trade-in-my-car" className={CTA_SECONDARY}>
+                Sell My Car
+              </Link>
+            </div>
+          </Reveal>
         </section>
       </main>
       <Footer />

@@ -68,7 +68,7 @@ const ResourcePage = ({ title, eyebrow, intro, children }: ResourcePageProps) =>
           <div className="mx-auto mt-12 max-w-[960px]">
             <Link
               href="/financing"
-              className="inline-flex h-12 items-center justify-center rounded-full bg-[#00af66] px-8 text-[16px] font-semibold text-white transition-opacity hover:opacity-90"
+              className="inline-flex h-12 items-center justify-center rounded-full border-2 border-[#00af66] bg-[#00af66] px-8 text-[16px] font-semibold text-white transition-opacity hover:opacity-90"
             >
               Get Pre-Approved
             </Link>

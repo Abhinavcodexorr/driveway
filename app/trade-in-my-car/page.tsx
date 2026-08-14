@@ -108,8 +108,8 @@ const TradeIn = () => {
       <Header />
 
       {/* Hero / Quote form */}
-      <section className="relative w-full px-4 lg:mt-18 lg:px-24">
-        <div className="relative z-10 mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-6 px-0 pb-5 pt-10 md:px-9 lg:flex-row lg:items-start lg:gap-10 lg:pt-20">
+      <section className="relative w-full px-4 lg:mt-6 lg:px-24">
+        <div className="relative z-10 mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-6 px-0 pb-5 pt-4 md:px-9 lg:flex-row lg:items-start lg:gap-10 lg:pt-8">
           <div className="w-full text-left lg:w-auto">
             <h1 className="max-w-xl text-[28px] font-bold leading-[1.1] tracking-tight text-gray-950 sm:text-[34px] md:text-[44px] lg:text-[66px]">
               Sell my car the easy way.
@@ -320,10 +320,7 @@ const TradeIn = () => {
       {/* FAQs */}
       <section className="mb-2 w-full px-3 lg:mb-12 lg:mt-0 lg:px-24">
         <div className="mx-auto max-w-[1400px] px-2 py-4 md:px-9 lg:py-2">
-          <div className="mb-5 md:mb-6">
-            <p className="mb-2 text-[13px] font-semibold uppercase tracking-[0.14em] text-[#00af66]">
-              FAQs
-            </p>
+          <div className="mb-5 text-center md:mb-6">
             <h2 className="text-[28px] font-semibold leading-tight text-foreground md:text-[36px] lg:text-[44px]">
               Popular selling questions
             </h2>

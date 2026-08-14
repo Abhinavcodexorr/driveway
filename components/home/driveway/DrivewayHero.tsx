@@ -20,8 +20,8 @@ const DrivewayHero = () => {
 
   return (
     <section className="dw-font relative w-full overflow-hidden bg-[#00af66]">
-      {/* Desktop layout — left copy + right lifestyle image */}
-      <div className="relative mx-auto hidden max-w-[1440px] lg:grid lg:min-h-[420px] lg:grid-cols-[1fr_minmax(380px,48%)] lg:items-end xl:min-h-[460px]">
+      {/* Desktop */}
+      <div className="relative mx-auto hidden max-w-[1440px] lg:grid lg:min-h-[420px] lg:grid-cols-[1fr_minmax(460px,1.15fr)] lg:items-end xl:min-h-[460px]">
         <div className="relative z-10 self-center py-8 pl-8 pr-6 xl:py-10 xl:pl-24 xl:pr-8">
           <motion.h1
             {...enter(0.05, 32)}
@@ -33,7 +33,7 @@ const DrivewayHero = () => {
             {...enter(0.18)}
             className="mb-5 max-w-[520px] text-left text-[17px] font-normal leading-normal text-white xl:mb-6 xl:text-[19px]"
           >
-            We make car financing and ownership a breeze.
+            Get pre-approved or sell your car — fast, simple, and stress-free.
           </motion.p>
 
           <motion.div
@@ -42,7 +42,7 @@ const DrivewayHero = () => {
           >
             <Link
               href="/financing"
-              className="inline-flex h-[48px] items-center justify-center rounded-full bg-white px-8 text-[16px] font-semibold text-[#00af66] transition-transform duration-300 hover:scale-[1.03] hover:opacity-90 xl:h-[54px] xl:px-10 xl:text-[18px]"
+              className="inline-flex h-[48px] items-center justify-center rounded-full border-2 border-white bg-white px-8 text-[16px] font-semibold text-[#00af66] transition-transform duration-300 hover:scale-[1.03] hover:opacity-90 xl:h-[54px] xl:px-10 xl:text-[18px]"
             >
               Get Pre-Approved
             </Link>
@@ -50,40 +50,28 @@ const DrivewayHero = () => {
               href="/trade-in-my-car"
               className="inline-flex h-[48px] items-center justify-center rounded-full border-2 border-white bg-transparent px-8 text-[16px] font-semibold text-white transition-transform duration-300 hover:scale-[1.03] hover:opacity-90 xl:h-[54px] xl:px-10 xl:text-[18px]"
             >
-              Sell my Car
+              Sell My Car
             </Link>
           </motion.div>
-
-          {/* Payment Calculator hidden for now
-          <motion.div
-            {...enter(0.42)}
-            className="flex items-center gap-2 text-left text-[16px] text-white xl:text-[18px]"
-          >
-            <span>or</span>
-            <Link href="/payment-calculator" className="font-semibold underline underline-offset-4">
-              Payment Calculator
-            </Link>
-          </motion.div>
-          */}
         </div>
 
         <motion.div
-          {...enter(0.2, 0, 40)}
-          className="relative z-0 flex h-full min-h-[360px] items-end justify-end bg-[#00af66] xl:min-h-[420px]"
+          {...enter(0.2, 36, 20)}
+          className="relative z-0 flex h-full min-h-[360px] items-end justify-end xl:min-h-[420px]"
         >
           <Image
             src={HERO_IMAGES.desktop}
-            alt="Customer with a Porsche 911"
-            width={720}
-            height={580}
+            alt="White Mercedes and black BMW luxury cars"
+            width={1280}
+            height={720}
             priority
             unoptimized
-            className="h-auto w-full max-w-[680px] bg-transparent object-contain object-bottom xl:max-w-[720px]"
+            className="h-auto w-full max-w-[700px] object-contain object-bottom xl:max-w-[760px]"
           />
         </motion.div>
       </div>
 
-      {/* Mobile / tablet layout */}
+      {/* Mobile / tablet */}
       <div className="flex flex-col items-center px-4 pb-0 pt-6 text-center sm:px-6 sm:pt-8 lg:hidden">
         <motion.h1
           {...enter(0.05, 28)}
@@ -95,7 +83,7 @@ const DrivewayHero = () => {
           {...enter(0.16)}
           className="mb-5 max-w-[36rem] text-[15px] font-normal text-white sm:mb-6 sm:text-[17px]"
         >
-          We make car financing and ownership a breeze.
+          Get pre-approved or sell your car — fast, simple, and stress-free.
         </motion.p>
 
         <motion.div
@@ -104,7 +92,7 @@ const DrivewayHero = () => {
         >
           <Link
             href="/financing"
-            className="inline-flex h-[48px] w-full items-center justify-center whitespace-nowrap rounded-full bg-white px-6 text-[16px] font-semibold text-[#00af66] transition-transform duration-300 active:scale-[0.98] sm:h-[52px] sm:text-[17px]"
+            className="inline-flex h-[48px] w-full items-center justify-center whitespace-nowrap rounded-full border-2 border-white bg-white px-6 text-[16px] font-semibold text-[#00af66] transition-transform duration-300 active:scale-[0.98] sm:h-[52px] sm:text-[17px]"
           >
             Get Pre-Approved
           </Link>
@@ -112,31 +100,19 @@ const DrivewayHero = () => {
             href="/trade-in-my-car"
             className="inline-flex h-[48px] w-full items-center justify-center whitespace-nowrap rounded-full border-2 border-white bg-transparent px-6 text-[16px] font-semibold text-white transition-transform duration-300 active:scale-[0.98] sm:h-[52px] sm:text-[17px]"
           >
-            Sell my Car
+            Sell My Car
           </Link>
         </motion.div>
 
-        {/* Payment Calculator hidden for now
-        <motion.div
-          {...enter(0.4)}
-          className="mb-2 flex items-center gap-2 text-[16px] text-white sm:text-[18px]"
-        >
-          <span>or</span>
-          <Link href="/payment-calculator" className="font-semibold underline underline-offset-4">
-            Payment Calculator
-          </Link>
-        </motion.div>
-        */}
-
-        <motion.div {...enter(0.35, 36)} className="mt-1 w-full max-w-[400px] bg-[#00af66]">
+        <motion.div {...enter(0.35, 28)} className="mt-1 w-full max-w-[440px]">
           <Image
             src={HERO_IMAGES.mobile}
-            alt="Customer with a Porsche 911"
-            width={420}
-            height={340}
+            alt="White Mercedes and black BMW luxury cars"
+            width={900}
+            height={620}
             priority
             unoptimized
-            className="mx-auto h-auto w-full bg-transparent object-contain object-bottom"
+            className="mx-auto h-auto w-full object-contain object-bottom"
           />
         </motion.div>
       </div>

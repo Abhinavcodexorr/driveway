@@ -6,31 +6,25 @@ import { Reveal } from "./motion";
 
 const AboutDriveway = () => {
   return (
-    <section
-      className="dw-font w-full bg-[#F5F5F5] px-4 pt-0 md:px-10"
-      style={{
-        background:
-          "linear-gradient(0deg, #F9F7F2 32px, #00af66 32px, #00af66 calc(100% - 32px), #F5F5F5 calc(100% - 32px), #F5F5F5 100%)",
-      }}
-    >
+    <section className="dw-font w-full bg-white px-4 pt-16 pb-12 md:px-10 md:pt-24 md:pb-16 lg:pt-28 lg:pb-20">
       <div className="mx-auto flex min-h-0 w-full max-w-[1062px] flex-col gap-8 lg:min-h-[600px] lg:flex-row lg:items-start lg:justify-between lg:gap-10 xl:gap-12">
         <Reveal
           x={-28}
           className="order-2 w-full pb-10 lg:order-1 lg:max-w-[460px] lg:pb-16 xl:max-w-[482px]"
         >
-          <h2 className="mb-2 text-[clamp(1.5rem,4vw,2.45rem)] font-bold leading-[1.2] tracking-[-0.5px] text-white md:mb-4 lg:mt-12 lg:mb-4 xl:mt-24 xl:mb-6 xl:tracking-[-1.2px]">
+          <h2 className="mb-2 text-[clamp(1.5rem,4vw,2.45rem)] font-bold leading-[1.2] tracking-[-0.5px] text-[#121212] md:mb-4 lg:mt-12 lg:mb-4 xl:mt-24 xl:mb-6 xl:tracking-[-1.2px]">
             About Carma Credit
           </h2>
 
           <div className="space-y-4 lg:max-h-[375px] lg:overflow-hidden">
-            <p className="m-0 text-[16px] leading-relaxed text-white md:text-[18px] md:leading-[1.5]">
+            <p className="m-0 text-[16px] leading-relaxed text-[#353535] md:text-[18px] md:leading-[1.5]">
               Carma Credit makes auto financing simple. Get pre-approved online,
               explore flexible payment options, and move forward with confidence—
               without the pressure of traditional dealership financing. We help
               drivers find rates and terms that fit their budget so buying or
               refinancing a vehicle feels clear and stress-free.
             </p>
-            <p className="m-0 text-[16px] leading-relaxed text-white md:text-[18px] md:leading-[1.5]">
+            <p className="m-0 text-[16px] leading-relaxed text-[#353535] md:text-[18px] md:leading-[1.5]">
               From pre-approval to selling your car and ongoing ownership
               tools, our journey is powered by people, transparency, and a
               commitment to making vehicle financing easy for everyone.
@@ -39,9 +33,9 @@ const AboutDriveway = () => {
 
           <Link
             href="/about-us"
-            className="mt-2 inline-block cursor-pointer px-1 py-0.5 text-[16px] font-semibold text-white no-underline transition-opacity hover:opacity-80 md:mt-4 md:text-[18px] xl:mt-6"
+            className="mt-2 inline-block cursor-pointer px-1 py-0.5 text-[16px] font-semibold text-[#00af66] no-underline transition-opacity hover:opacity-80 md:mt-4 md:text-[18px] xl:mt-6"
           >
-            <span className="border-b border-white pb-0.5">Learn More</span>
+            <span className="border-b border-[#00af66] pb-0.5">Learn More</span>
           </Link>
         </Reveal>
 

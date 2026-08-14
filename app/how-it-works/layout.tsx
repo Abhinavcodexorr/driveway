@@ -3,10 +3,10 @@ import { generateMetadata as generateMetadataHelper } from "@/lib/metadataHelper
 
 export async function generateMetadata(): Promise<Metadata> {
   return generateMetadataHelper({
-    title: "About Carma Credit | The Easiest Way to Sell Your Car in Canada",
+    title: "How It Works | Sell Your Car Easily with Carma Credit",
     description:
-      "Learn how Carma Credit makes selling your car simple, fair, and stress-free — with clear online offers and a trusted process from start to payday.",
-    canonicalPath: "/about-us",
+      "See how selling your car with Carma Credit works — get an instant online offer, verify details, drop off your car, and get paid.",
+    canonicalPath: "/how-it-works",
   });
 }
 

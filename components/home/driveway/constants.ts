@@ -11,8 +11,8 @@ export const DW = {
 } as const;
 
 export const HERO_IMAGES = {
-  desktop: "/driveway/hero-porsche-911.png",
-  mobile: "/driveway/hero-porsche-911-mobile.png",
+  desktop: "/driveway/hero-dual-cars.png",
+  mobile: "/driveway/hero-dual-cars-mobile.png",
 } as const;
 
 export const RECOMMENDED_CARS = [

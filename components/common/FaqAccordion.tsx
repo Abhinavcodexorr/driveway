@@ -33,7 +33,6 @@ export default function FaqAccordion({
         const answerText = faq.a ?? faq.answer;
         const panelId = `${reactId}-panel-${index}`;
         const buttonId = `${reactId}-button-${index}`;
-        const number = String(index + 1).padStart(2, "0");
 
         return (
           <div
@@ -52,16 +51,6 @@ export default function FaqAccordion({
               aria-expanded={isOpen}
               aria-controls={panelId}
             >
-              <span
-                className={`mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-[12px] font-bold tracking-wide transition-colors duration-300 sm:mt-0 sm:h-9 sm:w-9 sm:text-[13px] ${
-                  isOpen
-                    ? "bg-[#00af66] text-white"
-                    : "bg-white text-[#00af66] ring-1 ring-[#00af66]/25 group-hover:ring-[#00af66]/45"
-                }`}
-              >
-                {number}
-              </span>
-
               <span
                 className={`min-w-0 flex-1 text-[16px] font-semibold leading-snug transition-colors duration-300 sm:text-[17px] md:text-[19px] ${
                   isOpen ? "text-zinc-900" : "text-zinc-600 group-hover:text-zinc-800"
@@ -96,7 +85,7 @@ export default function FaqAccordion({
             >
               <div className="overflow-hidden">
                 <div className="border-t border-[#00af66]/15 px-4 pb-5 pt-0 sm:px-5 md:px-6">
-                  <div className="ml-0 pl-0 pt-4 text-[15px] leading-relaxed text-zinc-600 sm:ml-12 sm:text-[16px] md:leading-[1.7]">
+                  <div className="pt-4 text-[15px] leading-relaxed text-zinc-600 sm:text-[16px] md:leading-[1.7]">
                     {answerText}
                   </div>
                 </div>

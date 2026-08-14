@@ -19,6 +19,10 @@ declare module 'lucide-react' {
   export const Star: Icon;
   export const Clock: Icon;
   export const ShieldCheck: Icon;
+  export const Handshake: Icon;
+  export const BadgeCheck: Icon;
+  export const Scale: Icon;
+  export const Clock3: Icon;
   export const ArrowRight: Icon;
   export const Heart: Icon;
   export const ChevronDown: Icon;

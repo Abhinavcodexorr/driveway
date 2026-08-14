@@ -230,7 +230,7 @@ const DriversSeat = () => {
                     <Link
                       key={cta.label}
                       href={cta.href}
-                      className={`inline-flex w-full items-center justify-center rounded-full bg-[#00af66] px-8 py-3 text-[16px] font-semibold text-white hover:bg-[#009554] sm:w-auto ${
+                      className={`inline-flex w-full items-center justify-center rounded-full border-2 border-[#00af66] bg-[#00af66] px-8 py-3 text-[16px] font-semibold text-white hover:border-[#009554] hover:bg-[#009554] sm:w-auto ${
                         i === 0 ? "mr-0 sm:mr-4" : ""
                       }`}
                     >

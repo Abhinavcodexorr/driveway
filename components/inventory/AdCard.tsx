@@ -53,7 +53,7 @@ export const FinanceAdCard = () => {
       </p>
 
       {/* Call to Action Button */}
-      <span className="mt-2 inline-block rounded-lg bg-brand text-white text-[14px] px-6 py-2.5 hover:opacity-90 transition-opacity transition-colors cursor-pointer">
+      <span className="mt-2 inline-block rounded-full border-2 border-brand bg-brand text-white text-[14px] px-6 py-2.5 hover:opacity-90 transition-opacity transition-colors cursor-pointer">
         Get pre-approved
       </span>
     </CardShell>
@@ -90,7 +90,7 @@ export const TradeInAdCard = () => {
       </p>
 
       {/* Call to Action Button */}
-       <span className="mt-2 inline-block rounded-lg bg-brand text-white text-[14px] px-6 py-2.5 hover:opacity-90 transition-opacity transition-colors cursor-pointer">
+       <span className="mt-2 inline-block rounded-full border-2 border-brand bg-brand text-white text-[14px] px-6 py-2.5 hover:opacity-90 transition-opacity transition-colors cursor-pointer">
         Get your offer
       </span>
     </CardShell>

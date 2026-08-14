@@ -1,13 +1,14 @@
 "use client";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { createContext, useContext, useState } from "react";
+import { Suspense, createContext, useContext, useState } from "react";
 import { AppConfig, defaultAppConfig } from "@/lib/appConfig";
 import { WishlistProvider } from "@/context/WishlistContext";
 import { DrawerProvider } from "@/context/DrawerContext";
 import { useDrawer } from "@/context/DrawerContext";
 import WishlistDrawer from "@/components/inventory/WishlistDrawer";
 import PageTransition from "@/components/common/PageTransition";
+import ScrollToTop from "@/components/common/ScrollToTop";
 
 export const AppConfigContext = createContext<AppConfig>(defaultAppConfig);
 
@@ -29,6 +30,9 @@ export function Providers({ children, config }: { children: React.ReactNode; con
         <WishlistProvider>
           <DrawerProvider>
             <WishlistDrawerWithState />
+            <Suspense fallback={null}>
+              <ScrollToTop />
+            </Suspense>
             <PageTransition>{children}</PageTransition>
           </DrawerProvider>
         </WishlistProvider>

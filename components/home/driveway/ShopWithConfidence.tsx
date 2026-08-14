@@ -36,7 +36,7 @@ const ShopWithConfidence = () => {
           <div className="mt-10">
             <Link
               href="/financing"
-              className="inline-flex h-[50px] w-full items-center justify-center rounded-[6px] bg-[#00af66] text-[16px] font-semibold text-white shadow-[0_4px_14px_rgba(0, 175, 102,0.28)] transition-all duration-300 hover:scale-[1.03] hover:opacity-90 sm:w-[275px]"
+              className="inline-flex h-[50px] w-full items-center justify-center rounded-full border-2 border-[#00af66] bg-[#00af66] text-[16px] font-semibold text-white shadow-[0_4px_14px_rgba(0, 175, 102,0.28)] transition-all duration-300 hover:scale-[1.03] hover:opacity-90 sm:w-[275px]"
             >
               Get Pre-Approved
             </Link>

@@ -295,7 +295,7 @@ const HomeHeader = () => {
           })}
           <a
             href={PHONE_HREF}
-            className="my-4 flex h-11 w-full items-center justify-center gap-2 rounded-full border border-[#00af66] text-[15px] font-semibold text-[#00af66]"
+            className="my-4 flex h-11 w-full items-center justify-center gap-2 rounded-full border-2 border-[#00af66] text-[15px] font-semibold text-[#00af66]"
           >
             <Phone className="h-4 w-4" strokeWidth={2} />
             {PHONE_DISPLAY}

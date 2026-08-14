@@ -112,14 +112,14 @@ export const PriceAndCTA = ({ vehicle }: any) => {
 
         <div className="mt-1 space-y-3">
           <a href={`/finance/?inventory_id=${vehicle?.id}`}>
-            <button className="cursor-pointer my-3 font-bold w-full rounded-[10px] sm:rounded-[12px] border text-white py-[12px] sm:py-[10px] text-[15px] sm:text-[20px] hover:opacity-90 shadow-md transition-opacity bg-brand-btn-gradient border-brand-green">
+            <button className="cursor-pointer my-3 font-bold w-full rounded-full border-2 text-white py-[12px] sm:py-[10px] text-[15px] sm:text-[20px] hover:opacity-90 shadow-md transition-opacity bg-brand-btn-gradient border-brand-green">
               Get started
             </button>
           </a>
 
           <button
             onClick={() => setIsModalOpen(true)}
-            className="w-full bg-white cursor-pointer border-2 font-bold py-3 rounded-xl transition-colors text-[16px] sm:text-[20px] border-brand-green-alpha text-price-green hover:bg-brand-green-alpha hover:text-white hover:border-brand-green-alpha"
+            className="w-full bg-white cursor-pointer border-2 font-bold py-3 rounded-full transition-colors text-[16px] sm:text-[20px] border-brand-green-alpha text-price-green hover:bg-brand-green-alpha hover:text-white hover:border-brand-green-alpha"
           >
             Send message
           </button>
@@ -132,7 +132,7 @@ export const PriceAndCTA = ({ vehicle }: any) => {
           }`}
       >
         <a href={`/finance/?inventory_id=${vehicle?.id}`} className="flex-1">
-          <button className="w-full font-bold rounded-xl text-white py-3 text-[15px] bg-brand-btn-gradient border border-brand-green shadow-md">
+          <button className="w-full font-bold rounded-full text-white py-3 text-[15px] bg-brand-btn-gradient border-2 border-brand-green shadow-md">
             Get started
           </button>
         </a>
