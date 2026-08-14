@@ -15,7 +15,7 @@ const TradeInVehicle = () => {
   console.log("vehicle id is ", SITE_CONFIG.urls.tradeInMyCarVehicle);
 
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden">
+    <div className="min-h-screen overflow-x-clip bg-background">
       <Header />
 
       {/* Vehicle Trade-In Content Section */}

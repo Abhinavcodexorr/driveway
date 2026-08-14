@@ -107,7 +107,7 @@ const TradeIn = () => {
   };
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-background">
+    <div className="min-h-screen overflow-x-clip bg-background">
       <Header />
 
       {/* Hero / Quote form */}
@@ -176,6 +176,7 @@ const TradeIn = () => {
           <div className="z-10 w-full max-w-[440px] rounded-2xl border border-border-lightGray/80 bg-white p-5 pb-12 shadow-xl md:p-8 md:pb-24 lg:mr-7 lg:justify-self-end">
             <div className="mb-6 flex cursor-pointer border-b border-border-standard">
               <button
+                type="button"
                 onClick={() => setMode("vehicle")}
                 className={`relative flex-1 cursor-pointer pb-3 text-center text-[16px] font-bold transition-all md:text-[18px] ${
                   mode === "vehicle" ? "text-gray-900" : "text-gray-500"
@@ -188,6 +189,7 @@ const TradeIn = () => {
               </button>
 
               <button
+                type="button"
                 onClick={() => setMode("vin")}
                 className={`relative flex-1 cursor-pointer pb-3 text-center text-[16px] font-bold transition-all md:text-[18px] ${
                   mode === "vin" ? "text-gray-900" : "text-gray-500"
@@ -200,16 +202,24 @@ const TradeIn = () => {
               </button>
             </div>
 
-            <iframe
-              key={mode}
-              src={TRADE_FORMS[mode].url}
-              title={mode === "vehicle" ? "Trade Form By Vehicle" : "Trade Form By VIN"}
-              width="100%"
-              className="cursor-pointer border-0"
-              style={{
-                minHeight: `${TRADE_FORMS[mode].minHeight}px`,
-              }}
-            />
+            <div
+              className="w-full overflow-hidden"
+              style={{ height: TRADE_FORMS[mode].minHeight }}
+            >
+              <iframe
+                key={mode}
+                src={TRADE_FORMS[mode].url}
+                title={mode === "vehicle" ? "Trade Form By Vehicle" : "Trade Form By VIN"}
+                width="100%"
+                height={TRADE_FORMS[mode].minHeight}
+                scrolling="no"
+                className="block w-full border-0"
+                style={{
+                  height: TRADE_FORMS[mode].minHeight,
+                  overflow: "hidden",
+                }}
+              />
+            </div>
           </div>
         </div>
 

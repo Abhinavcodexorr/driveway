@@ -115,13 +115,14 @@ const DriversSeat = () => {
           </p>
         </Reveal>
 
-        {/* Carousel: arrows sit left/right of card (Driveway DWCarousel padding 0 60px) */}
-        <div className="relative px-0 md:px-[60px]">
+        {/* Carousel */}
+        <div className="relative md:px-[60px]">
+          {/* Desktop/tablet side arrows — outside the card */}
           <button
             type="button"
             aria-label="Previous slide"
             onClick={() => setIndex((i) => (i - 1 + total) % total)}
-            className="absolute left-0 top-1/2 z-20 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-[#d0d0d0] bg-white text-[#00af66] shadow-sm transition-colors hover:bg-[#00af66] hover:text-white sm:h-11 sm:w-11 md:left-4 xl:left-12"
+            className="absolute left-4 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-[#d0d0d0] bg-white text-[#00af66] shadow-sm transition-colors hover:bg-[#00af66] hover:text-white md:flex xl:left-12"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
@@ -130,7 +131,7 @@ const DriversSeat = () => {
             type="button"
             aria-label="Next slide"
             onClick={() => setIndex((i) => (i + 1) % total)}
-            className="absolute right-0 top-1/2 z-20 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-[#d0d0d0] bg-white text-[#00af66] shadow-sm transition-colors hover:bg-[#00af66] hover:text-white sm:h-11 sm:w-11 md:right-4 xl:right-12"
+            className="absolute right-4 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-[#d0d0d0] bg-white text-[#00af66] shadow-sm transition-colors hover:bg-[#00af66] hover:text-white md:flex xl:right-12"
           >
             <ChevronRight className="h-5 w-5" />
           </button>
@@ -243,22 +244,42 @@ const DriversSeat = () => {
           </AnimatePresence>
         </div>
 
-        {/* Dots below card (Driveway pagination) */}
-        <div className="flex items-center justify-center gap-[11px] px-4 pb-4 pt-4">
-          {CARDS.map((c, i) => (
-            <button
-              key={c.heading}
-              type="button"
-              aria-label={`Go to ${c.heading}`}
-              aria-current={i === index ? "true" : undefined}
-              onClick={() => setIndex(i)}
-              className={`h-2 cursor-pointer transition-all duration-300 ${
-                i === index
-                  ? "w-6 rounded-[20px] bg-[#00af66]"
-                  : "w-2 rounded-full bg-[#c5c5c5]"
-              }`}
-            />
-          ))}
+        {/* Mobile arrows + dots */}
+        <div className="flex items-center justify-center gap-4 px-4 pb-4 pt-4 md:gap-[11px]">
+          <button
+            type="button"
+            aria-label="Previous slide"
+            onClick={() => setIndex((i) => (i - 1 + total) % total)}
+            className="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full border border-[#d0d0d0] bg-white text-[#00af66] shadow-sm md:hidden"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+
+          <div className="flex items-center justify-center gap-[11px]">
+            {CARDS.map((c, i) => (
+              <button
+                key={c.heading}
+                type="button"
+                aria-label={`Go to ${c.heading}`}
+                aria-current={i === index ? "true" : undefined}
+                onClick={() => setIndex(i)}
+                className={`h-2 cursor-pointer transition-all duration-300 ${
+                  i === index
+                    ? "w-6 rounded-[20px] bg-[#00af66]"
+                    : "w-2 rounded-full bg-[#c5c5c5]"
+                }`}
+              />
+            ))}
+          </div>
+
+          <button
+            type="button"
+            aria-label="Next slide"
+            onClick={() => setIndex((i) => (i + 1) % total)}
+            className="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full border border-[#d0d0d0] bg-white text-[#00af66] shadow-sm md:hidden"
+          >
+            <ChevronRight className="h-5 w-5" />
+          </button>
         </div>
       </div>
     </section>

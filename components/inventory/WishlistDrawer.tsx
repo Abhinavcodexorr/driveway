@@ -60,8 +60,12 @@ export default function WishlistDrawer({ isOpen, onClose }: WishlistDrawerProps)
 
       {/* Drawer */}
       <div
-        className={`fixed top-0 right-0 h-screen w-full sm:max-w-sm bg-white shadow-lg z-[999] transform transition-transform duration-300 ease-in-out overflow-y-auto ${isOpen ? "translate-x-0" : "translate-x-full"
-          }`}
+        aria-hidden={!isOpen}
+        className={`fixed top-0 right-0 z-[999] h-screen w-full transform bg-white shadow-lg transition-transform duration-300 ease-in-out sm:max-w-sm ${
+          isOpen
+            ? "translate-x-0 overflow-y-auto pointer-events-auto"
+            : "translate-x-full overflow-hidden pointer-events-none"
+        }`}
       >
         {/* Header */}
         <div
