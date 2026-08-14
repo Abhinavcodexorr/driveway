@@ -26,15 +26,11 @@ export default function HowItWorksPage() {
               />
             </Reveal>
             <Reveal x={30} delay={0.1} className="order-1 lg:order-2">
-              <h1 className="text-[40px] font-bold leading-[1.05] tracking-[-0.02em] md:text-[56px] lg:text-[64px]">
-                Applying for a
-                <br />
-                car loan with
-                <br />
-                confidence
+              <h1 className="text-[28px] font-bold leading-[1.1] tracking-[-0.02em] sm:text-[36px] md:text-[56px] lg:text-[64px]">
+                Applying for a car loan with confidence
               </h1>
               <p className="mt-5 max-w-[480px] text-[14px] leading-[1.7] text-[#333]">
-                Complete our online car loan application in minutes to pre-qualify for the car of
+                Complete our online car loan application in minutes to pre-approve for the car of
                 your choice. We offer financing options for all credit situations.
               </p>
               <Link href="/financing" className={`${CTA} mt-7`}>
@@ -45,7 +41,7 @@ export default function HowItWorksPage() {
         </section>
 
         <section className="px-4 py-6 md:px-8">
-          <Reveal className="mx-auto max-w-[1350px] rounded-[20px] bg-[#f8f8f8] px-4 py-[70px] md:px-10">
+          <Reveal className="mx-auto max-w-[1350px] rounded-[20px] bg-[#f8f8f8] px-4 py-10 md:px-10 md:py-[70px]">
             <p className="mb-3 text-center text-[16px] font-semibold uppercase tracking-wide text-[#008765]">
               How It Works
             </p>
@@ -116,7 +112,7 @@ export default function HowItWorksPage() {
               <p className="mb-3 text-[16px] font-semibold uppercase tracking-wide text-[#008765]">
                 Let us do the hard work
               </p>
-              <h2 className="mb-5 text-[36px] font-bold leading-[1.1] tracking-[-0.02em] md:text-[52px] lg:text-[64px]">
+              <h2 className="mb-5 text-[28px] font-bold leading-[1.15] tracking-[-0.02em] md:text-[52px] lg:text-[64px]">
                 We’re here for you at every stage
               </h2>
               <p className="mb-8 max-w-[480px] text-[14px] leading-[1.7] text-[#333]">
@@ -145,7 +141,7 @@ export default function HowItWorksPage() {
               <p className="mb-3 text-[16px] font-semibold uppercase tracking-wide text-[#008765]">
                 Lets get started
               </p>
-              <h2 className="mb-5 text-[36px] font-bold leading-[1.1] tracking-[-0.02em] md:text-[52px] lg:text-[64px]">
+              <h2 className="mb-5 text-[28px] font-bold leading-[1.15] tracking-[-0.02em] md:text-[52px] lg:text-[64px]">
                 Discover how much you could save on your car loan
               </h2>
               <p className="mb-8 max-w-[480px] text-[14px] leading-[1.7] text-[#333]">

@@ -61,7 +61,7 @@ export default function WhatDoINeedPage() {
         <section className="px-4 pt-6 md:px-8 md:pt-8">
           <Reveal
             y={20}
-            className="relative mx-auto flex min-h-[480px] max-w-[1350px] items-center overflow-hidden rounded-[20px] bg-cover bg-center px-6 py-16 md:min-h-[582px] md:px-14"
+            className="relative mx-auto flex min-h-[300px] max-w-[1350px] items-center overflow-hidden rounded-[20px] bg-cover bg-center px-4 py-10 md:min-h-[582px] md:px-14 md:py-16"
             style={{ backgroundImage: "url('/what-do-i-need/hero.jpeg')" }}
           >
             <div className="absolute inset-0 bg-black/45" />
@@ -69,7 +69,7 @@ export default function WhatDoINeedPage() {
               <p className="mb-3 text-[16px] font-semibold uppercase tracking-wide">
                 What Is Needed
               </p>
-              <h1 className="mb-5 text-[36px] font-bold leading-[1.1] tracking-[-0.02em] md:text-[52px] lg:text-[64px]">
+              <h1 className="mb-5 text-[28px] font-bold leading-[1.15] tracking-[-0.02em] md:text-[52px] lg:text-[64px]">
                 Auto financing documents: Which docs to use and why
               </h1>
               <p className="max-w-[560px] text-[14px] leading-[1.7] text-white/95">
@@ -87,12 +87,8 @@ export default function WhatDoINeedPage() {
               <p className="mb-3 text-[16px] font-semibold uppercase tracking-wide text-[#008765]">
                 Finance With Carma
               </p>
-              <h2 className="mb-5 text-[32px] font-bold leading-[1.1] tracking-[-0.02em] md:text-[48px] lg:text-[56px]">
-                You could save thousands
-                <br />
-                of dollars on your car
-                <br />
-                loan *
+              <h2 className="mb-5 text-[26px] font-bold leading-[1.15] tracking-[-0.02em] md:text-[48px] lg:text-[56px]">
+                You could save thousands of dollars on your car loan *
               </h2>
               <p className="mb-8 text-[14px] leading-[1.7] text-[#333]">
                 What would you do with extra money in your wallet each month?

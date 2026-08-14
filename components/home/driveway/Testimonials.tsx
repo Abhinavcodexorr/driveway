@@ -21,9 +21,9 @@ const Testimonials = () => {
   return (
     <section
       id="carma-reviews"
-      className="dw-font relative w-full bg-[#00af66] px-4 py-12 text-white md:px-6 md:py-14"
-    >
-      <div className="relative mx-auto max-w-[1100px] px-10 md:px-[60px]">
+      className="dw-font relative w-full bg-[#00af66] px-3 py-10 text-white sm:px-4 sm:py-12 md:px-6 md:py-14"
+      >
+      <div className="relative mx-auto max-w-[1100px] px-8 sm:px-10 md:px-[60px]">
         <button
           type="button"
           aria-label="Previous slide"
@@ -58,8 +58,8 @@ const Testimonials = () => {
                 exit={reduce ? undefined : { opacity: 0, y: -12 }}
                 transition={{ duration: 0.35, ease: easeOut }}
               >
-                <h3 className="mb-2 text-[24px] font-bold leading-tight md:text-[28px]">
-                  <span className="mr-2 inline-block align-top text-[44px] leading-none">
+                <h3 className="mb-2 text-[20px] font-bold leading-tight sm:text-[24px] md:text-[28px]">
+                  <span className="mr-1 inline-block align-top text-[36px] leading-none sm:mr-2 sm:text-[44px]">
                     “
                   </span>
                   {current.title}

@@ -85,16 +85,16 @@ const Footer = () => {
 
   return (
     <footer className="w-full border-t-0 bg-neutral-charcoal font-[Lato,sans-serif]">
-      <Reveal y={20} className="mx-auto max-w-[1600px] px-5 pt-12 lg:px-10 lg:pt-14 pb-5">
+      <Reveal y={20} className="mx-auto max-w-[1600px] px-4 pt-10 pb-5 sm:px-5 lg:px-10 lg:pt-14">
 
         {/* Link columns grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
           {columns.map((col) => (
             <div key={col.title}>
-              <h3 className="text-[18px] font-bold tracking-[1px] uppercase mb-5 text-white">
+              <h3 className="mb-4 text-[16px] font-bold uppercase tracking-[1px] text-white sm:mb-5 sm:text-[18px]">
                 {col.title}
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-2.5 sm:space-y-3">
                 {col.links.map((link) => (
                   <li key={link.label}>
                     {link.external ? (
@@ -102,14 +102,14 @@ const Footer = () => {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[15px] uppercase text-white transition-colors"
+                        className="text-[14px] uppercase text-white transition-colors sm:text-[15px]"
                       >
                         {link.label}
                       </a>
                     ) : (
                       <Link
                         href={link.href}
-                        className="text-[15px] uppercase text-white transition-colors"
+                        className="text-[14px] uppercase text-white transition-colors sm:text-[15px]"
                         onClick={(e) => {
                           if (
                             pathname === "/inventory" &&
@@ -131,20 +131,18 @@ const Footer = () => {
 
           {/* Contact / address column */}
           <div>
-            <h3 className="text-[18px] font-bold tracking-[1px] uppercase mb-5 text-white">
+            <h3 className="mb-4 text-[16px] font-bold uppercase tracking-[1px] text-white sm:mb-5 sm:text-[18px]">
               Contact Us
             </h3>
             <div className="flex items-start gap-3">
-              <MapPin className="h-5 w-5 text-white/85 shrink-0 mt-0.5" />
-              
-              {/* Entire address element acts as a link now */}
+              <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-white/85" />
               <a
                 href={mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white block"
+                className="block text-white"
               >
-                <address className="not-italic text-[15px] leading-relaxed cursor-pointer">
+                <address className="cursor-pointer text-[14px] leading-relaxed not-italic sm:text-[15px]">
                   {safeD.full_address_1.trim()},
                   <br />
                   {safeD.city_1}, {safeD.province_1}
@@ -156,25 +154,25 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12">
+        <div className="mt-10 sm:mt-12">
           <hr className="border-dark-border" />
         </div>
 
         {/* Copyright bar */}
-        <div className="pt-6 px-10 pb-5 flex flex-col md:flex-row gap-4 justify-between max-[767px]:justify-center max-[767px]:items-center">
-          <div className="text-[13px] text-white uppercase text-center md:text-start">
+        <div className="flex flex-col items-center justify-between gap-4 px-0 pb-5 pt-6 text-center md:flex-row md:items-start md:px-2 md:text-left">
+          <div className="text-[12px] uppercase text-white sm:text-[13px]">
             © {new Date().getFullYear()} {safeD.dealership_name}. <br />
-            <span className="flex items-center gap-2">
+            <span className="mt-1 flex flex-wrap items-center justify-center gap-2 md:justify-start">
               All rights reserved. Powered by
               <a
                 href="https://www.zopdealer.com/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image 
-                  src={zlogo} 
-                  alt="Zop Dealer" 
-                  width={20} 
+                <Image
+                  src={zlogo}
+                  alt="Zop Dealer"
+                  width={20}
                   height={20}
                   style={{
                     width: "auto",
@@ -185,11 +183,11 @@ const Footer = () => {
               </a>
             </span>
           </div>
-          <p className="text-[12.5px] text-white uppercase">
+          <p className="flex flex-wrap items-center justify-center gap-x-1 gap-y-1 text-[12px] uppercase text-white sm:text-[12.5px] md:justify-end">
             <Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
-            {" | "}
+            <span aria-hidden>|</span>
             <Link href="/terms-conditions" className="hover:text-white">Terms & Conditions</Link>
-            {" | "}
+            <span aria-hidden>|</span>
             <Link target="_blank" href={`/sitemap`} className="hover:text-white">Site Map</Link>
           </p>
         </div>

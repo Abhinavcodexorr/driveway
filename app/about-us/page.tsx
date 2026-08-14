@@ -17,7 +17,7 @@ export default function AboutUsPage() {
           >
             <div className="absolute inset-0 bg-black/50" />
             <div className="relative z-10 mx-auto w-full max-w-[1140px] text-white">
-              <h1 className="mb-3 text-[32px] font-bold leading-tight md:text-[36px]">
+              <h1 className="mb-3 text-[26px] font-bold leading-tight sm:text-[32px] md:text-[36px]">
                 About Carma
               </h1>
               <p className="max-w-[640px] text-[14px] leading-[1.7] text-white/95 md:text-[16px]">

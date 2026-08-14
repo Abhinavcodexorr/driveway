@@ -112,19 +112,19 @@ const TradeIn = () => {
 
       {/* Hero / Quote form */}
       <section className="relative w-full px-4 lg:mt-18 lg:px-24">
-        <div className="relative z-10 mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-6 px-2 pb-5 pt-10 md:px-9 lg:flex-row lg:items-start lg:gap-10 lg:pt-20">
+        <div className="relative z-10 mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-6 px-0 pb-5 pt-10 md:px-9 lg:flex-row lg:items-start lg:gap-10 lg:pt-20">
           <div className="w-full text-left lg:w-auto">
-            <h1 className="text-[38px] font-bold leading-[1.08] tracking-tight text-gray-950 md:w-xl md:text-[44px] lg:text-[66px]">
+            <h1 className="max-w-xl text-[28px] font-bold leading-[1.1] tracking-tight text-gray-950 sm:text-[34px] md:text-[44px] lg:text-[66px]">
               Sell my car the easy way.
             </h1>
-            <p className="mt-4 max-w-xl text-[18px] leading-relaxed text-black lg:mt-6 lg:text-[23px]">
+            <p className="mt-4 max-w-xl text-[16px] leading-relaxed text-black sm:text-[18px] lg:mt-6 lg:text-[23px]">
               Fast, seamless and secure. It&apos;s the way everyone{" "}
               <br className="hidden lg:inline" /> deserves.
             </p>
           </div>
 
           {/* Mobile graphic */}
-          <div className="relative block w-full px-4 pointer-events-none lg:hidden">
+          <div className="pointer-events-none relative block w-full px-0 lg:hidden">
             <div className="relative flex h-[180px] w-full flex-col items-center justify-center overflow-visible">
               <div className="absolute inset-x-0 top-14 z-10 flex w-full -translate-y-1/2 justify-center">
                 <svg
@@ -265,7 +265,7 @@ const TradeIn = () => {
       <section className="mx-auto w-full -mt-5 lg:mt-0 lg:px-24">
         <div className="mx-auto px-4 py-10 lg:max-w-[1400px] lg:px-0 lg:py-24">
           <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[1fr_1.1fr] lg:gap-12 lg:pl-10 xl:min-h-180">
-            <div className="h-[500px] w-full md:h-full">
+            <div className="h-[240px] w-full sm:h-[360px] md:h-full">
               <Image
                 src={sell}
                 alt="Customer trading in their car at Dealership"
@@ -329,7 +329,7 @@ const TradeIn = () => {
                   }`}
                 >
                   <span
-                    className={`pr-4 text-[18px] font-bold leading-none md:text-[20px] ${
+                    className={`pr-4 text-[16px] font-bold leading-snug md:text-[20px] md:leading-snug ${
                       openFaq !== i
                         ? "py-5 text-neutral-darkGray4 md:py-6"
                         : "py-4 text-neutral-darkGray2 md:py-5"

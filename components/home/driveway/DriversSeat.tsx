@@ -107,7 +107,7 @@ const DriversSeat = () => {
     >
       <div className="mx-auto max-w-[1440px] px-4 md:px-6">
         <Reveal className="mx-auto max-w-[420px] md:max-w-none">
-          <h2 className="text-left text-[32px] font-bold leading-[1.2] tracking-[-0.6px] text-[#121212] md:text-center md:text-[40px] md:tracking-[-1.2px] lg:text-[56px] lg:tracking-[-1.5px]">
+          <h2 className="text-left text-[clamp(1.75rem,6vw,3.5rem)] font-bold leading-[1.2] tracking-[-0.6px] text-[#121212] md:text-center md:tracking-[-1.2px] lg:tracking-[-1.5px]">
             You’re in the driver’s seat
           </h2>
           <p className="mt-4 mb-6 text-left text-[16px] leading-[1.5] text-[#353535] md:mb-6 md:text-center md:text-[18px] lg:mb-8 lg:mt-6">
@@ -121,7 +121,7 @@ const DriversSeat = () => {
             type="button"
             aria-label="Previous slide"
             onClick={() => setIndex((i) => (i - 1 + total) % total)}
-            className="absolute left-1 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-[#d0d0d0] bg-white text-[#00af66] shadow-sm transition-colors hover:bg-[#00af66] hover:text-white md:left-4 xl:left-12"
+            className="absolute left-0 top-1/2 z-20 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-[#d0d0d0] bg-white text-[#00af66] shadow-sm transition-colors hover:bg-[#00af66] hover:text-white sm:h-11 sm:w-11 md:left-4 xl:left-12"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
@@ -130,7 +130,7 @@ const DriversSeat = () => {
             type="button"
             aria-label="Next slide"
             onClick={() => setIndex((i) => (i + 1) % total)}
-            className="absolute right-1 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-[#d0d0d0] bg-white text-[#00af66] shadow-sm transition-colors hover:bg-[#00af66] hover:text-white md:right-4 xl:right-12"
+            className="absolute right-0 top-1/2 z-20 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-[#d0d0d0] bg-white text-[#00af66] shadow-sm transition-colors hover:bg-[#00af66] hover:text-white sm:h-11 sm:w-11 md:right-4 xl:right-12"
           >
             <ChevronRight className="h-5 w-5" />
           </button>
@@ -229,8 +229,8 @@ const DriversSeat = () => {
                     <Link
                       key={cta.label}
                       href={cta.href}
-                      className={`inline-flex items-center justify-center rounded-full bg-[#00af66] px-8 py-3 text-[16px] font-semibold text-white hover:bg-[#009554] ${
-                        i === 0 ? "mr-4 max-w-[200px]" : ""
+                      className={`inline-flex w-full items-center justify-center rounded-full bg-[#00af66] px-8 py-3 text-[16px] font-semibold text-white hover:bg-[#009554] sm:w-auto ${
+                        i === 0 ? "mr-0 sm:mr-4" : ""
                       }`}
                     >
                       {cta.label}

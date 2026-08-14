@@ -74,14 +74,14 @@ export default function UnderstandingAutoFinancingPage() {
         <section className="px-4 pt-6 md:px-8 md:pt-8">
           <Reveal
             y={20}
-            className="relative mx-auto flex min-h-[420px] max-w-[1350px] items-center justify-center overflow-hidden rounded-[20px] bg-cover bg-center px-6 py-16 md:min-h-[589px] md:px-14"
+            className="relative mx-auto flex min-h-[280px] max-w-[1350px] items-center justify-center overflow-hidden rounded-[20px] bg-cover bg-center px-4 py-10 md:min-h-[589px] md:px-14 md:py-16"
             style={{
               backgroundImage: "url('/understanding-auto-financing/banner.jpeg')",
             }}
           >
             <div className="absolute inset-0 bg-black/40" />
             <div className="relative z-10 mx-auto max-w-[820px] text-center text-white">
-              <h1 className="mb-5 text-[36px] font-bold leading-[1.1] tracking-[-0.02em] md:text-[52px] lg:text-[64px]">
+              <h1 className="mb-5 text-[28px] font-bold leading-[1.15] tracking-[-0.02em] md:text-[52px] lg:text-[64px]">
                 Understanding auto financing
               </h1>
               <p className="mx-auto max-w-[700px] text-[14px] leading-[1.7] text-white/95">

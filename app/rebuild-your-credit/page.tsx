@@ -14,7 +14,7 @@ export default function RebuildYourCreditPage() {
       <Header />
       <main className="min-h-screen bg-white font-[Arial,Helvetica,sans-serif] text-black">
         <section className="px-4 pt-6 md:px-8 md:pt-8">
-          <Reveal y={20} className="relative mx-auto flex min-h-[520px] max-w-[1350px] items-center overflow-hidden rounded-[20px] bg-cover bg-center px-6 py-16 md:min-h-[662px] md:px-14"
+          <Reveal y={20} className="relative mx-auto flex min-h-[320px] max-w-[1350px] items-center overflow-hidden rounded-[20px] bg-cover bg-center px-4 py-10 md:min-h-[662px] md:px-14 md:py-16"
             style={{ backgroundImage: "url('/rebuild-your-credit/hero-bg.png')" }}
           >
             <div className="absolute inset-0 bg-black/35" />
@@ -22,7 +22,7 @@ export default function RebuildYourCreditPage() {
               <p className="mb-3 text-[16px] font-semibold uppercase tracking-wide">
                 Why Good Credit Is Important
               </p>
-              <h1 className="mb-5 text-[36px] font-bold leading-[1.1] tracking-[-0.02em] md:text-[52px] lg:text-[64px]">
+              <h1 className="mb-5 text-[28px] font-bold leading-[1.15] tracking-[-0.02em] md:text-[52px] lg:text-[64px]">
                 How To Rebuild Your Credit Score?
               </h1>
               <p className="mb-8 max-w-[560px] text-[14px] leading-[1.7] text-white/95">

@@ -72,14 +72,14 @@ export default function PaymentCalculator() {
     return (
         <>
             <Header />
-            <div className="lg:mt-20 mx-auto px-5 lg:px-16 py-8 lg:py-12 shadow-sm font-sans text-gray-700 bg-light-gray2">
-                <h1 className="text-3xl md:text-5xl font-bold mb-8 text-black">Payment Calculator</h1>
+            <div className="lg:mt-20 mx-auto px-4 sm:px-5 lg:px-16 py-6 sm:py-8 lg:py-12 shadow-sm font-sans text-gray-700 bg-light-gray2">
+                <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-6 sm:mb-8 text-black">Payment Calculator</h1>
 
                 <div className=' bg-white'>
                     <div className="grid grid-cols-1 md:grid-cols-3">
 
                     {/* Left Form Column (Spans 2 columns) */}
-                    <div className="md:col-span-2 bg-white px-6 py-10 grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-x-7 border-r border-slate-200">
+                    <div className="md:col-span-2 bg-white px-4 py-8 sm:px-6 sm:py-10 grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-x-7 border-r border-slate-200">
 
                         <div>
                             <label className="block text-black  text-base font-lg mb-1">Vehicle Price</label>
@@ -173,7 +173,7 @@ export default function PaymentCalculator() {
                                                 key={m}
                                                 type="button"
                                                 onClick={() => setTerm(m)}
-                                                className={`px-7 py-3 text-sm font-medium rounded-xl cursor-pointer border transition-all duration-200 ${term === m
+                                                className={`px-4 py-2.5 text-sm font-medium rounded-xl cursor-pointer border transition-all duration-200 sm:px-7 sm:py-3 ${term === m
                                                         ? 'text-white border-brand bg-brand-gradient shadow-[0_4px_0_0_var(--color-primary-green)]'
                                                         : 'border-slate-300 text-gray-700 hover:shadow-[0_4px_0_0_var(--color-primary-green)] shadow-[0_0_10px_rgba(0,0,0,0.1)]'
                                                     }`}
@@ -216,7 +216,7 @@ export default function PaymentCalculator() {
                         {/* Credit Score Toggles */}
                         <div className="sm:col-span-2">
                             <label className="block text-black text-base font-lg mb-2">Approx. Credit Score</label>
-                            <div className="flex gap-2 w-[50%]">
+                            <div className="flex w-full flex-wrap gap-2 sm:w-auto">
                                 {['Poor', 'Fair', 'Good', 'Excellent'].map((score) => (
                                     <button
                                         key={score}
@@ -229,7 +229,7 @@ export default function PaymentCalculator() {
                                             if (score === 'Fair') setApr(9.99);
                                             if (score === 'Poor') setApr(14.99);
                                         }}
-                                        className={`px-4 lg:px-6 py-2 border rounded-xl text-sm font-medium transition-colors cursor-pointer ${creditScore === score
+                                        className={`flex-1 px-3 py-2 border rounded-xl text-sm font-medium transition-colors cursor-pointer sm:flex-none sm:px-4 lg:px-6 ${creditScore === score
                                                 ? 'text-white border-none bg-brand-gradient shadow-[0_4px_0_0_var(--color-primary-green)]'
                                                 : 'bg-white text-gray-700 hover:bg-gray-50 border-slate-300 hover:shadow-[0_4px_0_0_var(--color-primary-green)]'
                                             }`}

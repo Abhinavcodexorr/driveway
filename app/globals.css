@@ -236,6 +236,34 @@
   animation: dollarCount 2.4s ease-in-out infinite;
 }
 
+/* Global responsive baseline */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: clip;
+  min-width: 0;
+}
+
+img,
+video,
+svg,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Touch-friendly controls on small screens */
+@media (max-width: 767px) {
+  .finance-slider::-webkit-slider-thumb {
+    width: 36px;
+    height: 36px;
+  }
+}
+
 /* Sitewide polish — smooth interactive motion */
 @media (prefers-reduced-motion: no-preference) {
   a,

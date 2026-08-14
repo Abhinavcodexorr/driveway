@@ -120,7 +120,7 @@ export default function FaqPage() {
       <main className="min-h-screen bg-white font-[Arial,Helvetica,sans-serif] text-black">
         <section className="px-4 pb-6 pt-10 md:px-8 md:pt-14">
           <Reveal className="mx-auto max-w-[1140px] text-center">
-            <h1 className="mb-3 text-[36px] font-bold text-[#636363] md:text-[42px]">FAQs</h1>
+            <h1 className="mb-3 text-[28px] font-bold text-[#636363] sm:text-[36px] md:text-[42px]">FAQs</h1>
             <p className="text-[14px] text-[#636363]">
               You’ve got questions? We’ve got answers.
             </p>

@@ -80,13 +80,13 @@ const SellSection = () => {
   };
 
   return (
-    <section className="dw-font w-full bg-[#00af66] px-6 py-12 lg:px-[180px] lg:pb-8 lg:pt-12">
-      <div className="mx-auto flex max-w-[1100px] flex-col items-center gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
-        <Reveal className="max-w-[480px] text-center lg:text-left" x={-24}>
-          <h2 className="mb-4 text-[32px] font-bold leading-tight text-white md:text-[40px]">
+    <section className="dw-font w-full bg-[#00af66] px-4 py-10 sm:px-6 sm:py-12 lg:px-16 lg:pb-8 lg:pt-12 xl:px-[120px]">
+      <div className="mx-auto flex max-w-[1100px] flex-col items-center gap-8 sm:gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
+        <Reveal className="w-full max-w-[480px] text-center lg:text-left" x={-24}>
+          <h2 className="mb-3 text-[clamp(1.75rem,5vw,2.5rem)] font-bold leading-tight text-white sm:mb-4">
             What’s my car worth?
           </h2>
-          <p className="text-[16px] leading-relaxed text-white/95 md:text-[18px]">
+          <p className="text-[15px] leading-relaxed text-white/95 sm:text-[16px] md:text-[18px]">
             We’ve got a tried-and-true system for getting you a guaranteed, no-haggle
             price for your vehicle. Trade in and trade up, or collect some cash for
             your ride.

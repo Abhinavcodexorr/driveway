@@ -21,34 +21,34 @@ const DrivewayHero = () => {
   return (
     <section className="dw-font relative w-full overflow-hidden bg-[#00af66]">
       {/* Desktop layout — left copy + right lifestyle image */}
-      <div className="relative mx-auto hidden max-w-[1440px] lg:grid lg:min-h-[597px] lg:grid-cols-[1fr_minmax(420px,46%)] lg:items-end">
-        <div className="relative z-10 self-center pb-10 pl-16 pr-8 pt-[72px] xl:pl-24">
+      <div className="relative mx-auto hidden max-w-[1440px] lg:grid lg:min-h-[520px] lg:grid-cols-[1fr_minmax(360px,46%)] lg:items-end xl:min-h-[597px]">
+        <div className="relative z-10 self-center pb-8 pl-8 pr-6 pt-14 xl:pb-10 xl:pl-24 xl:pr-8 xl:pt-[72px]">
           <motion.h1
             {...enter(0.05, 32)}
-            className="m-0 mb-2 max-w-[640px] text-left text-[64px] font-bold leading-[1.1] tracking-[-0.02em] text-white xl:text-[76px]"
+            className="m-0 mb-2 max-w-[640px] text-left text-[48px] font-bold leading-[1.1] tracking-[-0.02em] text-white xl:text-[64px] 2xl:text-[76px]"
           >
             Auto Done <span className="text-[#FF8D7D]">Easy</span>
           </motion.h1>
           <motion.p
             {...enter(0.18)}
-            className="mb-8 max-w-[520px] text-left text-[20px] font-normal leading-normal text-white"
+            className="mb-6 max-w-[520px] text-left text-[18px] font-normal leading-normal text-white xl:mb-8 xl:text-[20px]"
           >
             We make car financing and ownership a breeze.
           </motion.p>
 
           <motion.div
             {...enter(0.3)}
-            className="mb-5 flex flex-row flex-wrap items-center gap-4"
+            className="mb-5 flex flex-row flex-wrap items-center gap-3 xl:gap-4"
           >
             <Link
               href="/financing"
-              className="inline-flex h-[62px] items-center justify-center rounded-full bg-white px-12 text-[20px] font-semibold text-[#00af66] transition-transform duration-300 hover:scale-[1.03] hover:opacity-90"
+              className="inline-flex h-[52px] items-center justify-center rounded-full bg-white px-8 text-[17px] font-semibold text-[#00af66] transition-transform duration-300 hover:scale-[1.03] hover:opacity-90 xl:h-[62px] xl:px-12 xl:text-[20px]"
             >
               Get Pre-Approved
             </Link>
             <Link
               href="/trade-in-my-car"
-              className="inline-flex h-[62px] items-center justify-center rounded-full border-2 border-white bg-transparent px-12 text-[20px] font-semibold text-white transition-transform duration-300 hover:scale-[1.03] hover:opacity-90"
+              className="inline-flex h-[52px] items-center justify-center rounded-full border-2 border-white bg-transparent px-8 text-[17px] font-semibold text-white transition-transform duration-300 hover:scale-[1.03] hover:opacity-90 xl:h-[62px] xl:px-12 xl:text-[20px]"
             >
               Sell or Trade
             </Link>
@@ -56,7 +56,7 @@ const DrivewayHero = () => {
 
           <motion.div
             {...enter(0.42)}
-            className="flex items-center gap-2 text-left text-[18px] text-white"
+            className="flex items-center gap-2 text-left text-[16px] text-white xl:text-[18px]"
           >
             <span>or</span>
             <Link href="/payment-calculator" className="font-semibold underline underline-offset-4">
@@ -67,7 +67,7 @@ const DrivewayHero = () => {
 
         <motion.div
           {...enter(0.2, 0, 40)}
-          className="relative z-0 flex h-full min-h-[520px] items-end justify-end"
+          className="relative z-0 flex h-full min-h-[420px] items-end justify-end xl:min-h-[520px]"
         >
           <Image
             src={HERO_IMAGES.desktop}
@@ -80,28 +80,34 @@ const DrivewayHero = () => {
         </motion.div>
       </div>
 
-      {/* Mobile layout — centered copy + image below */}
-      <div className="flex flex-col items-center px-6 pt-10 text-center lg:hidden">
+      {/* Mobile / tablet layout */}
+      <div className="flex flex-col items-center px-4 pb-0 pt-8 text-center sm:px-6 sm:pt-10 lg:hidden">
         <motion.h1
           {...enter(0.05, 28)}
-          className="m-0 mb-3 text-[41px] font-bold leading-[1.1] tracking-[-0.02em] text-white"
+          className="m-0 mb-3 text-[clamp(1.85rem,7vw,2.55rem)] font-bold leading-[1.1] tracking-[-0.02em] text-white"
         >
           Welcome to Auto Done <span className="text-[#FF8D7D]">Easy</span>
         </motion.h1>
-        <motion.p {...enter(0.16)} className="mb-8 text-[18px] font-normal text-white">
+        <motion.p
+          {...enter(0.16)}
+          className="mb-6 max-w-[36rem] text-[16px] font-normal text-white sm:mb-8 sm:text-[18px]"
+        >
           We make car financing and ownership a breeze.
         </motion.p>
 
-        <motion.div {...enter(0.28)} className="mb-4 flex w-full max-w-[400px] flex-col gap-3">
+        <motion.div
+          {...enter(0.28)}
+          className="mb-4 flex w-full max-w-[400px] flex-col gap-3"
+        >
           <Link
             href="/financing"
-            className="inline-flex h-[59px] w-full items-center justify-center rounded-full bg-white px-12 text-[18px] font-semibold text-[#00af66] transition-transform duration-300 active:scale-[0.98]"
+            className="inline-flex h-[52px] w-full items-center justify-center whitespace-nowrap rounded-full bg-white px-6 text-[16px] font-semibold text-[#00af66] transition-transform duration-300 active:scale-[0.98] sm:h-[56px] sm:text-[17px]"
           >
             Get Pre-Approved
           </Link>
           <Link
             href="/trade-in-my-car"
-            className="inline-flex h-[59px] w-full items-center justify-center rounded-full border-2 border-white bg-transparent px-12 text-[18px] font-semibold text-white transition-transform duration-300 active:scale-[0.98]"
+            className="inline-flex h-[52px] w-full items-center justify-center whitespace-nowrap rounded-full border-2 border-white bg-transparent px-6 text-[16px] font-semibold text-white transition-transform duration-300 active:scale-[0.98] sm:h-[56px] sm:text-[17px]"
           >
             Sell or Trade
           </Link>
@@ -109,7 +115,7 @@ const DrivewayHero = () => {
 
         <motion.div
           {...enter(0.4)}
-          className="mb-2 flex items-center gap-2 text-[18px] text-white"
+          className="mb-2 flex items-center gap-2 text-[16px] text-white sm:text-[18px]"
         >
           <span>or</span>
           <Link href="/payment-calculator" className="font-semibold underline underline-offset-4">

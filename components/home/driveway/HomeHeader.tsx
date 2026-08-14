@@ -42,20 +42,19 @@ const HomeHeader = () => {
     closeTimer.current = setTimeout(() => setActiveNav(null), 160);
   };
 
+  const navLinkClass =
+    "relative flex h-[64px] xl:h-[77px] items-center px-2 xl:px-3 text-[15px] xl:text-[18px] font-semibold leading-none whitespace-nowrap text-[#353535] transition-colors hover:text-[#00af66]";
+
   return (
     <header className="dw-font sticky top-0 z-50 w-full bg-white shadow-[0_1px_0_rgba(0,0,0,0.08)]">
-      {/* Desktop */}
-      <div className="relative mx-auto hidden h-[77px] max-w-[1440px] items-center px-6 lg:flex xl:px-10">
-        <Link
-          href="/"
-          aria-label="Carma Credit home"
-          className="mr-8 shrink-0"
-        >
+      {/* Desktop / tablet landscape */}
+      <div className="relative mx-auto hidden h-[64px] max-w-[1440px] items-center px-4 lg:flex xl:h-[77px] xl:px-10">
+        <Link href="/" aria-label="Carma Credit home" className="mr-4 shrink-0 xl:mr-8">
           <Logo />
         </Link>
 
         <nav
-          className="flex min-w-0 flex-1 items-center gap-1 xl:gap-2"
+          className="flex min-w-0 flex-1 items-center justify-start gap-0.5 xl:gap-2"
           onMouseLeave={scheduleClose}
         >
           {DW_NAV.map((item) => {
@@ -64,11 +63,7 @@ const HomeHeader = () => {
 
             if (!hasMenu) {
               return (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="relative flex h-[77px] items-center px-3 text-[18px] font-semibold leading-none text-[#353535] transition-colors hover:text-[#00af66]"
-                >
+                <Link key={item.label} href={item.href} className={navLinkClass}>
                   {item.label}
                 </Link>
               );
@@ -85,19 +80,19 @@ const HomeHeader = () => {
                   aria-expanded={isOpen}
                   aria-haspopup="true"
                   onClick={() => setActiveNav(isOpen ? null : item.label)}
-                  className={`relative flex h-[77px] cursor-pointer items-center gap-1.5 px-3 text-[18px] font-semibold leading-none transition-colors ${
-                    isOpen ? "text-[#00af66]" : "text-[#353535] hover:text-[#00af66]"
+                  className={`${navLinkClass} cursor-pointer gap-1 ${
+                    isOpen ? "text-[#00af66]" : ""
                   }`}
                 >
                   {item.label}
                   <ChevronDown
-                    className={`h-4 w-4 transition-transform duration-200 ${
+                    className={`h-3.5 w-3.5 xl:h-4 xl:w-4 transition-transform duration-200 ${
                       isOpen ? "rotate-180" : ""
                     }`}
                     strokeWidth={2}
                   />
                   {isOpen && (
-                    <span className="absolute bottom-[18px] left-3 right-3 h-[3px] rounded-full bg-[#00af66]" />
+                    <span className="absolute bottom-[14px] left-2 right-2 h-[3px] rounded-full bg-[#00af66] xl:bottom-[18px] xl:left-3 xl:right-3" />
                   )}
                 </button>
               </div>
@@ -105,78 +100,81 @@ const HomeHeader = () => {
           })}
         </nav>
 
-        <div className="ml-auto flex shrink-0 items-center">
+        <div className="ml-2 flex shrink-0 items-center xl:ml-4">
           <a
             href={PHONE_HREF}
-            className="flex items-center gap-2 text-[16px] font-semibold text-[#00af66] transition-opacity hover:opacity-80 xl:text-[17px]"
+            className="flex items-center gap-1.5 text-[14px] font-semibold text-[#00af66] transition-opacity hover:opacity-80 xl:gap-2 xl:text-[17px]"
           >
-            <Phone className="h-[20px] w-[20px]" strokeWidth={1.8} />
-            {PHONE_DISPLAY}
+            <Phone className="h-[18px] w-[18px] xl:h-[20px] xl:w-[20px]" strokeWidth={1.8} />
+            <span className="hidden xl:inline">{PHONE_DISPLAY}</span>
+            <span className="xl:hidden">Call</span>
           </a>
         </div>
       </div>
 
-      {/* Desktop dropdown panel */}
+      {/* Desktop dropdown */}
       <AnimatePresence>
         {activeNav &&
           (DW_NAV.find((n) => n.label === activeNav)?.items.length ?? 0) > 0 && (
-          <motion.div
-            key={activeNav}
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -6 }}
-            transition={{ duration: 0.22, ease: easeOut }}
-            className="absolute left-0 right-0 top-[77px] z-40 hidden border-t border-[#E6E6E6] bg-[#F4F6F7] shadow-[0_8px_24px_rgba(0,0,0,0.08)] lg:block"
-            onMouseEnter={() => activeNav && openMenu(activeNav)}
-            onMouseLeave={scheduleClose}
-          >
-            <div className="mx-auto flex max-w-[1440px] gap-10 px-6 py-8 xl:px-10">
-              <div>
-                <p className="mb-4 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#8A8A8A]">
-                  {activeNav}
-                </p>
-                <ul className="m-0 flex list-none flex-col gap-3 p-0">
-                  {DW_NAV.find((n) => n.label === activeNav)?.items.map((sub, i) => (
-                    <motion.li
-                      key={sub.label}
-                      initial={{ opacity: 0, x: -8 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.25, delay: 0.04 * i, ease: easeOut }}
-                    >
-                      <Link
-                        href={sub.href}
-                        onClick={() => setActiveNav(null)}
-                        className="text-[18px] font-semibold text-[#00af66] no-underline transition-opacity hover:underline hover:opacity-80"
+            <motion.div
+              key={activeNav}
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              transition={{ duration: 0.22, ease: easeOut }}
+              className="absolute left-0 right-0 top-[64px] z-40 hidden border-t border-[#E6E6E6] bg-[#F4F6F7] shadow-[0_8px_24px_rgba(0,0,0,0.08)] lg:block xl:top-[77px]"
+              onMouseEnter={() => activeNav && openMenu(activeNav)}
+              onMouseLeave={scheduleClose}
+            >
+              <div className="mx-auto flex max-w-[1440px] gap-10 px-4 py-6 xl:px-10 xl:py-8">
+                <div>
+                  <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#8A8A8A] xl:mb-4">
+                    {activeNav}
+                  </p>
+                  <ul className="m-0 flex list-none flex-col gap-3 p-0">
+                    {DW_NAV.find((n) => n.label === activeNav)?.items.map((sub, i) => (
+                      <motion.li
+                        key={sub.label}
+                        initial={{ opacity: 0, x: -8 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.25, delay: 0.04 * i, ease: easeOut }}
                       >
-                        {sub.label}
-                      </Link>
-                    </motion.li>
-                  ))}
-                </ul>
+                        <Link
+                          href={sub.href}
+                          onClick={() => setActiveNav(null)}
+                          className="text-[16px] font-semibold text-[#00af66] no-underline transition-opacity hover:underline hover:opacity-80 xl:text-[18px]"
+                        >
+                          {sub.label}
+                        </Link>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            </div>
-          </motion.div>
-        )}
+            </motion.div>
+          )}
       </AnimatePresence>
 
-      {/* Mobile */}
-      <div className="flex h-[57px] items-center justify-between px-4 lg:hidden">
+      {/* Mobile / tablet */}
+      <div className="flex h-[56px] items-center justify-between gap-3 px-3 sm:px-4 lg:hidden">
         <button
           type="button"
           onClick={() => setMobileOpen((v) => !v)}
-          className="cursor-pointer text-[#00af66]"
+          className="flex h-10 w-10 cursor-pointer items-center justify-center text-[#00af66]"
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
         >
           {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
 
-        <Link href="/" aria-label="Carma Credit home" className="scale-[0.85]">
-          <Logo />
+        <Link href="/" aria-label="Carma Credit home" className="min-w-0 flex-1 flex justify-center">
+          <span className="max-w-[160px] sm:max-w-[200px]">
+            <Logo />
+          </span>
         </Link>
 
         <a
           href={PHONE_HREF}
-          className="text-[#00af66]"
+          className="flex h-10 w-10 items-center justify-center text-[#00af66]"
           aria-label={`Call ${PHONE_DISPLAY}`}
         >
           <Phone className="h-6 w-6" strokeWidth={1.6} />
@@ -184,7 +182,7 @@ const HomeHeader = () => {
       </div>
 
       {mobileOpen && (
-        <nav className="absolute left-0 top-full z-50 max-h-[calc(100vh-57px)] w-full overflow-y-auto border-b border-gray-100 bg-white px-4 py-2 shadow-lg lg:hidden">
+        <nav className="absolute left-0 top-full z-50 max-h-[calc(100dvh-56px)] w-full overflow-y-auto overscroll-contain border-b border-gray-100 bg-white px-4 py-2 shadow-lg lg:hidden">
           {DW_NAV.map((item) => {
             const hasMenu = item.items.length > 0;
             const expanded = mobileExpanded === item.label;
@@ -195,7 +193,7 @@ const HomeHeader = () => {
                   <Link
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
-                    className="block py-4 text-[17px] font-semibold text-[#353535]"
+                    className="block py-3.5 text-[16px] font-semibold text-[#353535] sm:py-4 sm:text-[17px]"
                   >
                     {item.label}
                   </Link>
@@ -208,7 +206,7 @@ const HomeHeader = () => {
                 <button
                   type="button"
                   onClick={() => setMobileExpanded(expanded ? null : item.label)}
-                  className="flex w-full cursor-pointer items-center justify-between py-4 text-left text-[17px] font-semibold text-[#353535]"
+                  className="flex w-full cursor-pointer items-center justify-between py-3.5 text-left text-[16px] font-semibold text-[#353535] sm:py-4 sm:text-[17px]"
                 >
                   {item.label}
                   <ChevronDown
@@ -234,7 +232,7 @@ const HomeHeader = () => {
           })}
           <a
             href={PHONE_HREF}
-            className="my-4 flex h-[44px] w-full items-center justify-center gap-2 rounded-full border border-[#00af66] text-[15px] font-semibold text-[#00af66]"
+            className="my-4 flex h-11 w-full items-center justify-center gap-2 rounded-full border border-[#00af66] text-[15px] font-semibold text-[#00af66]"
           >
             <Phone className="h-4 w-4" strokeWidth={2} />
             {PHONE_DISPLAY}

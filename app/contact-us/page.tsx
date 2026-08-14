@@ -21,7 +21,7 @@ export default function ContactUs() {
 
                     {/* Left Side */}
                     <div className="space-y-8">
-                        <h1 className="text-2xl sm:text-[42px] font-bold lg:mt-28 lg:max-w-xl">
+                        <h1 className="text-2xl font-bold sm:text-3xl md:text-[42px] lg:mt-28 lg:max-w-xl">
                             Got a question? We’re here to help.
                         </h1>
                         <div className="space-y-7 lg:space-y-4 lg:w-[480px]">
@@ -74,9 +74,9 @@ export default function ContactUs() {
                     </div>
 
                     {/* Right Side: Form Container */}
-                    <div className=" bg-white px-4 pt-8 pb-18 sm:p-6 rounded-2xl shadow-[0_2px_18px_rgba(0,0,0,0.1)] border border-gray-100">
-                        <h2 className="text-2xl sm:text-3xl font-bold mb-6">Let’s Get You on the Road</h2>
-                        <div className="h-[600px]">
+                    <div className="rounded-2xl border border-gray-100 bg-white px-4 pb-8 pt-8 shadow-[0_2px_18px_rgba(0,0,0,0.1)] sm:p-6">
+                        <h2 className="mb-6 text-2xl font-bold sm:text-3xl">Let’s Get You on the Road</h2>
+                        <div className="min-h-[420px] h-[min(70vh,600px)] sm:h-[600px]">
                             <iframe
                                 src={`${SITE_CONFIG?.urls.contactUsBaseUrl}`}
                                 className="w-full rounded-2xl h-full"

@@ -6,18 +6,18 @@ import { ChevronRight } from "lucide-react";
 import { Reveal, Stagger, StaggerItem } from "./motion";
 
 const STEPS = [
-  "Apply for financing online using our simple application.",
-  "We’ll match you with a local dealership who will show you vehicle options you are pre-approved for.",
-  "Pick the car you want and drive away! No more wasted time. No more rejection.",
+  "Apply for financing online in minutes with our simple application.",
+  "We’ll review your credit and find options that fit your budget and situation.",
+  "Get pre-approved and move forward with confidence — no wasted time, no rejection surprises.",
 ] as const;
 
 const ShopWithConfidence = () => {
   return (
-    <section className="dw-font w-full bg-white px-6 py-12 sm:py-16 lg:py-[100px]">
-      <div className="mx-auto flex max-w-[1100px] flex-col items-center gap-10 sm:flex-row sm:items-center sm:gap-12 lg:gap-16">
+    <section className="dw-font w-full bg-white px-4 py-10 sm:px-6 sm:py-16 lg:py-[100px]">
+      <div className="mx-auto flex max-w-[1100px] flex-col items-center gap-8 sm:flex-row sm:items-center sm:gap-12 lg:gap-16">
         <Reveal x={-20} className="order-1 w-full sm:w-1/2">
-          <h2 className="mb-8 max-w-[495px] text-[28px] font-semibold leading-[1.2] tracking-[-0.01em] text-[#4a4a4a] sm:text-[32px] lg:mb-10 lg:text-[36px] lg:leading-[44px]">
-            Shop For a Car With Confidence
+          <h2 className="mb-6 max-w-[495px] text-[clamp(1.5rem,4vw,2.25rem)] font-semibold leading-[1.2] tracking-[-0.01em] text-[#4a4a4a] sm:mb-8 lg:mb-10 lg:leading-[44px]">
+            Get Approved With Confidence
           </h2>
 
           <Stagger className="flex flex-col gap-5">
@@ -46,7 +46,7 @@ const ShopWithConfidence = () => {
         <Reveal delay={0.12} x={20} scale className="order-2 w-full sm:w-1/2">
           <Image
             src="/canadadrives/shop-with-confidence.webp"
-            alt="Shop with confidence"
+            alt="Get approved with confidence at Carma Credit"
             width={1060}
             height={824}
             className="mx-auto h-auto w-full max-w-[530px] object-contain"
