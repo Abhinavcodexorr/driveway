@@ -142,21 +142,24 @@ export const getConstants = (appConfig: AppConfig) => {
     INVENTORY_SLUG: appConfig.site.inventory_slug,
 
     SITE_CONFIG: {
-      urls: {
-        financeBaseUrl: `${appConfig.site.saas_api}/api/templates/render/16`,
-        financeRenderApiUrl: `${appConfig.site.saas_api}/api/templates/render/15`,
-        assetBaseUrl: appConfig.site.cdn_api,
-        googleMapsUrl: safeD.address_map_url_1 || safeD.address_1_bar,
-        tradeFormByVehicle: `${appConfig.site.saas_api}/api/templates/render/17`,
-        tradeFormByVin: `${appConfig.site.saas_api}/api/templates/render/18`,
-        bookAppointment:`${appConfig.site.saas_api}/api/templates/render/23`,
-        contactUsBaseUrl:`${appConfig.site.saas_api}/api/templates/render/22`,
-        vehiclePageContactUsBaseUrl:`${appConfig.site.saas_api}/api/templates/render/7`,
-        tradeInMyCarVehicle:`${appConfig.site.saas_api}/api/templates/render/20?`,
-        thankYouTradeIn:`${appConfig.site.saas_api}/api/templates/render/25`,
-        thankYouFinance:`${appConfig.site.saas_api}/api/templates/render/19`,
-        scheduleAnAppointmentWithExpert:`${appConfig.site.saas_api}/api/templates/render/24`
-      },
+      urls: (() => {
+        const saasBase = String(appConfig.site.saas_api || "").replace(/\/+$/, "");
+        return {
+          financeBaseUrl: `${saasBase}/api/templates/render/16`,
+          financeRenderApiUrl: `${saasBase}/api/templates/render/15`,
+          assetBaseUrl: appConfig.site.cdn_api,
+          googleMapsUrl: safeD.address_map_url_1 || safeD.address_1_bar,
+          tradeFormByVehicle: `${saasBase}/api/templates/render/17`,
+          tradeFormByVin: `${saasBase}/api/templates/render/18`,
+          bookAppointment: `${saasBase}/api/templates/render/23`,
+          contactUsBaseUrl: `${saasBase}/api/templates/render/22`,
+          vehiclePageContactUsBaseUrl: `${saasBase}/api/templates/render/7`,
+          tradeInMyCarVehicle: `${saasBase}/api/templates/render/20?`,
+          thankYouTradeIn: `${saasBase}/api/templates/render/25`,
+          thankYouFinance: `${saasBase}/api/templates/render/19`,
+          scheduleAnAppointmentWithExpert: `${saasBase}/api/templates/render/24`,
+        };
+      })(),
       api: {
         saasApi: appConfig.site.saas_api,
         cdnApi: appConfig.site.cdn_api,
