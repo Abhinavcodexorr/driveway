@@ -94,7 +94,7 @@ export default function WishlistDrawer({ isOpen, onClose }: WishlistDrawerProps)
                   alt="No favorites"
                   width={240}
                   height={135}
-                  className="object-contain"
+                  className="object-contain h-auto w-auto max-w-full"
                 />
                 {/* Red heart icon overlay */}
                 <div className="absolute top-3 right-3 text-brand-green">
