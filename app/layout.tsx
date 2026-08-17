@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { Providers } from "./providers";
 import { ScriptLoader } from "@/components/ScriptLoader";
@@ -75,6 +76,7 @@ export default async function RootLayout({
       </head>
       <body className="min-h-full flex flex-col">
         <Providers config={appConfig}>{children}</Providers>
+        <SpeedInsights />
       </body>
     </html>
   );
