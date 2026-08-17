@@ -10,7 +10,6 @@
 
 "use client";
 
-import { useState } from "react";
 import { FileText, Mail, CalendarCheck, CarFrontIcon } from "lucide-react";
 import Image from "next/image";
 
@@ -18,14 +17,10 @@ import Image from "next/image";
 import { Header, Footer } from "@/components/layout";
 
 // Shared components
-import { GetInTouch } from "@/components/common";
+import { GetInTouch, TradeQuoteForm } from "@/components/common";
 import FaqAccordion from "@/components/common/FaqAccordion";
 
-// Assets
-import { getConstants } from "@/constants";
-import { useAppConfig } from "@/app/providers";
-
-const SELL_HERO_IMAGE = "/sell-my-car-carma-offer-hd.png";
+const SELL_HERO_IMAGE = "/sell-my-car-carma-offer-blue.png";
 
 /* Static Data */
 const steps = [
@@ -88,21 +83,6 @@ const faqs = [
 
 /* Page Component */
 const TradeIn = () => {
-  const appConfig = useAppConfig();
-  const { SITE_CONFIG } = getConstants(appConfig);
-  const [mode, setMode] = useState<"vehicle" | "vin">("vehicle");
-
-  const TRADE_FORMS = {
-    vehicle: {
-      url: SITE_CONFIG.urls.tradeFormByVehicle,
-      minHeight: 447,
-    },
-    vin: {
-      url: SITE_CONFIG.urls.tradeFormByVin,
-      minHeight: 327,
-    },
-  };
-
   return (
     <div className="min-h-screen overflow-x-clip bg-background">
       <Header />
@@ -170,54 +150,7 @@ const TradeIn = () => {
           </div>
 
           {/* Quote Form */}
-          <div className="z-10 w-full max-w-[440px] rounded-2xl border border-border-lightGray/80 bg-white p-5 pb-8 shadow-xl md:p-8 md:pb-10 lg:mr-7 lg:justify-self-end">
-            <div className="mb-6 flex cursor-pointer border-b border-border-standard">
-              <button
-                type="button"
-                onClick={() => setMode("vehicle")}
-                className={`relative flex-1 cursor-pointer pb-3 text-center text-[16px] font-bold transition-all md:text-[18px] ${
-                  mode === "vehicle" ? "text-gray-900" : "text-gray-500"
-                }`}
-              >
-                By Vehicle
-                {mode === "vehicle" && (
-                  <div className="absolute bottom-0 left-0 right-0 h-[2.5px] rounded-full bg-brand2" />
-                )}
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setMode("vin")}
-                className={`relative flex-1 cursor-pointer pb-3 text-center text-[16px] font-bold transition-all md:text-[18px] ${
-                  mode === "vin" ? "text-gray-900" : "text-gray-500"
-                }`}
-              >
-                VIN
-                {mode === "vin" && (
-                  <div className="absolute bottom-0 left-0 right-0 h-[2.5px] rounded-full bg-primary-green2" />
-                )}
-              </button>
-            </div>
-
-            <div
-              className="w-full overflow-hidden"
-              style={{ height: TRADE_FORMS[mode].minHeight }}
-            >
-              <iframe
-                key={mode}
-                src={TRADE_FORMS[mode].url}
-                title={mode === "vehicle" ? "Trade Form By Vehicle" : "Trade Form By VIN"}
-                width="100%"
-                height={TRADE_FORMS[mode].minHeight}
-                scrolling="no"
-                className="block w-full border-0"
-                style={{
-                  height: TRADE_FORMS[mode].minHeight,
-                  overflow: "hidden",
-                }}
-              />
-            </div>
-          </div>
+          <TradeQuoteForm className="z-10 lg:mr-7 lg:justify-self-end" />
         </div>
 
         {/* Desktop wave graphic */}

@@ -19,7 +19,7 @@ const DrivewayHero = () => {
         };
 
   return (
-    <section className="dw-font relative w-full overflow-hidden bg-[#00af66]">
+    <section className="dw-font relative w-full overflow-hidden bg-[#007aff]">
       {/* Desktop */}
       <div className="relative mx-auto hidden max-w-[1440px] lg:grid lg:min-h-[420px] lg:grid-cols-[1fr_minmax(460px,1.15fr)] lg:items-end xl:min-h-[460px]">
         <div className="relative z-10 self-center py-8 pl-8 pr-6 xl:py-10 xl:pl-24 xl:pr-8">
@@ -42,7 +42,7 @@ const DrivewayHero = () => {
           >
             <Link
               href="/financing"
-              className="inline-flex h-[48px] items-center justify-center rounded-full border-2 border-white bg-white px-8 text-[16px] font-semibold text-[#00af66] transition-transform duration-300 hover:scale-[1.03] hover:opacity-90 xl:h-[54px] xl:px-10 xl:text-[18px]"
+              className="inline-flex h-[48px] items-center justify-center rounded-full border-2 border-white bg-white px-8 text-[16px] font-semibold text-[#007aff] transition-transform duration-300 hover:scale-[1.03] hover:opacity-90 xl:h-[54px] xl:px-10 xl:text-[18px]"
             >
               Get Pre-Approved
             </Link>
@@ -92,7 +92,7 @@ const DrivewayHero = () => {
         >
           <Link
             href="/financing"
-            className="inline-flex h-[48px] w-full items-center justify-center whitespace-nowrap rounded-full border-2 border-white bg-white px-6 text-[16px] font-semibold text-[#00af66] transition-transform duration-300 active:scale-[0.98] sm:h-[52px] sm:text-[17px]"
+            className="inline-flex h-[48px] w-full items-center justify-center whitespace-nowrap rounded-full border-2 border-white bg-white px-6 text-[16px] font-semibold text-[#007aff] transition-transform duration-300 active:scale-[0.98] sm:h-[52px] sm:text-[17px]"
           >
             Get Pre-Approved
           </Link>

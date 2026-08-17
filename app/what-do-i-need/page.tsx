@@ -6,7 +6,7 @@ import { Header, Footer } from "@/components/layout";
 import { Reveal } from "@/components/common/motion";
 
 const CTA =
-  "inline-flex items-center justify-center rounded-full border-2 border-[#00af66] bg-[#00af66] px-5 py-2.5 text-[16px] font-normal uppercase tracking-wide text-white transition-all duration-300 hover:scale-[1.03] hover:opacity-90";
+  "inline-flex items-center justify-center rounded-full border-2 border-[#007aff] bg-[#007aff] px-5 py-2.5 text-[16px] font-normal uppercase tracking-wide text-white transition-all duration-300 hover:scale-[1.03] hover:opacity-90";
 
 const STEPS = [
   {

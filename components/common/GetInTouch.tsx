@@ -58,7 +58,7 @@ const GetInTouch = () => {
 ];
 
   return (
-    <section className="w-full text-white bg-neutral-charcoal">
+    <section className="w-full text-white bg-[rgb(8,32,72)]">
       <div className="mx-auto max-w-[1600px] px-4 py-10 md:px-10 md:py-12">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10">
 
@@ -68,7 +68,7 @@ const GetInTouch = () => {
               Get in touch with us, we're here to help
             </h2>
 
-            <div className="mt-8 rounded-xl bg-transparent p-[10px] border border-border-darkCharcoal">
+            <div className="mt-8 rounded-xl bg-transparent p-[10px]">
               {/* Sales / Service tab switcher */}
               <div className="flex gap-2">
                 {(["Sales", "Service"] as const).map((t) => (
@@ -102,7 +102,7 @@ const GetInTouch = () => {
               <a
                 key={item.title}
                 href={item.href}
-                className={`${item.order} rounded-xl bg-transparent p-6 flex items-center justify-between hover:bg-white/10 transition-colors border border-border-darkCharcoal`}
+                className={`${item.order} flex items-center justify-between rounded-xl bg-transparent p-6 transition-colors hover:bg-white/10`}
               >
                 <div className="flex items-center justify-between w-full flex-wrap">
                   <div>

@@ -26,7 +26,7 @@ const ResourcePage = ({ title, eyebrow, intro, children }: ResourcePageProps) =>
     <>
       <Header />
       <main className="dw-font min-h-screen bg-white">
-        <section className="bg-[#00af66] px-4 py-12 text-white md:px-8 md:py-16">
+        <section className="bg-[#007aff] px-4 py-12 text-white md:px-8 md:py-16">
           <div className="mx-auto max-w-[960px]">
             {eyebrow && (
               <p className="mb-2 text-[12px] font-semibold uppercase tracking-[0.08em] text-white/80">
@@ -52,8 +52,8 @@ const ResourcePage = ({ title, eyebrow, intro, children }: ResourcePageProps) =>
                   href={link.href}
                   className={`shrink-0 rounded-full px-4 py-2 text-[14px] font-semibold transition-colors ${
                     active
-                      ? "bg-[#00af66] text-white"
-                      : "bg-white text-[#353535] hover:text-[#00af66]"
+                      ? "bg-[#007aff] text-white"
+                      : "bg-white text-[#353535] hover:text-[#007aff]"
                   }`}
                 >
                   {link.label}
@@ -68,7 +68,7 @@ const ResourcePage = ({ title, eyebrow, intro, children }: ResourcePageProps) =>
           <div className="mx-auto mt-12 max-w-[960px]">
             <Link
               href="/financing"
-              className="inline-flex h-12 items-center justify-center rounded-full border-2 border-[#00af66] bg-[#00af66] px-8 text-[16px] font-semibold text-white transition-opacity hover:opacity-90"
+              className="inline-flex h-12 items-center justify-center rounded-full border-2 border-[#007aff] bg-[#007aff] px-8 text-[16px] font-semibold text-white transition-opacity hover:opacity-90"
             >
               Get Pre-Approved
             </Link>

@@ -1,10 +1,6 @@
 /* =========================
    Reviews Component (Home)
-   Customer review carousel on the homepage.
-   - Responsive: shows 1 / 2 / 3 slides based on viewport
-   - Auto-advances every 4 seconds
-   - Manual prev/next navigation buttons
-   - Displays Google Review branding on each card
+   Compact customer review carousel.
 ========================= */
 
 "use client";
@@ -13,49 +9,57 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import Image from "next/image";
 
-
 import google from "@/assets/brand/google.png";
 import googleReview from "@/assets/brand/Goolge-Review-Logo.jpg";
 import { getConstants } from "@/constants";
 import { useAppConfig } from "@/app/providers";
+import { Reveal } from "@/components/common";
 
 type Review = {
-  initial: string;
   name: string;
   text: string;
+  image: string;
 };
 
 const reviews: Review[] = [
   {
-    initial: "J",
     name: "It's Jerry",
-    text: "So, I recently bought a 2021 Jetta High line from Dealership, and I can confidently say the experience was nothing short of amazing—thanks to Sam! From the very beginning, Sam went above and beyond to make sure everything went smoothly.",
+    image: "https://randomuser.me/api/portraits/men/32.jpg",
+    text: "Bought a 2021 Jetta Highline from Cardora and the experience was amazing—thanks to Sam. He stepped in personally and resolved everything with professionalism and genuine care.",
   },
   {
-    initial: "S",
     name: "Shimul Rajput",
-    text: "Just bought my first car and Sam was amazing! He was so supportive, quick to respond, and made the whole process feel easy and stress-free. Couldn't have asked for a better experience! Highly recommended! ✨",
+    image: "https://randomuser.me/api/portraits/women/65.jpg",
+    text: "Just bought my first car and Sam was amazing! Supportive, quick to respond, and made the whole process easy and stress-free. Highly recommended!",
   },
   {
-    initial: "K",
     name: "Katie McWade",
-    text: "My husband and I recently went through Sam for the purchase of our new family vehicle. He worked very hard for us for the best rate possible and turned what had been a stressful and frustrating process, into something absolutely seamless and enjoyable.",
+    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    text: "Sam worked hard to get us the best rate and turned a stressful process into something seamless. We are incredibly happy with our newly purchased vehicle.",
   },
   {
-    initial: "A",
-    name: "Alex Brown",
-    text: "Amazing experience dealing with Sam and his team at Gedi Route (GR Cars). I highly recommend them for any vehicle purchase. I will definitely be using them for my next vehicle upgrade.",
+    name: "Gary Williams",
+    image: "https://randomuser.me/api/portraits/men/75.jpg",
+    text: "Amazing experience dealing with Sam and his team. I highly recommend them for any vehicle purchase and will definitely be back for my next upgrade.",
+  },
+  {
+    name: "Inderjeet",
+    image: "https://randomuser.me/api/portraits/men/11.jpg",
+    text: "Sam was knowledgeable, patient, and helpful throughout. He even went out of his way to find the perfect car. Stress-free and enjoyable from start to finish.",
   },
 ];
+
+const GOOGLE_REVIEWS_URL =
+  "https://www.google.com/search?q=cardora#lrd=0x882b3f8957c9a033:0x9a07057d8dafccb0,1";
 
 const Reviews = () => {
   const appConfig = useAppConfig();
   const { SITE_CONFIG } = getConstants(appConfig);
   const scrollRef = useRef<HTMLDivElement>(null);
   const isScrolling = useRef(false);
+  const paused = useRef(false);
   const [slidesToShow, setSlidesToShow] = useState(3);
 
-  // Triple the array to provide buffer segments for infinite scrolling loops
   const duplicatedReviews = [...reviews, ...reviews, ...reviews];
 
   useEffect(() => {
@@ -80,13 +84,10 @@ const Reviews = () => {
 
     const container = scrollRef.current;
     const scrollAmount = getScrollAmount();
-    
     isScrolling.current = true;
 
-    // Use absolute coordinates instead of scrollBy to prevent multi-click calculation stacking
-    const targetScrollLeft = dir === "left" 
-      ? container.scrollLeft - scrollAmount 
-      : container.scrollLeft + scrollAmount;
+    const targetScrollLeft =
+      dir === "left" ? container.scrollLeft - scrollAmount : container.scrollLeft + scrollAmount;
 
     container.scrollTo({
       left: targetScrollLeft,
@@ -100,8 +101,6 @@ const Reviews = () => {
 
     const scrollAmount = getScrollAmount();
     const singleSetWidth = scrollAmount * reviews.length;
-    
-    // Initial jump to the middle track setup
     container.scrollLeft = singleSetWidth;
 
     const handleScrollEnd = () => {
@@ -109,7 +108,6 @@ const Reviews = () => {
       const currentScrollAmount = getScrollAmount();
       const currentSetWidth = currentScrollAmount * reviews.length;
 
-      // Infinite loop boundary correction mechanics
       if (container.scrollLeft >= currentSetWidth * 2 - 10) {
         container.style.scrollBehavior = "auto";
         container.scrollLeft = container.scrollLeft - currentSetWidth;
@@ -119,8 +117,7 @@ const Reviews = () => {
         container.scrollLeft = container.scrollLeft + currentSetWidth;
         container.style.scrollBehavior = "smooth";
       }
-      
-      // Unblock click interaction
+
       isScrolling.current = false;
     };
 
@@ -128,78 +125,98 @@ const Reviews = () => {
     return () => container.removeEventListener("scrollend", handleScrollEnd);
   }, [slidesToShow]);
 
-  return (
-    <section className="w-full overflow-hidden mt-14 bg-review-blue">
-      <div className="mx-auto max-w-[1280px] px-4 md:px-6 pt-12 lg:pt-16 pb-16">
-        <h2 className="text-[26px] md:text-[44px] font-bold text-foreground tracking-tight leading-none text-center mb-5">
-          People love buying with {SITE_CONFIG?.dealership.name}
-        </h2>
+  useEffect(() => {
+    const id = setInterval(() => {
+      if (!paused.current) scroll("right");
+    }, 6000);
+    return () => clearInterval(id);
+  }, [slidesToShow]);
 
-        <div className="flex justify-center items-center w-full sm:px-10 mb-7">
+  const arrowClass =
+    "flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full border border-[#d0d0d0] bg-white text-[#007aff] shadow-sm transition-colors hover:border-[#007aff] hover:bg-[#007aff] hover:text-white";
+
+  return (
+    <section
+      id="reviews"
+      className="dw-font w-full bg-[#F3F8F5] py-10 md:py-14"
+      onMouseEnter={() => {
+        paused.current = true;
+      }}
+      onMouseLeave={() => {
+        paused.current = false;
+      }}
+    >
+      <div className="mx-auto max-w-[1200px] px-4 md:px-6">
+        <Reveal className="mx-auto mb-7 max-w-[720px] text-center md:mb-8">
+          <h2 className="text-[clamp(1.75rem,5vw,2.75rem)] font-bold leading-[1.2] tracking-[-0.6px] text-[#121212]">
+            People love {SITE_CONFIG?.dealership.name}
+          </h2>
+
           <a
-            href="https://www.google.com/search?q=cardora&oq=cardora&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg8MgYIAhBFGDwyDwgDEC4YChivARjHARiABDILCAQQABgKGAsYgAQyCwgFEAAYChgLGIAEMgsIBhAAGAoYCxiABDIGCAcQRRg80gEIMjgxMGowajeoAgiwAgHxBRTGNHBoyF19&sourceid=chrome&ie=UTF-8&zx=1764666449357&no_sw_cr=1#lrd=0x882b3f8957c9a033:0x9a07057d8dafccb0,1,,,,"
+            href={GOOGLE_REVIEWS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[16px] font-semibold text-foreground w-full md:w-auto"
+            className="mt-5 inline-flex items-center justify-center gap-2.5 rounded-full border border-black/8 bg-white px-4 py-2 shadow-[0_4px_18px_rgba(0,0,0,0.06)] transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,122,255,0.16)]"
           >
-            <div className="flex items-center justify-center gap-3 rounded-[40px] overflow-hidden bg-transparent shadow-none py-[10px] lg:px-4 px-6 lg:w-[500px] max-w-full flex-wrap border border-neutral-mediumGray2">
-              <Image src={google} alt="Google" className="h-[29px] w-[85px] object-contain" />
-              <div className="flex items-center gap-1">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-star text-star" />
-                ))}
-              </div>
-              <span className="text-[15px] font-medium text-foreground">5.0 (80)</span>
-              <span className="underline font-md">View all</span>
-            </div>
+            <Image src={google} alt="Google" className="h-5 w-[64px] object-contain" />
+            <span className="flex items-center gap-0.5" aria-hidden>
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} className="h-3.5 w-3.5 fill-[#F4B400] text-[#F4B400]" />
+              ))}
+            </span>
+            <span className="text-[13px] font-semibold text-[#121212]">5.0 (33)</span>
           </a>
-        </div>
+        </Reveal>
 
-        <div className="relative mt-5 lg:mt-0 px-4 md:px-10">
+        <div className="relative md:px-[52px]">
           <button
+            type="button"
             onClick={() => scroll("left")}
             aria-label="Previous review"
-            className="flex absolute left-1 md:left-4 top-1/2 -translate-y-1/2 z-10 h-10 w-10 rounded-full bg-card border border-border shadow-md items-center justify-center cursor-pointer hover:bg-accent transition-colors"
+            className={`${arrowClass} absolute left-0 top-1/2 z-10 hidden -translate-y-1/2 md:flex`}
           >
-            <ChevronLeft className="h-5 w-5 text-foreground" />
+            <ChevronLeft className="h-5 w-5" />
           </button>
 
-          {/* Changed overflow-x-hidden to overflow-x-auto to make touch gestures work natively on mobile */}
           <div
             ref={scrollRef}
-            className="overflow-x-auto scrollbar-none w-full snap-x mandatory"
+            className="w-full snap-x snap-mandatory overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
-            <div className="flex w-full py-2">
+            <div className="flex w-full items-stretch py-1">
               {duplicatedReviews.map((r, index) => (
                 <div
                   key={`${r.name}-${index}`}
                   data-slide
-                  className={`snap-center shrink-0 lg:flex-shrink-0 px-2 min-h-[470px] lg:min-h-[450px] md:px-3 ${
+                  className={`snap-center shrink-0 px-2 ${
                     slidesToShow === 1 ? "w-full" : slidesToShow === 2 ? "w-1/2" : "w-1/3"
                   }`}
                 >
-                  <article className="rounded-2xl bg-card p-5 md:p-6 shadow-md flex flex-col h-full border border-border transition-shadow duration-300 hover:shadow-lg">
-                    <div className="flex items-center gap-4">
-                      <div className="h-[65px] w-[65px] rounded-full flex items-center justify-center text-white text-[35px] font-medium flex-shrink-0 bg-avatar-purple">
-                        {r.initial}
-                      </div>
-                      <div>
-                        <h3 className="text-[20px] font-bold text-review-name">{r.name}</h3>
-                        <div className="flex gap-0.5 mt-1">
+                  <article className="flex h-full flex-col rounded-xl border border-black/5 bg-white p-4 shadow-[0_6px_20px_rgba(16,24,40,0.05)] transition-shadow duration-300 hover:shadow-[0_10px_24px_rgba(0,122,255,0.12)] md:p-5">
+                    <div className="flex items-center gap-3">
+                      <Image
+                        src={r.image}
+                        alt={r.name}
+                        width={44}
+                        height={44}
+                        className="h-11 w-11 rounded-full object-cover"
+                      />
+                      <div className="min-w-0">
+                        <h3 className="truncate text-[15px] font-bold text-[#121212]">{r.name}</h3>
+                        <div className="mt-0.5 flex gap-0.5" aria-label="5 out of 5 stars">
                           {Array.from({ length: 5 }).map((_, i) => (
-                            <Star key={i} className="h-4 w-4 fill-star text-star" />
+                            <Star key={i} className="h-3 w-3 fill-[#F4B400] text-[#F4B400]" />
                           ))}
                         </div>
                       </div>
                     </div>
 
-                    <p className="mt-5 text-[16px] text-foreground/80 leading-relaxed flex-1">
+                    <p className="mt-3 line-clamp-4 text-[14px] leading-relaxed text-[#4a4a4a]">
                       {r.text}
                     </p>
 
-                    <div className="flex items-center gap-2 mt-6 pt-2">
-                      <Image src={googleReview} alt="Google" className="h-[30px] w-[30px] object-contain" />
-                      <span className="text-[14px] font-bold text-foreground/80">Google Review</span>
+                    <div className="mt-3 flex items-center gap-1.5 pt-1">
+                      <Image src={googleReview} alt="" className="h-4 w-4 object-contain" />
+                      <span className="text-[12px] font-semibold text-[#6b6b6b]">Google Review</span>
                     </div>
                   </article>
                 </div>
@@ -208,11 +225,21 @@ const Reviews = () => {
           </div>
 
           <button
+            type="button"
             onClick={() => scroll("right")}
             aria-label="Next review"
-            className="flex absolute right-1 md:right-4 top-1/2 -translate-y-1/2 z-10 h-10 w-10 rounded-full bg-card border border-border shadow-md items-center justify-center cursor-pointer hover:bg-accent transition-colors"
+            className={`${arrowClass} absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 md:flex`}
           >
-            <ChevronRight className="h-5 w-5 text-foreground" />
+            <ChevronRight className="h-5 w-5" />
+          </button>
+        </div>
+
+        <div className="mt-4 flex items-center justify-center gap-4 md:hidden">
+          <button type="button" onClick={() => scroll("left")} aria-label="Previous review" className={arrowClass}>
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+          <button type="button" onClick={() => scroll("right")} aria-label="Next review" className={arrowClass}>
+            <ChevronRight className="h-5 w-5" />
           </button>
         </div>
       </div>

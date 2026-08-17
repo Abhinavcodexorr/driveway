@@ -7,7 +7,7 @@ import { Header, Footer } from "@/components/layout";
 import { Reveal, Stagger, StaggerItem } from "@/components/common/motion";
 
 const CTA_PRIMARY =
-  "inline-flex items-center justify-center rounded-full border-2 border-[#00af66] bg-[#00af66] px-8 py-3.5 text-[16px] font-semibold text-white transition-all duration-300 hover:scale-[1.03] hover:opacity-90";
+  "inline-flex items-center justify-center rounded-full border-2 border-[#007aff] bg-[#007aff] px-8 py-3.5 text-[16px] font-semibold text-white transition-all duration-300 hover:scale-[1.03] hover:opacity-90";
 
 const CTA_SECONDARY =
   "inline-flex items-center justify-center rounded-full border-2 border-white bg-transparent px-8 py-3.5 text-[16px] font-semibold text-white transition-all duration-300 hover:scale-[1.03] hover:bg-white/10";
@@ -58,7 +58,7 @@ export default function HowItWorksPage() {
       <Header />
       <main className="dw-font min-h-screen overflow-hidden bg-white text-[#121212]">
         {/* Hero */}
-        <section className="bg-[#00af66] px-4 py-14 sm:px-6 md:px-10 md:py-20">
+        <section className="bg-[#007aff] px-4 py-14 sm:px-6 md:px-10 md:py-20">
           <div className="mx-auto max-w-[1100px]">
             <Reveal y={16}>
               <p className="mb-4 text-[15px] font-semibold tracking-wide text-white/90 md:text-[16px]">
@@ -89,7 +89,7 @@ export default function HowItWorksPage() {
                 return (
                   <StaggerItem key={item.title}>
                     <article className="h-full rounded-2xl border border-[#E8E8E8] bg-[#FAFAFA] p-7 md:p-8">
-                      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-[#EEF8F3] text-[#00af66]">
+                      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-[#E8F2FF] text-[#007aff]">
                         <Icon className="h-6 w-6" strokeWidth={2.25} />
                       </div>
                       <h3 className="mb-3 text-[22px] font-bold tracking-[-0.02em] text-[#121212]">
@@ -134,7 +134,7 @@ export default function HowItWorksPage() {
                             {" "}
                             <Link
                               href={step.link.href}
-                              className="font-semibold text-[#00af66] underline decoration-[#00af66]/40 underline-offset-4 transition-opacity hover:opacity-80"
+                              className="font-semibold text-[#007aff] underline decoration-[#007aff]/40 underline-offset-4 transition-opacity hover:opacity-80"
                             >
                               {step.link.label}
                             </Link>
@@ -173,7 +173,7 @@ export default function HowItWorksPage() {
               />
             </Reveal>
             <Reveal x={24} delay={0.1}>
-              <p className="mb-3 text-[14px] font-semibold uppercase tracking-[0.08em] text-[#00af66]">
+              <p className="mb-3 text-[14px] font-semibold uppercase tracking-[0.08em] text-[#007aff]">
                 We handle the hard parts
               </p>
               <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold leading-[1.15] tracking-[-0.03em] text-[#121212]">
@@ -193,7 +193,7 @@ export default function HowItWorksPage() {
         </section>
 
         {/* Bottom CTA */}
-        <section className="bg-[#00af66] px-4 py-16 sm:px-6 md:px-10 md:py-20">
+        <section className="bg-[#007aff] px-4 py-16 sm:px-6 md:px-10 md:py-20">
           <Reveal className="mx-auto max-w-[900px] text-center">
             <h2 className="text-[clamp(1.85rem,4vw,3rem)] font-bold leading-[1.15] tracking-[-0.03em] text-white">
               The Easiest Way to Sell Your Car
@@ -205,7 +205,7 @@ export default function HowItWorksPage() {
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/financing"
-                className="inline-flex items-center justify-center rounded-full border-2 border-white bg-white px-8 py-3.5 text-[16px] font-semibold text-[#00af66] transition-all duration-300 hover:scale-[1.03] hover:opacity-90"
+                className="inline-flex items-center justify-center rounded-full border-2 border-white bg-white px-8 py-3.5 text-[16px] font-semibold text-[#007aff] transition-all duration-300 hover:scale-[1.03] hover:opacity-90"
               >
                 Get Pre-Approved
               </Link>

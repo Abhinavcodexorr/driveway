@@ -3,7 +3,7 @@ export const defineAppConfig = (config: any) => config;
 export const defaultAppConfig = defineAppConfig({
   dealership: {
     dealership_name: "Carma Credit",
-    dealership_logo: "/logo-carma.jpg",
+    dealership_logo: "/carma-logo.png",
     full_address_1: "1 Yonge St #1801",
     city_1: "Toronto",
     province_1: "Ontario",
@@ -306,7 +306,7 @@ export async function getAppConfig(): Promise<AppConfig> {
 
     // Local brand override for Carma Credit
     dealership.dealership_name = "Carma Credit";
-    dealership.dealership_logo = "/logo-carma.jpg";
+    dealership.dealership_logo = "/carma-logo.png";
     dealership.sales_number_1 = "(855) 514-5500";
     dealership.toll_free_number_1 = "(855) 514-5500";
 

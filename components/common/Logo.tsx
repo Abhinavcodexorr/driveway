@@ -7,14 +7,19 @@ import Image from "next/image";
 
 const Logo = () => {
   return (
-    <span className="inline-flex items-center" aria-label="Carma Credit">
+    <span
+      className="relative inline-block h-7 w-[108px] overflow-hidden lg:h-8 lg:w-[124px]"
+      aria-label="Carma Credit"
+    >
       <Image
-        src="/logo-carma.jpg"
+        src="/carma-logo.png"
         alt="Carma Credit"
-        width={365}
-        height={102}
-        className="h-[32px] w-auto max-w-[140px] object-contain sm:h-[36px] sm:max-w-none lg:h-[44px]"
+        width={358}
+        height={95}
+        className="!h-full !w-full object-contain object-left"
+        sizes="124px"
         priority
+        unoptimized
       />
     </span>
   );

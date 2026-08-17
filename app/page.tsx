@@ -1,7 +1,7 @@
 /* =========================
    Home Page
    Driveway-inspired redesign:
-   Header → Hero → Shop With Confidence → Sell → Drivers Seat → Testimonials → About → Why Sell → Footer
+   Header → Hero → Shop With Confidence → Sell → Drivers Seat → Reviews → FAQ → Footer
 ========================= */
 
 "use client";
@@ -12,10 +12,9 @@ import {
   ShopWithConfidence,
   SellSection,
   DriversSeat,
-  Testimonials,
-  AboutDriveway,
-  DeliveredByDriveway,
+  HomeFaq,
 } from "@/components/home/driveway";
+import { Reviews } from "@/components/home";
 
 const HomePage = () => {
   return (
@@ -26,9 +25,8 @@ const HomePage = () => {
         <ShopWithConfidence />
         <SellSection />
         <DriversSeat />
-        <Testimonials />
-        <AboutDriveway />
-        <DeliveredByDriveway />
+        <Reviews />
+        <HomeFaq />
       </main>
       <Footer />
     </>

@@ -1,13 +1,13 @@
 /* Driveway-matched homepage design tokens (from driveway.com) */
 
 export const DW = {
-  blue: "#00af66",
+  blue: "#007aff",
   easy: "#FF8D7D",
   searchBg: "#081848",
-  sellBg: "#00af66",
+  sellBg: "#007aff",
   text: "#353535",
-  linkBlue: "#00af66",
-  teal: "#00af66",
+  linkBlue: "#007aff",
+  teal: "#007aff",
 } as const;
 
 export const HERO_IMAGES = {

@@ -12,4 +12,5 @@ export { default as DreamVehicleCTA } from "./DreamVehicleCTA";
 export { default as PageTransition } from "./PageTransition";
 export { default as ScrollToTop } from "./ScrollToTop";
 export { default as FaqAccordion } from "./FaqAccordion";
+export { default as TradeQuoteForm } from "./TradeQuoteForm";
 export { Reveal, Stagger, StaggerItem, easeOut, fadeUp, fadeIn, scaleIn } from "./motion";

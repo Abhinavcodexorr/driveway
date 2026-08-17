@@ -23,7 +23,7 @@ const ShopWithConfidence = () => {
           <Stagger className="flex flex-col gap-5">
             {STEPS.map((step) => (
               <StaggerItem key={step} className="relative">
-                <div className="absolute left-[6px] top-[4px] flex h-5 w-5 items-center justify-center rounded-full border-2 border-[#00af66] text-[#00af66]">
+                <div className="absolute left-[6px] top-[4px] flex h-5 w-5 items-center justify-center rounded-full border-2 border-[#007aff] text-[#007aff]">
                   <ChevronRight className="h-3.5 w-3.5" strokeWidth={3} />
                 </div>
                 <p className="m-0 ml-[45px] text-[16px] leading-normal text-[#4a4a4a]">
@@ -36,7 +36,7 @@ const ShopWithConfidence = () => {
           <div className="mt-10">
             <Link
               href="/financing"
-              className="inline-flex h-[50px] w-full items-center justify-center rounded-full border-2 border-[#00af66] bg-[#00af66] text-[16px] font-semibold text-white shadow-[0_4px_14px_rgba(0, 175, 102,0.28)] transition-all duration-300 hover:scale-[1.03] hover:opacity-90 sm:w-[275px]"
+              className="inline-flex h-[50px] w-full items-center justify-center rounded-full border-2 border-[#007aff] bg-[#007aff] text-[16px] font-semibold text-white shadow-[0_4px_14px_rgba(0, 122, 255,0.28)] transition-all duration-300 hover:scale-[1.03] hover:opacity-90 sm:w-[275px]"
             >
               Get Pre-Approved
             </Link>
@@ -45,12 +45,12 @@ const ShopWithConfidence = () => {
 
         <Reveal delay={0.12} x={20} scale className="order-2 w-full sm:w-1/2">
           <Image
-            src="/canadadrives/shop-with-confidence.webp"
-            alt="Get approved with confidence at Carma Credit"
+            src="/canadadrives/approved-black-rs6-bronze-gwagen.png"
+            alt="Black Audi RS6 and bronze Mercedes G-Wagon at Carma Credit"
             width={1060}
             height={824}
             className="mx-auto h-auto w-full max-w-[530px] object-contain"
-            priority={false}
+            unoptimized
           />
         </Reveal>
       </div>

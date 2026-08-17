@@ -21,7 +21,7 @@ const Testimonials = () => {
   return (
     <section
       id="carma-reviews"
-      className="dw-font relative w-full bg-[#00af66] px-3 py-10 text-white sm:px-4 sm:py-12 md:px-6 md:py-14"
+      className="dw-font relative w-full bg-[#007aff] px-3 py-10 text-white sm:px-4 sm:py-12 md:px-6 md:py-14"
       >
       <div className="relative mx-auto max-w-[1100px] px-8 sm:px-10 md:px-[60px]">
         <button

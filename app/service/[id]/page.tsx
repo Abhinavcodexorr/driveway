@@ -457,7 +457,7 @@ export default async function ServicePage({ params }: PageProps) {
       <section className="w-full border-t border-slate-100 bg-white py-14 md:py-16">
         <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16">
           <div className="mb-8 md:mb-10">
-            <p className="mb-2 text-[13px] font-semibold uppercase tracking-[0.14em] text-[#00af66]">
+            <p className="mb-2 text-[13px] font-semibold uppercase tracking-[0.14em] text-[#007aff]">
               FAQs
             </p>
             <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">

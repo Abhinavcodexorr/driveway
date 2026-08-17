@@ -84,7 +84,7 @@ const Footer = () => {
   const pathname = usePathname();
 
   return (
-    <footer className="w-full border-t-0 bg-neutral-charcoal font-[Lato,sans-serif]">
+    <footer className="w-full border-t-0 bg-[rgb(8,32,72)] font-[Lato,sans-serif]">
       <Reveal y={20} className="mx-auto max-w-[1600px] px-4 pt-10 pb-5 sm:px-5 lg:px-10 lg:pt-14">
 
         {/* Link columns grid */}

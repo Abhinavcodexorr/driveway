@@ -28,6 +28,11 @@ const nextConfig: NextConfig = {
         hostname: "www.cardora.ca",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "randomuser.me",
+        pathname: "/**",
+      },
     ],
   },
 

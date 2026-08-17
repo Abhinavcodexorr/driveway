@@ -9,5 +9,6 @@ export { default as DriversSeat } from "./DriversSeat";
 export { default as Testimonials } from "./Testimonials";
 export { default as AboutDriveway } from "./AboutDriveway";
 export { default as DeliveredByDriveway } from "./DeliveredByDriveway";
+export { default as HomeFaq } from "./HomeFaq";
 export { default as SearchByBodyStyle } from "./SearchByBodyStyle";
 
