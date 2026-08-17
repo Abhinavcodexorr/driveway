@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type ComponentType } from "react";
+import { useEffect, useRef, useState, type ComponentType, type MouseEvent } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
@@ -81,10 +81,20 @@ const HomeHeader = () => {
   const navLinkClass =
     "relative flex h-[64px] xl:h-[77px] items-center px-2 xl:px-3 text-[15px] xl:text-[18px] font-semibold leading-none whitespace-nowrap text-[#353535] transition-colors hover:text-[#007aff]";
 
+  const handleHashNav = (href: string, e: MouseEvent) => {
+    const hashIndex = href.indexOf("#");
+    if (hashIndex === -1 || pathname !== "/") return;
+    const el = document.getElementById(href.slice(hashIndex + 1));
+    if (!el) return;
+    e.preventDefault();
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.history.replaceState(null, "", href);
+  };
+
   return (
     <header className="dw-font sticky top-0 z-50 w-full bg-white shadow-[0_1px_0_rgba(0,0,0,0.08)]">
       {/* Desktop / tablet landscape */}
-      <div className="relative mx-auto hidden h-[64px] max-w-[1440px] items-center px-4 lg:flex xl:h-[77px] xl:px-10">
+      <div className="relative mx-auto hidden h-[64px] max-w-[1440px] items-center px-4 xl:flex xl:h-[77px] xl:px-10">
         <Link href="/" aria-label="Carma Credit home" className="mr-4 flex h-8 shrink-0 items-center overflow-hidden xl:mr-8">
           <Logo />
         </Link>
@@ -158,7 +168,10 @@ const HomeHeader = () => {
                               <li key={sub.label}>
                                 <Link
                                   href={sub.href}
-                                  onClick={() => setActiveNav(null)}
+                                  onClick={(e) => {
+                                    setActiveNav(null);
+                                    handleHashNav(sub.href, e);
+                                  }}
                                   className="flex items-start gap-3 rounded-xl px-3 py-3 no-underline transition-colors hover:bg-[#F5F7F8]"
                                 >
                                   <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#E8F2FF] text-[#007aff]">
@@ -201,7 +214,7 @@ const HomeHeader = () => {
       </div>
 
       {/* Mobile / tablet */}
-      <div className="flex h-[56px] items-center justify-between gap-3 px-3 sm:px-4 lg:hidden">
+      <div className="flex h-[56px] items-center justify-between gap-3 px-3 sm:px-4 xl:hidden">
         <button
           type="button"
           onClick={() => setMobileOpen((v) => !v)}
@@ -225,7 +238,7 @@ const HomeHeader = () => {
       </div>
 
       {mobileOpen && (
-        <nav className="absolute left-0 top-full z-50 max-h-[calc(100dvh-56px)] w-full overflow-y-auto overscroll-contain border-b border-gray-100 bg-white px-4 py-2 shadow-lg lg:hidden">
+        <nav className="absolute left-0 top-full z-50 max-h-[calc(100dvh-56px)] w-full overflow-y-auto overscroll-contain border-b border-gray-100 bg-white px-4 py-2 shadow-lg xl:hidden">
           {DW_NAV.map((item) => {
             const hasMenu = item.items.length > 0;
             const expanded = mobileExpanded === item.label;
@@ -267,7 +280,10 @@ const HomeHeader = () => {
                         <Link
                           key={sub.label}
                           href={sub.href}
-                          onClick={() => setMobileOpen(false)}
+                          onClick={(e) => {
+                            setMobileOpen(false);
+                            handleHashNav(sub.href, e);
+                          }}
                           className="flex items-start gap-3 rounded-xl px-2 py-2.5 hover:bg-[#F5F7F8]"
                         >
                           <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#E8F2FF] text-[#007aff]">

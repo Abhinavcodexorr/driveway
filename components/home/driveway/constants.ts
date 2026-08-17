@@ -101,7 +101,7 @@ export const DW_NAV = [
       },
       {
         label: "Customer Reviews",
-        href: "/#carma-reviews",
+        href: "/#reviews",
         description: "See why drivers trust Carma Credit",
         icon: "reviews",
       },

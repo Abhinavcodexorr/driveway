@@ -126,6 +126,14 @@ const Reviews = () => {
   }, [slidesToShow]);
 
   useEffect(() => {
+    if (window.location.hash !== "#reviews") return;
+    const timer = window.setTimeout(() => {
+      document.getElementById("reviews")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 80);
+    return () => window.clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
     const id = setInterval(() => {
       if (!paused.current) scroll("right");
     }, 6000);
@@ -138,7 +146,7 @@ const Reviews = () => {
   return (
     <section
       id="reviews"
-      className="dw-font w-full bg-[#F3F8F5] py-10 md:py-14"
+      className="dw-font w-full scroll-mt-[72px] bg-[#F3F8F5] py-10 md:py-14 lg:scroll-mt-[80px] xl:scroll-mt-[93px]"
       onMouseEnter={() => {
         paused.current = true;
       }}

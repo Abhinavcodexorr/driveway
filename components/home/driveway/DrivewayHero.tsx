@@ -19,36 +19,35 @@ const DrivewayHero = () => {
         };
 
   return (
-    <section className="dw-font relative w-full overflow-hidden bg-[#007aff]">
-      {/* Desktop */}
-      <div className="relative mx-auto hidden max-w-[1440px] lg:grid lg:min-h-[420px] lg:grid-cols-[1fr_minmax(460px,1.15fr)] lg:items-end xl:min-h-[460px]">
-        <div className="relative z-10 self-center py-8 pl-8 pr-6 xl:py-10 xl:pl-24 xl:pr-8">
+    <section className="dw-font relative w-full overflow-x-clip bg-[#007aff]">
+      <div className="relative mx-auto grid w-full max-w-[1440px] min-w-0 grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] items-end">
+        <div className="relative z-10 min-w-0 self-center py-5 pl-3 pr-1 sm:py-7 sm:pl-6 sm:pr-3 md:pl-10 xl:py-10 xl:pl-24 xl:pr-8">
           <motion.h1
             {...enter(0.05, 32)}
-            className="m-0 mb-2 max-w-[640px] text-left text-[44px] font-bold leading-[1.1] tracking-[-0.02em] text-white xl:text-[56px] 2xl:text-[64px]"
+            className="m-0 mb-1.5 max-w-[640px] text-left text-[clamp(1.15rem,4.2vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.02em] text-white sm:mb-2 sm:text-[clamp(1.6rem,4vw,3.5rem)]"
           >
             Auto Done <span className="text-[#FF8D7D]">Easy</span>
           </motion.h1>
           <motion.p
             {...enter(0.18)}
-            className="mb-5 max-w-[520px] text-left text-[17px] font-normal leading-normal text-white xl:mb-6 xl:text-[19px]"
+            className="mb-3 max-w-[520px] text-left text-[clamp(0.7rem,2.1vw,1.2rem)] font-normal leading-snug text-white sm:mb-5 sm:leading-normal xl:mb-6 xl:text-[19px]"
           >
             Get pre-approved or sell your car — fast, simple, and stress-free.
           </motion.p>
 
           <motion.div
             {...enter(0.3)}
-            className="flex flex-row flex-wrap items-center gap-3 xl:gap-4"
+            className="flex flex-col items-stretch gap-2 min-[380px]:flex-row min-[380px]:flex-wrap min-[380px]:items-center sm:gap-3 xl:gap-4"
           >
             <Link
               href="/financing"
-              className="inline-flex h-[48px] items-center justify-center rounded-full border-2 border-white bg-white px-8 text-[16px] font-semibold text-[#007aff] transition-transform duration-300 hover:scale-[1.03] hover:opacity-90 xl:h-[54px] xl:px-10 xl:text-[18px]"
+              className="inline-flex h-9 items-center justify-center whitespace-nowrap rounded-full border-2 border-white bg-white px-3 text-[11px] font-semibold text-[#007aff] transition-transform duration-300 hover:scale-[1.03] hover:opacity-90 sm:h-[48px] sm:px-6 sm:text-[15px] xl:h-[54px] xl:px-10 xl:text-[18px]"
             >
               Get Pre-Approved
             </Link>
             <Link
               href="/trade-in-my-car"
-              className="inline-flex h-[48px] items-center justify-center rounded-full border-2 border-white bg-transparent px-8 text-[16px] font-semibold text-white transition-transform duration-300 hover:scale-[1.03] hover:opacity-90 xl:h-[54px] xl:px-10 xl:text-[18px]"
+              className="inline-flex h-9 items-center justify-center whitespace-nowrap rounded-full border-2 border-white bg-transparent px-3 text-[11px] font-semibold text-white transition-transform duration-300 hover:scale-[1.03] hover:opacity-90 sm:h-[48px] sm:px-6 sm:text-[15px] xl:h-[54px] xl:px-10 xl:text-[18px]"
             >
               Sell My Car
             </Link>
@@ -56,63 +55,18 @@ const DrivewayHero = () => {
         </div>
 
         <motion.div
-          {...enter(0.2, 36, 20)}
-          className="relative z-0 flex h-full min-h-[360px] items-end justify-end xl:min-h-[420px]"
+          {...enter(0.2)}
+          className="relative z-0 flex min-h-0 min-w-0 items-end justify-end self-end pr-1 sm:pr-3 xl:pr-4"
         >
           <Image
             src={HERO_IMAGES.desktop}
             alt="White Mercedes and black BMW luxury cars"
-            width={1280}
-            height={720}
+            width={1536}
+            height={1024}
             priority
             unoptimized
-            className="h-auto w-full max-w-[700px] object-contain object-bottom xl:max-w-[760px]"
-          />
-        </motion.div>
-      </div>
-
-      {/* Mobile / tablet */}
-      <div className="flex flex-col items-center px-4 pb-0 pt-6 text-center sm:px-6 sm:pt-8 lg:hidden">
-        <motion.h1
-          {...enter(0.05, 28)}
-          className="m-0 mb-2 text-[clamp(1.75rem,6.5vw,2.35rem)] font-bold leading-[1.1] tracking-[-0.02em] text-white"
-        >
-          Welcome to Auto Done <span className="text-[#FF8D7D]">Easy</span>
-        </motion.h1>
-        <motion.p
-          {...enter(0.16)}
-          className="mb-5 max-w-[36rem] text-[15px] font-normal text-white sm:mb-6 sm:text-[17px]"
-        >
-          Get pre-approved or sell your car — fast, simple, and stress-free.
-        </motion.p>
-
-        <motion.div
-          {...enter(0.28)}
-          className="mb-3 flex w-full max-w-[400px] flex-col gap-3"
-        >
-          <Link
-            href="/financing"
-            className="inline-flex h-[48px] w-full items-center justify-center whitespace-nowrap rounded-full border-2 border-white bg-white px-6 text-[16px] font-semibold text-[#007aff] transition-transform duration-300 active:scale-[0.98] sm:h-[52px] sm:text-[17px]"
-          >
-            Get Pre-Approved
-          </Link>
-          <Link
-            href="/trade-in-my-car"
-            className="inline-flex h-[48px] w-full items-center justify-center whitespace-nowrap rounded-full border-2 border-white bg-transparent px-6 text-[16px] font-semibold text-white transition-transform duration-300 active:scale-[0.98] sm:h-[52px] sm:text-[17px]"
-          >
-            Sell My Car
-          </Link>
-        </motion.div>
-
-        <motion.div {...enter(0.35, 28)} className="mt-1 w-full max-w-[440px]">
-          <Image
-            src={HERO_IMAGES.mobile}
-            alt="White Mercedes and black BMW luxury cars"
-            width={900}
-            height={620}
-            priority
-            unoptimized
-            className="mx-auto h-auto w-full object-contain object-bottom"
+            className="h-auto w-full max-w-[760px] object-contain object-bottom"
+            sizes="(max-width: 640px) 55vw, (max-width: 1280px) 50vw, 760px"
           />
         </motion.div>
       </div>

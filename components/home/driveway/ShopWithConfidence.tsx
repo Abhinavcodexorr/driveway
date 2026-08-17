@@ -14,8 +14,8 @@ const STEPS = [
 const ShopWithConfidence = () => {
   return (
     <section className="dw-font w-full bg-white px-4 py-10 sm:px-6 sm:py-14 lg:py-16">
-      <div className="mx-auto flex max-w-[1100px] flex-col items-center gap-8 sm:flex-row sm:items-center sm:gap-12 lg:gap-16">
-        <Reveal x={-20} className="order-1 w-full sm:w-1/2">
+      <div className="mx-auto flex max-w-[1100px] min-w-0 flex-col items-center gap-8 md:flex-row md:items-center md:gap-10 lg:gap-16">
+        <Reveal x={-20} className="order-1 w-full min-w-0 md:w-1/2">
           <h2 className="mb-6 max-w-[495px] text-[clamp(1.5rem,4vw,2.25rem)] font-semibold leading-[1.2] tracking-[-0.01em] text-[#4a4a4a] sm:mb-8 lg:mb-10 lg:leading-[44px]">
             Get Approved With Confidence
           </h2>
@@ -36,14 +36,14 @@ const ShopWithConfidence = () => {
           <div className="mt-10">
             <Link
               href="/financing"
-              className="inline-flex h-[50px] w-full items-center justify-center rounded-full border-2 border-[#007aff] bg-[#007aff] text-[16px] font-semibold text-white shadow-[0_4px_14px_rgba(0, 122, 255,0.28)] transition-all duration-300 hover:scale-[1.03] hover:opacity-90 sm:w-[275px]"
+              className="inline-flex h-[50px] w-full max-w-full items-center justify-center rounded-full border-2 border-[#007aff] bg-[#007aff] px-6 text-[16px] font-semibold text-white shadow-[0_4px_14px_rgba(0,122,255,0.28)] transition-all duration-300 hover:scale-[1.03] hover:opacity-90 sm:w-[275px]"
             >
               Get Pre-Approved
             </Link>
           </div>
         </Reveal>
 
-        <Reveal delay={0.12} x={20} scale className="order-2 w-full sm:w-1/2">
+        <Reveal delay={0.12} x={20} scale className="order-2 w-full min-w-0 md:w-1/2">
           <Image
             src="/canadadrives/approved-black-rs6-bronze-gwagen.png"
             alt="Black Audi RS6 and bronze Mercedes G-Wagon at Carma Credit"

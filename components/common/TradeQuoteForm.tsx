@@ -28,7 +28,7 @@ const TradeQuoteForm = ({ className = "" }: TradeQuoteFormProps) => {
 
   return (
     <div
-      className={`w-full max-w-[440px] rounded-2xl border border-border-lightGray/80 bg-white p-5 pb-8 shadow-xl md:p-8 md:pb-10 ${className}`}
+      className={`w-full max-w-full rounded-2xl border border-border-lightGray/80 bg-white p-4 pb-8 shadow-xl sm:p-5 md:max-w-[440px] md:p-8 md:pb-10 ${className}`}
     >
       <div className="mb-6 flex cursor-pointer border-b border-border-standard">
         <button

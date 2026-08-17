@@ -40,7 +40,7 @@ export default function ContactUs() {
 
   return (
     <PageShell showGetInTouch>
-      <div className="bg-white px-4 py-8 font-sans text-gray-900 sm:px-6 lg:mt-8 lg:px-24 lg:py-10">
+      <div className="bg-white px-4 py-8 font-sans text-gray-900 sm:px-6 lg:mt-8 lg:px-10 xl:px-24 lg:py-10">
         <div className="mx-auto grid w-full max-w-[1100px] grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-10">
           {/* Left — same pattern as cardora.ca */}
           <div className="space-y-6 lg:space-y-8">

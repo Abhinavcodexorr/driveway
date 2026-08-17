@@ -248,6 +248,14 @@ body {
   min-width: 0;
 }
 
+main,
+section,
+header,
+footer {
+  min-width: 0;
+  max-width: 100%;
+}
+
 img,
 video,
 svg,
@@ -275,10 +283,6 @@ iframe {
       opacity 0.2s ease,
       transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
       box-shadow 0.25s ease;
-  }
-
-  img {
-    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   }
 }
 

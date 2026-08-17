@@ -88,7 +88,7 @@ const TradeIn = () => {
       <PageShell showGetInTouch>
 
       {/* Hero / Quote form */}
-      <section className="relative w-full px-4 lg:mt-6 lg:px-24">
+      <section className="relative w-full px-4 lg:mt-6 xl:px-24">
         <div className="relative z-10 mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-6 px-0 pb-5 pt-4 md:px-9 lg:flex-row lg:items-start lg:gap-10 lg:pt-8">
           <div className="w-full text-left lg:w-auto">
             <h1 className="max-w-xl text-[28px] font-bold leading-[1.1] tracking-tight text-gray-950 sm:text-[34px] md:text-[44px] lg:text-[66px]">
@@ -205,7 +205,7 @@ const TradeIn = () => {
       <section className="mx-auto w-full -mt-5 lg:mt-0 lg:px-24">
         <div className="mx-auto px-4 py-8 lg:max-w-[1400px] lg:px-0 lg:py-10">
           <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-[1fr_1.1fr] lg:gap-10 lg:pl-10">
-            <div className="relative h-[300px] w-full overflow-hidden rounded-[24px] sm:h-[400px] md:rounded-[32px] lg:h-auto lg:min-h-full">
+            <div className="relative aspect-[16/10] h-auto w-full overflow-hidden rounded-[24px] sm:aspect-[16/11] md:rounded-[32px] lg:aspect-auto lg:h-auto lg:min-h-full">
               <Image
                 src={SELL_HERO_IMAGE}
                 alt="Get a cash offer to sell my car with Carma Credit"

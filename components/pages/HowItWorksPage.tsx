@@ -55,7 +55,7 @@ const STEPS: Step[] = [
 export default function HowItWorksPage() {
   return (
     <PageShell>
-      <main className="dw-font min-h-screen overflow-hidden bg-white text-[#121212]">
+      <main className="dw-font min-h-screen overflow-x-clip bg-white text-[#121212]">
         {/* Hero */}
         <section className="bg-[#007aff] px-4 py-14 sm:px-6 md:px-10 md:py-20">
           <div className="mx-auto max-w-[1100px]">

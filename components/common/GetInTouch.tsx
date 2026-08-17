@@ -64,7 +64,7 @@ const GetInTouch = () => {
 
           {/* Left: business hours */}
           <div>
-            <h2 className="text-[28px] lg:text-[30px] font-bold leading-tight max-[767px]:text-[20px]">
+            <h2 className="max-w-full text-[22px] font-bold leading-tight sm:text-[28px] lg:text-[30px]">
               Get in touch with us, we're here to help
             </h2>
 
@@ -87,9 +87,9 @@ const GetInTouch = () => {
               {/* Hours table */}
               <div className="mt-5 space-y-3">
                 {Object.values(tab === "Sales" ? BUSINESS_HOURS_SALES : BUSINESS_HOURS_SERVICES).map(({ label, hours }) => (
-                  <div key={label} className="grid grid-cols-[1fr_2fr]">
-                    <span className="text-[16px]">{label}:</span>
-                    <span className="text-[16px] text-white">{hours}</span>
+                  <div key={label} className="grid grid-cols-[minmax(0,1fr)_minmax(0,2fr)] gap-x-3">
+                    <span className="min-w-0 break-words text-[14px] sm:text-[16px]">{label}:</span>
+                    <span className="min-w-0 break-words text-[14px] text-white sm:text-[16px]">{hours}</span>
                   </div>
                 ))}
               </div>

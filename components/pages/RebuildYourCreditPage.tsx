@@ -13,7 +13,7 @@ export default function RebuildYourCreditPage() {
     <PageShell>
       <main className="min-h-screen bg-white font-[Arial,Helvetica,sans-serif] text-black">
         <section className="px-4 pt-6 md:px-8 md:pt-8">
-          <Reveal y={20} className="relative mx-auto flex min-h-[320px] max-w-[1350px] items-center overflow-hidden rounded-[20px] bg-cover bg-center px-4 py-10 md:min-h-[662px] md:px-14 md:py-16"
+          <Reveal y={20} className="relative mx-auto flex min-h-[280px] max-w-[1350px] items-center overflow-hidden rounded-[20px] bg-cover bg-[center_30%] px-4 py-10 sm:min-h-[360px] md:min-h-[520px] md:px-14 md:py-16 lg:min-h-[662px]"
             style={{ backgroundImage: "url('/rebuild-your-credit/hero-bg.png')" }}
           >
             <div className="absolute inset-0 bg-black/35" />

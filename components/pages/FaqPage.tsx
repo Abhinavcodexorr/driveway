@@ -18,7 +18,7 @@ export default function FaqPage() {
             <p className="mb-3 text-[13px] font-semibold uppercase tracking-[0.14em] text-[#007aff]">
               Help center
             </p>
-            <h1 className="mb-3 text-[32px] font-bold tracking-tight text-zinc-900 sm:text-[40px] md:text-[48px]">
+            <h1 className="mb-3 text-[clamp(1.75rem,6vw,3rem)] font-bold tracking-tight text-zinc-900">
               Frequently asked questions
             </h1>
             <p className="mx-auto max-w-xl text-[15px] leading-relaxed text-zinc-500 sm:text-[16px]">

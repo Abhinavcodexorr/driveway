@@ -19,7 +19,7 @@ import { Reviews } from "@/components/home";
 const HomePage = () => {
   return (
     <>
-      <main className="dw-font min-h-screen overflow-hidden bg-white">
+      <main className="dw-font min-h-screen overflow-x-clip bg-white">
         <Header />
         <DrivewayHero />
         <ShopWithConfidence />

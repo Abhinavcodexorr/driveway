@@ -36,13 +36,13 @@ const DriversSeat = () => {
         </Reveal>
 
         <Reveal>
-          <article className="mx-auto w-full max-w-[420px] bg-white px-4 py-8 text-[#353535] min-[420px]:px-6 md:flex md:max-w-none md:flex-row-reverse md:justify-center md:px-10 md:py-11">
+          <article className="mx-auto w-full min-w-0 max-w-[420px] bg-white px-4 py-8 text-[#353535] min-[420px]:px-6 md:flex md:max-w-none md:flex-row-reverse md:items-center md:justify-center md:gap-6 md:px-8 md:py-11 lg:gap-10 lg:px-10">
             <div
               className={[
-                "relative mx-auto my-4 flex h-[203px] w-full items-center justify-center",
-                "min-[420px]:h-[262px]",
-                "md:mx-0 md:h-[324px] md:w-[460px]",
-                "xl:h-[444px] xl:w-[421px]",
+                "relative mx-auto my-4 flex h-[200px] w-full min-w-0 max-w-full items-center justify-center overflow-hidden",
+                "min-[420px]:h-[240px]",
+                "md:mx-0 md:h-[300px] md:w-[min(46%,460px)] md:shrink-0",
+                "xl:h-[400px] xl:w-[421px]",
                 "2xl:h-[448px] 2xl:w-[636px]",
               ].join(" ")}
             >
@@ -63,7 +63,7 @@ const DriversSeat = () => {
               </div>
             </div>
 
-            <div className="relative flex flex-col justify-center md:mr-12 md:w-[332px] md:shrink-0 lg:mr-[70px] lg:w-[415px] xl:mr-[90px] xl:w-[453px] 2xl:mr-[112px] 2xl:w-[438px]">
+            <div className="relative flex min-w-0 flex-col justify-center md:mr-0 md:w-[min(48%,453px)] md:shrink-0 lg:w-[415px] xl:mr-[40px] xl:w-[453px] 2xl:mr-[80px] 2xl:w-[438px]">
               <p className="text-[16px] font-medium uppercase tracking-[1px] text-[#184F56]">
                 {CARD.heading}
               </p>

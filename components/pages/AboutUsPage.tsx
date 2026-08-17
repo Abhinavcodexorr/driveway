@@ -39,7 +39,7 @@ const PILLARS = [
 export default function AboutUsPage() {
   return (
     <PageShell>
-      <main className="dw-font min-h-screen overflow-hidden bg-white text-[#121212]">
+      <main className="dw-font min-h-screen overflow-x-clip bg-white text-[#121212]">
         {/* Hero — Canada Drives style, Carma green */}
         <section className="relative bg-[#007aff] px-4 pb-14 pt-14 sm:px-6 md:px-10 md:pb-20 md:pt-20">
           <div className="mx-auto max-w-[1100px]">
