@@ -1,5 +1,5 @@
-import InventoryPage from "../page";
-import VehicleDetailsPage from "../_components/VehicleDetailsPage";
+import InventoryPage from "@/components/pages/InventoryPage";
+import VehicleDetailsPage from "@/components/pages/VehicleDetailsPage";
 import { isVehicleDetailSlug } from "@/lib/inventoryUrls";
 
 export const dynamic = "force-dynamic";

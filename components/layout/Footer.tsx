@@ -187,8 +187,6 @@ const Footer = () => {
             <Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
             <span aria-hidden>|</span>
             <Link href="/terms-conditions" className="hover:text-white">Terms & Conditions</Link>
-            <span aria-hidden>|</span>
-            <Link target="_blank" href={`/sitemap`} className="hover:text-white">Site Map</Link>
           </p>
         </div>
       </Reveal>

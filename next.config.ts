@@ -5,11 +5,9 @@ const nextConfig: NextConfig = {
     // ignoreBuildErrors: true,
   },
 
-  allowedDevOrigins: ["192.168.1.7"],
+  allowedDevOrigins: ["192.168.1.7", "192.168.1.12"],
 
   devIndicators: false,
-
-
 
   images: {
     remotePatterns: [
