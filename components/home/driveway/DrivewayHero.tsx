@@ -59,9 +59,9 @@ const DrivewayHero = () => {
         >
           <Image
             src={HERO_IMAGES.mobile}
-            alt="White Mercedes and black BMW luxury cars"
-            width={1400}
-            height={460}
+            alt="Young man sitting by the rear wheel of a white supercar using a phone"
+            width={1600}
+            height={780}
             priority
             unoptimized
             className="h-auto w-full max-w-full object-contain object-bottom lg:hidden"
@@ -69,9 +69,9 @@ const DrivewayHero = () => {
           />
           <Image
             src={HERO_IMAGES.desktop}
-            alt="White Mercedes and black BMW luxury cars"
-            width={1800}
-            height={640}
+            alt="Young man sitting by the rear wheel of a white supercar using a phone"
+            width={1600}
+            height={780}
             priority
             unoptimized
             className="hidden h-auto w-full max-w-none object-contain object-center lg:block"
