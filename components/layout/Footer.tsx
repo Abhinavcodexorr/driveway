@@ -97,7 +97,7 @@ const Footer = () => {
                 alt="Carma"
                 width={120}
                 height={32}
-                className="!h-7 !w-auto !max-w-[118px] object-contain object-left sm:!h-8 sm:!max-w-[128px]"
+                className="!h-7 !w-auto !max-w-[118px] object-contain object-left brightness-0 invert sm:!h-8 sm:!max-w-[128px]"
                 sizes="128px"
                 unoptimized
                 style={{ height: 28, width: "auto", maxWidth: 128 }}
