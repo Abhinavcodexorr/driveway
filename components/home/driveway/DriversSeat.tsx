@@ -88,7 +88,15 @@ const DriversSeat = () => {
 
               <Link
                 href="/financing"
-                className="inline-flex w-full items-center justify-center rounded-full border-2 border-[#007aff] bg-[#007aff] px-8 py-3 text-[16px] font-semibold text-white hover:border-[#0066d6] hover:bg-[#0066d6] sm:w-auto"
+                scroll
+                onClick={() => {
+                  const html = document.documentElement;
+                  html.style.scrollBehavior = "auto";
+                  window.scrollTo(0, 0);
+                  html.scrollTop = 0;
+                  document.body.scrollTop = 0;
+                }}
+                className="inline-flex w-full items-center justify-center rounded-full border-2 border-[#1451b5] bg-[#1451b5] px-8 py-3 text-[16px] font-semibold text-white hover:border-[#0f4094] hover:bg-[#0f4094] sm:w-auto"
               >
                 Get Pre-Approved
               </Link>

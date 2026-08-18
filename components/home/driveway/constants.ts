@@ -1,18 +1,18 @@
 /* Driveway-matched homepage design tokens (from driveway.com) */
 
 export const DW = {
-  blue: "#007aff",
+  blue: "#1451b5",
   easy: "#FF8D7D",
   searchBg: "#081848",
-  sellBg: "#007aff",
+  sellBg: "#1451b5",
   text: "#353535",
-  linkBlue: "#007aff",
-  teal: "#007aff",
+  linkBlue: "#1451b5",
+  teal: "#1451b5",
 } as const;
 
 export const HERO_IMAGES = {
-  desktop: "/driveway/hero-dual-cars.png",
-  mobile: "/driveway/hero-dual-cars-mobile.png",
+  desktop: "/driveway/hero-banner.png?v=2",
+  mobile: "/driveway/hero-banner.png?v=2",
 } as const;
 
 export const RECOMMENDED_CARS = [
@@ -38,11 +38,6 @@ export const RECOMMENDED_CARS = [
 
 /** Carma Credit mega-nav structure */
 export const DW_NAV = [
-  {
-    label: "Home",
-    href: "/",
-    items: [],
-  },
   {
     label: "Finance",
     href: "/financing",
@@ -98,12 +93,6 @@ export const DW_NAV = [
         href: "/about-us",
         description: "Who we are and how we help drivers get approved",
         icon: "about",
-      },
-      {
-        label: "Customer Reviews",
-        href: "/#reviews",
-        description: "See why drivers trust Carma Credit",
-        icon: "reviews",
       },
       {
         label: "Contact Us",

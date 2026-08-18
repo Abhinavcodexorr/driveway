@@ -8,15 +8,15 @@
 ═════════════════════════════════════════════════════════════════ */
 :root {
   /* Primary Colors */
-  --color-primary-green: #007aff;
-  --color-primary-green-dark: #007aff;
+  --color-primary-green: #1451b5;
+  --color-primary-green-dark: #1451b5;
   
   /* Neutral Colors */
   --color-neutral-white: #ffffff;
   
   /* Semantic Colors */
-  --color-slider-thumb: #007aff;
-  --color-shadow-green: rgba(0, 122, 255, 0.2);
+  --color-slider-thumb: #1451b5;
+  --color-shadow-green: rgba(20, 81, 181, 0.2);
   --color-shadow-dark: rgba(0, 0, 0, 0.08);
 }
 
@@ -240,7 +240,6 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  scroll-behavior: smooth;
 }
 
 body {

@@ -69,7 +69,7 @@ const TERMS = [
 export default function UnderstandingAutoFinancingPage() {
   return (
     <PageShell>
-      <main className="min-h-screen bg-white font-[Arial,Helvetica,sans-serif] text-black">
+      <main className="dw-font min-h-screen overflow-x-clip bg-white text-[#121212]">
         <section className="px-4 pt-6 md:px-8 md:pt-8">
           <Reveal
             y={20}
@@ -79,11 +79,11 @@ export default function UnderstandingAutoFinancingPage() {
             }}
           >
             <div className="absolute inset-0 bg-black/40" />
-            <div className="relative z-10 mx-auto max-w-[820px] text-center text-white">
-              <h1 className="mb-5 text-[28px] font-bold leading-[1.15] tracking-[-0.02em] md:text-[52px] lg:text-[64px]">
+            <div className="relative z-10 mx-auto max-w-[860px] text-center text-white">
+              <h1 className="mb-5 text-[clamp(1.85rem,5vw,3.75rem)] font-bold leading-[1.15] tracking-[-0.02em]">
                 Understanding auto financing
               </h1>
-              <p className="mx-auto max-w-[700px] text-[14px] leading-[1.7] text-white/95">
+              <p className="mx-auto max-w-[740px] text-[16px] leading-[1.7] text-white/95 sm:text-[17px] md:text-[18px]">
                 When you are thinking about your auto loan, the following terms are good to know
                 about and understand. These terms often come up in the finance process and are used
                 in the monthly payment calculations, define different parties in the financial
@@ -98,16 +98,16 @@ export default function UnderstandingAutoFinancingPage() {
         <section className="px-4 pb-[70px] pt-12 md:px-8 md:pt-16">
           <div className="mx-auto max-w-[1089px]">
             <Reveal>
-              <h2 className="mb-8 text-[28px] font-bold leading-tight md:text-[42px]">
+              <h2 className="mb-8 text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold leading-[1.15] tracking-[-0.03em] text-[#121212]">
                 Common Refinance Terms and Definitions
               </h2>
             </Reveal>
 
-            <Stagger className="space-y-5">
+            <Stagger className="space-y-6">
               {TERMS.map((item) => (
                 <StaggerItem key={item.term}>
-                  <p className="text-[14px] leading-[1.7] text-[#333]">
-                    <strong className="font-bold text-black">{item.term}</strong>
+                  <p className="text-[16px] leading-[1.75] text-[#333] md:text-[17px]">
+                    <strong className="font-bold text-[#121212]">{item.term}</strong>
                     <span className="font-normal">{item.def}</span>
                   </p>
                 </StaggerItem>
@@ -115,7 +115,7 @@ export default function UnderstandingAutoFinancingPage() {
             </Stagger>
 
             <Reveal delay={0.1}>
-              <p className="mt-8 text-[14px] leading-[1.7] text-[#333]">
+              <p className="mt-10 text-[16px] leading-[1.75] text-[#333] md:text-[17px]">
                 When you’re in the market for a new car, it’s important to understand all of the
                 jargon that comes along with auto financing. With this glossary of key terms, you’ll
                 be able to navigate the world of auto financing with confidence.

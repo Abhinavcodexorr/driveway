@@ -34,7 +34,7 @@ const MoreWaysToExplore = () => {
             href="https://www.airstreamadventures.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative inline-flex w-full shrink-0 cursor-pointer items-center justify-center whitespace-nowrap rounded-full px-8 py-3.5 text-[16px] font-semibold leading-[1.5] text-[#007aff] transition-transform duration-300 hover:scale-[1.03] hover:bg-[rgba(31,31,31,0.1)] sm:w-auto sm:px-12 sm:py-4 sm:text-[18px] md:text-[20px] md:leading-[30px] after:absolute after:inset-0 after:rounded-full after:border-2 after:border-[#007aff] after:content-['']"
+            className="relative inline-flex w-full shrink-0 cursor-pointer items-center justify-center whitespace-nowrap rounded-full px-8 py-3.5 text-[16px] font-semibold leading-[1.5] text-[#1451b5] transition-transform duration-300 hover:scale-[1.03] hover:bg-[rgba(31,31,31,0.1)] sm:w-auto sm:px-12 sm:py-4 sm:text-[18px] md:text-[20px] md:leading-[30px] after:absolute after:inset-0 after:rounded-full after:border-2 after:border-[#1451b5] after:content-['']"
           >
             Discover More
           </Link>

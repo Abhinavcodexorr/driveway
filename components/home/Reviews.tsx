@@ -141,7 +141,7 @@ const Reviews = () => {
   }, [slidesToShow]);
 
   const arrowClass =
-    "flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full border border-[#d0d0d0] bg-white text-[#007aff] shadow-sm transition-colors hover:border-[#007aff] hover:bg-[#007aff] hover:text-white";
+    "flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full border border-[#d0d0d0] bg-white text-[#1451b5] shadow-sm transition-colors hover:border-[#1451b5] hover:bg-[#1451b5] hover:text-white";
 
   return (
     <section
@@ -164,7 +164,7 @@ const Reviews = () => {
             href={GOOGLE_REVIEWS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-5 inline-flex items-center justify-center gap-2.5 rounded-full border border-black/8 bg-white px-4 py-2 shadow-[0_4px_18px_rgba(0,0,0,0.06)] transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,122,255,0.16)]"
+            className="mt-5 inline-flex items-center justify-center gap-2.5 rounded-full border border-black/8 bg-white px-4 py-2 shadow-[0_4px_18px_rgba(0,0,0,0.06)] transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(20,81,181,0.16)]"
           >
             <Image src={google} alt="Google" className="h-5 w-[64px] object-contain" />
             <span className="flex items-center gap-0.5" aria-hidden>
@@ -199,7 +199,7 @@ const Reviews = () => {
                     slidesToShow === 1 ? "w-full" : slidesToShow === 2 ? "w-1/2" : "w-1/3"
                   }`}
                 >
-                  <article className="flex h-full flex-col rounded-xl border border-black/5 bg-white p-4 shadow-[0_6px_20px_rgba(16,24,40,0.05)] transition-shadow duration-300 hover:shadow-[0_10px_24px_rgba(0,122,255,0.12)] md:p-5">
+                  <article className="flex h-full flex-col rounded-xl border border-black/5 bg-white p-4 shadow-[0_6px_20px_rgba(16,24,40,0.05)] transition-shadow duration-300 hover:shadow-[0_10px_24px_rgba(20,81,181,0.12)] md:p-5">
                     <div className="flex items-center gap-3">
                       <Image
                         src={r.image}

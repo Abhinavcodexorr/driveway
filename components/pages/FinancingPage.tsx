@@ -8,7 +8,7 @@
 
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 // Layout
 import { PageShell } from "@/components/layout";
@@ -19,7 +19,7 @@ import { useAppConfig } from "@/app/providers";
 
 /*  Constants */
 const MIN_HEIGHT      = 540;
-const FALLBACK_HEIGHT = 900;
+const FALLBACK_HEIGHT = 720;
 
 /*  Page Component */
 const Finance = () => {
@@ -27,6 +27,12 @@ const Finance = () => {
   const { SITE_CONFIG } = getConstants(appConfig);
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const [height, setHeight] = useState<number>(FALLBACK_HEIGHT);
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, []);
 
   // Listen for height updates from the embedded financing form
   useEffect(() => {
@@ -36,10 +42,11 @@ const Finance = () => {
         data &&
         typeof data === "object" &&
         data.type === "css" &&
-        data.element_id === "financing_form" &&
+        (data.element_id === "finance_form" ||
+          data.element_id === "financing_form") &&
         typeof data.value === "number"
       ) {
-        setHeight(Math.max(MIN_HEIGHT, Math.ceil(data.value) + 24));
+        setHeight(Math.max(MIN_HEIGHT, Math.ceil(data.value) + 8));
       }
     };
 
@@ -48,20 +55,20 @@ const Finance = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
-      <PageShell showGetInTouch>
+    <div className="bg-background">
+      <PageShell>
 
-      <section className="mb-6 py-4 pb-8 md:mb-8 md:py-8 lg:mb-10 lg:mt-10">
+      <section className="py-4 md:py-6">
         <div className="mx-auto max-w-[1100px] px-4 md:px-6">
           <div className="overflow-hidden">
             <iframe
               ref={iframeRef}
-              id="financing_form"
+              id="finance_form"
               src={`${SITE_CONFIG.urls.financeRenderApiUrl}?`}
               name="iframe_a"
               title="Carma Credit financing application"
               scrolling="no"
-              className="w-full block transition-[height] duration-300 ease-out border-0"
+              className="credit-application w-full block transition-[height] duration-300 ease-out border-0"
               style={{
                 minHeight: MIN_HEIGHT,
                 height: `${height}px`,

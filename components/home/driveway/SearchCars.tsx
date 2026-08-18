@@ -69,7 +69,7 @@ const SearchCars = () => {
             <button
               type="submit"
               aria-label="Get Pre-Approved"
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-[#353535] transition-colors hover:text-[#007aff]"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-[#353535] transition-colors hover:text-[#1451b5]"
             >
               <Search className="h-5 w-5" strokeWidth={2} />
             </button>

@@ -21,9 +21,11 @@ import { useAppConfig } from "@/app/providers";
 /*  Component */
 const GetInTouch = () => {
   const appConfig = useAppConfig();
-  const { BUSINESS_HOURS_SALES, BUSINESS_HOURS_SERVICES } = getConstants(appConfig);
+  const { BUSINESS_HOURS_SALES, BUSINESS_HOURS_SERVICES, PHONE_HREF, PHONE_NUMBER } =
+    getConstants(appConfig);
   const [tab, setTab] = useState<"Sales" | "Service">("Sales");
   const d = appConfig.dealership;
+  const phoneDigits = (PHONE_NUMBER || d.sales_number_1 || "").replace(/\D/g, "");
 
   /* Contact cards with mapped values from config */
   const contactCards = [
@@ -31,14 +33,14 @@ const GetInTouch = () => {
     title: "Call us",
     subtitle: "Call Us Anytime Now",
     icon: callIcon,
-    href: `tel:${d.sales_number_1}`,
+    href: PHONE_HREF || `tel:${d.sales_number_1}`,
     order: "order-1",
   },
   {
     title: "WhatsApp",
     subtitle: "Chat on WhatsApp",
     icon: whatsappIcon,
-    href: `https://wa.me/${d.sales_number_1?.replace(/\D/g, "")}`,
+    href: `https://wa.me/${phoneDigits}`,
     order: "order-3 md:order-2",
   },
   {
@@ -52,7 +54,7 @@ const GetInTouch = () => {
     title: "Text",
     subtitle: "Text Us Right Now",
     icon: messageIcon,
-    href: `sms:${d.sales_number_1}`,
+    href: `sms:+${phoneDigits}`,
     order: "order-4",
   },
 ];

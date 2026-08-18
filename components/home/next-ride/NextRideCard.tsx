@@ -46,7 +46,7 @@ export default function NextRideCard() {
             </div>
 
             <span
-              className="arrow shrink-0 w-[22px] h-[22px] text-[#007aff] transition-transform duration-200 ease group-hover:translate-x-[4px]"
+              className="arrow shrink-0 w-[22px] h-[22px] text-[#1451b5] transition-transform duration-200 ease group-hover:translate-x-[4px]"
               aria-hidden="true"
             >
               <svg
@@ -77,7 +77,7 @@ export default function NextRideCard() {
     
     {/* Header & Dollar signs section */}
     <div className="text-center z-[2] pointer-events-none flex flex-col items-center">
-      <p className="offer-title m-0 text-[#007aff] font-bold text-[clamp(1.75rem,7.8vw,2.45rem)] tracking-[-0.03em] leading-none whitespace-nowrap" aria-hidden="true">
+      <p className="offer-title m-0 text-[#1451b5] font-bold text-[clamp(1.75rem,7.8vw,2.45rem)] tracking-[-0.03em] leading-none whitespace-nowrap" aria-hidden="true">
         Your offer
       </p>
       
@@ -106,7 +106,7 @@ export default function NextRideCard() {
       <h2 className="text-[1.05rem] font-bold text-[#1a1a1a] leading-[1.25] tracking-[-0.01em]">Sell my Car</h2>
       <p className="mt-[4px] text-[0.875rem] font-medium text-[#6b7280] leading-[1.35]">Get an offer in under 2 mins.</p>
     </div>
-    <span className="arrow shrink-0 w-[22px] h-[22px] text-[#007aff] transition-transform duration-200 ease group-hover:translate-x-[4px]" aria-hidden="true">
+    <span className="arrow shrink-0 w-[22px] h-[22px] text-[#1451b5] transition-transform duration-200 ease group-hover:translate-x-[4px]" aria-hidden="true">
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full block">
         <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
@@ -127,7 +127,7 @@ export default function NextRideCard() {
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
-            <div className="price-badge absolute left-[59%] top-[18%] -translate-x-1/2 w-[68%] h-[17%] flex items-center justify-center gap-[0.06em] p-0 bg-[#007aff] text-white rounded-full shadow-[0_10px_24px_rgba(0,0,0,0.18)] font-bold text-[clamp(1.5rem,6.8vw,2.05rem)] leading-none tracking-[-0.02em] z-[3] whitespace-nowrap pointer-events-none overflow-hidden" aria-hidden="true">
+            <div className="price-badge absolute left-[59%] top-[18%] -translate-x-1/2 w-[68%] h-[17%] flex items-center justify-center gap-[0.06em] p-0 bg-[#1451b5] text-white rounded-full shadow-[0_10px_24px_rgba(0,0,0,0.18)] font-bold text-[clamp(1.5rem,6.8vw,2.05rem)] leading-none tracking-[-0.02em] z-[3] whitespace-nowrap pointer-events-none overflow-hidden" aria-hidden="true">
               <span className="count inline-flex items-baseline min-w-[3.2ch] justify-center">
                 <span>$</span>
                 <span>$</span>
@@ -142,7 +142,7 @@ export default function NextRideCard() {
               <h2 className="text-[1.05rem] font-bold text-[#1a1a1a] leading-[1.25] tracking-[-0.01em]">Get pre-approved</h2>
               <p className="mt-[4px] text-[0.875rem] font-medium text-[#6b7280] leading-[1.35]">No impact to your credit</p>
             </div>
-            <span className="arrow shrink-0 w-[22px] h-[22px] text-[#007aff] transition-transform duration-200 ease group-hover:translate-x-[4px]" aria-hidden="true">
+            <span className="arrow shrink-0 w-[22px] h-[22px] text-[#1451b5] transition-transform duration-200 ease group-hover:translate-x-[4px]" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full block">
                 <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
               </svg>

@@ -18,9 +18,9 @@ export default async function TermsOfService() {
   
   return (
     <PageShell showGetInTouch>
-    <div className="bg-white min-h-screen font-sans antialiased text-gray-800 selection:bg-gray-200 mt-20">
+    <div className="dw-font min-h-screen bg-white text-gray-800 antialiased selection:bg-gray-200">
       {/* Terms of Service Main Content Wrapper */}
-      <main className="w-full flex justify-center mx-auto px-6 sm:px-12 py-12 lg:py-16">
+      <main className="mx-auto flex w-full justify-center px-6 py-8 sm:px-12 sm:py-10 lg:py-12">
         <div className="max-w-6xl">
           
           {/* Main Section Header */}

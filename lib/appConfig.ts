@@ -28,9 +28,9 @@ export const defaultAppConfig = defineAppConfig({
     country_3: "USA",
     address_3_bar: "https://maps.app.goo.gl/6t8TafUNTrZ6Gvp8A",
     address_map_url_3: "",
-    toll_free_number_1: "(855) 514-5500",
+    toll_free_number_1: "1-855-979-3500",
     toll_free_number_2: "",
-    sales_number_1: "(855) 514-5500",
+    sales_number_1: "1-855-979-3500",
     sales_number_2: "",
     cell_phone_1: "",
     cell_phone_2: "",
@@ -307,8 +307,8 @@ export async function getAppConfig(): Promise<AppConfig> {
     // Local brand override for Carma Credit
     dealership.dealership_name = "Carma Credit";
     dealership.dealership_logo = "/carma-logo.png";
-    dealership.sales_number_1 = "(855) 514-5500";
-    dealership.toll_free_number_1 = "(855) 514-5500";
+    dealership.sales_number_1 = "1-855-979-3500";
+    dealership.toll_free_number_1 = "1-855-979-3500";
 
     return {
       dealership,

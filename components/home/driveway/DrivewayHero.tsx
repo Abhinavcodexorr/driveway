@@ -19,35 +19,34 @@ const DrivewayHero = () => {
         };
 
   return (
-    <section className="dw-font relative w-full overflow-x-clip bg-[#007aff]">
-      <div className="relative mx-auto grid w-full max-w-[1440px] min-w-0 grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] items-end">
-        <div className="relative z-10 min-w-0 self-center py-5 pl-3 pr-1 sm:py-7 sm:pl-6 sm:pr-3 md:pl-10 xl:py-10 xl:pl-24 xl:pr-8">
+    <section className="dw-font relative w-full overflow-x-clip bg-[#1451b5]">
+      <div className="relative mx-auto grid min-h-[240px] w-full max-w-[1440px] min-w-0 grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] items-center pb-3 sm:min-h-[320px] sm:pb-4 md:min-h-[380px] lg:min-h-[420px] xl:min-h-[460px] xl:pb-6">
+        <div className="relative z-10 min-w-0 py-8 pl-4 pr-2 sm:py-10 sm:pl-8 sm:pr-4 md:pl-12 lg:py-12 xl:py-14 xl:pl-24 xl:pr-8">
           <motion.h1
-            {...enter(0.05, 32)}
-            className="m-0 mb-1.5 max-w-[640px] text-left text-[clamp(1.15rem,4.2vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.02em] text-white sm:mb-2 sm:text-[clamp(1.6rem,4vw,3.5rem)]"
+            {...enter(0.05, 28)}
+            className="m-0 mb-2 whitespace-nowrap text-left text-[clamp(1.2rem,3.7vw,3.5rem)] font-bold leading-[1.08] tracking-[-0.03em] text-white sm:mb-3"
           >
             Auto Done <span className="text-[#FF8D7D]">Easy</span>
           </motion.h1>
           <motion.p
-            {...enter(0.18)}
-            className="mb-3 max-w-[520px] text-left text-[clamp(0.7rem,2.1vw,1.2rem)] font-normal leading-snug text-white sm:mb-5 sm:leading-normal xl:mb-6 xl:text-[19px]"
+            {...enter(0.16)}
+            className="mb-4 max-w-[520px] text-left text-[clamp(0.8rem,2.05vw,1.25rem)] font-normal leading-snug text-white sm:mb-6 sm:leading-normal xl:mb-7"
           >
             Get pre-approved or sell your car — fast, simple, and stress-free.
           </motion.p>
-
           <motion.div
-            {...enter(0.3)}
-            className="flex flex-col items-stretch gap-2 min-[380px]:flex-row min-[380px]:flex-wrap min-[380px]:items-center sm:gap-3 xl:gap-4"
+            {...enter(0.28)}
+            className="flex flex-col items-stretch gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:gap-3 xl:gap-4"
           >
             <Link
               href="/financing"
-              className="inline-flex h-9 items-center justify-center whitespace-nowrap rounded-full border-2 border-white bg-white px-3 text-[11px] font-semibold text-[#007aff] transition-transform duration-300 hover:scale-[1.03] hover:opacity-90 sm:h-[48px] sm:px-6 sm:text-[15px] xl:h-[54px] xl:px-10 xl:text-[18px]"
+              className="inline-flex h-10 items-center justify-center whitespace-nowrap rounded-full border-2 border-white bg-white px-4 text-[13px] font-semibold text-[#1451b5] transition-transform duration-300 hover:scale-[1.03] hover:opacity-90 sm:h-12 sm:px-7 sm:text-[16px] xl:h-[54px] xl:px-10 xl:text-[18px]"
             >
               Get Pre-Approved
             </Link>
             <Link
               href="/trade-in-my-car"
-              className="inline-flex h-9 items-center justify-center whitespace-nowrap rounded-full border-2 border-white bg-transparent px-3 text-[11px] font-semibold text-white transition-transform duration-300 hover:scale-[1.03] hover:opacity-90 sm:h-[48px] sm:px-6 sm:text-[15px] xl:h-[54px] xl:px-10 xl:text-[18px]"
+              className="inline-flex h-10 items-center justify-center whitespace-nowrap rounded-full border-2 border-white bg-transparent px-4 text-[13px] font-semibold text-white transition-transform duration-300 hover:scale-[1.03] hover:opacity-90 sm:h-12 sm:px-7 sm:text-[16px] xl:h-[54px] xl:px-10 xl:text-[18px]"
             >
               Sell My Car
             </Link>
@@ -56,17 +55,17 @@ const DrivewayHero = () => {
 
         <motion.div
           {...enter(0.2)}
-          className="relative z-0 flex min-h-0 min-w-0 items-end justify-end self-end pr-1 sm:pr-3 xl:pr-4"
+          className="relative z-0 flex min-w-0 items-center justify-end pr-3 sm:pr-5 xl:pr-8"
         >
           <Image
             src={HERO_IMAGES.desktop}
             alt="White Mercedes and black BMW luxury cars"
-            width={1536}
-            height={1024}
+            width={1800}
+            height={640}
             priority
             unoptimized
-            className="h-auto w-full max-w-[760px] object-contain object-bottom"
-            sizes="(max-width: 640px) 55vw, (max-width: 1280px) 50vw, 760px"
+            className="h-auto w-full max-w-none object-contain object-center"
+            sizes="(max-width: 768px) 60vw, 64vw"
           />
         </motion.div>
       </div>

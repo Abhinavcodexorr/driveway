@@ -24,13 +24,13 @@ const FinanceContent = () => {
   const inventoryId  = searchParams.get("inventory_id") || "";
 
   return (
-    <PageShell showGetInTouch>
-    <main className="bg-background  my-18 mx-5 xl:mx-36  lg:mt-40">
-      <section className="flex-1 w-full min-h-[150vh] lg:min-h-[100vh]">
+    <PageShell>
+    <main className="bg-background mx-5 my-6 xl:mx-36 lg:mt-10">
+      <section className="w-full">
         <div className="mx-auto">
           <iframe
             src={`${SITE_CONFIG?.urls.financeBaseUrl}?inventory_id=${inventoryId}`}
-            className="w-full border-0 rounded-2xl min-h-[150vh] lg:min-h-[100vh]"
+            className="w-full border-0 rounded-2xl min-h-[720px]"
             title="Express Checkout - Finance"
             allow="payment"
           />

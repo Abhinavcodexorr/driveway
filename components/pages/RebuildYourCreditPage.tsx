@@ -6,7 +6,7 @@ import { PageShell } from "@/components/layout";
 import { Reveal, Stagger, StaggerItem } from "@/components/common/motion";
 
 const CTA =
-  "inline-flex items-center justify-center rounded-full border-2 border-[#007aff] bg-[#007aff] px-5 py-2.5 text-[16px] font-normal uppercase tracking-wide text-white transition-all duration-300 hover:scale-[1.03] hover:opacity-90";
+  "inline-flex items-center justify-center rounded-full border-2 border-[#1451b5] bg-[#1451b5] px-5 py-2.5 text-[16px] font-normal uppercase tracking-wide text-white transition-all duration-300 hover:scale-[1.03] hover:opacity-90";
 
 export default function RebuildYourCreditPage() {
   return (

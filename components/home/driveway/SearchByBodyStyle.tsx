@@ -126,7 +126,7 @@ const SearchByBodyStyle = () => {
                     height={51}
                     className="mb-3 h-[51px] w-[109px] object-contain transition-transform duration-300 group-hover:scale-105"
                   />
-                  <span className="text-[15px] font-normal text-[#007aff] underline underline-offset-2 md:text-[16px]">
+                  <span className="text-[15px] font-normal text-[#1451b5] underline underline-offset-2 md:text-[16px]">
                     {item.title}
                   </span>
                 </Link>
@@ -152,7 +152,7 @@ const SearchByBodyStyle = () => {
                   href="/financing"
                   className="group flex cursor-pointer flex-col items-center text-center no-underline"
                 >
-                  <div className="mb-2 flex aspect-square w-full items-center justify-center rounded-lg border border-[#E1E1E1] bg-white p-3 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-[#007aff]">
+                  <div className="mb-2 flex aspect-square w-full items-center justify-center rounded-lg border border-[#E1E1E1] bg-white p-3 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-[#1451b5]">
                     <Image
                       src={brand.image}
                       alt={brand.title}
@@ -185,7 +185,7 @@ const SearchByBodyStyle = () => {
               <StaggerItem key={model} as="li">
                 <Link
                   href="/financing"
-                  className="cursor-pointer text-[15px] font-normal text-[#007aff] underline underline-offset-2 transition-colors hover:text-[#0C316D] md:text-[16px]"
+                  className="cursor-pointer text-[15px] font-normal text-[#1451b5] underline underline-offset-2 transition-colors hover:text-[#0C316D] md:text-[16px]"
                 >
                   {model}
                 </Link>

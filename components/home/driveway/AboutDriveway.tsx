@@ -33,9 +33,9 @@ const AboutDriveway = () => {
 
           <Link
             href="/about-us"
-            className="mt-2 inline-block cursor-pointer px-1 py-0.5 text-[16px] font-semibold text-[#007aff] no-underline transition-opacity hover:opacity-80 md:mt-4 md:text-[18px] xl:mt-6"
+            className="mt-2 inline-block cursor-pointer px-1 py-0.5 text-[16px] font-semibold text-[#1451b5] no-underline transition-opacity hover:opacity-80 md:mt-4 md:text-[18px] xl:mt-6"
           >
-            <span className="border-b border-[#007aff] pb-0.5">Learn More</span>
+            <span className="border-b border-[#1451b5] pb-0.5">Learn More</span>
           </Link>
         </Reveal>
 

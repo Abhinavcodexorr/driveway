@@ -51,14 +51,14 @@ const DeliveredByDriveway = () => {
             </StaggerItem>
 
             <StaggerItem>
-              <article className="h-full rounded-2xl border-2 border-[#007aff]/25 bg-white p-6 shadow-[0_12px_40px_rgba(0,122,255,0.08)] md:p-7">
-                <p className="mb-4 text-[13px] font-semibold uppercase tracking-[0.12em] text-[#007aff]">
+              <article className="h-full rounded-2xl border-2 border-[#1451b5]/25 bg-white p-6 shadow-[0_12px_40px_rgba(20,81,181,0.08)] md:p-7">
+                <p className="mb-4 text-[13px] font-semibold uppercase tracking-[0.12em] text-[#1451b5]">
                   Selling with Carma Credit
                 </p>
                 <ul className="m-0 space-y-3.5 p-0 list-none">
                   {CARMA.map((item) => (
                     <li key={item} className="flex items-start gap-3 text-[15px] font-medium leading-snug text-[#1A1A1A] md:text-[16px]">
-                      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#E8F2FF] text-[#007aff]">
+                      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#E8F2FF] text-[#1451b5]">
                         <Check className="h-3.5 w-3.5" strokeWidth={2.75} />
                       </span>
                       {item}
@@ -67,7 +67,7 @@ const DeliveredByDriveway = () => {
                 </ul>
                 <Link
                   href="/trade-in-my-car"
-                  className="mt-7 inline-flex h-12 w-full items-center justify-center rounded-full border-2 border-[#007aff] bg-[#007aff] px-6 text-[15px] font-semibold text-white transition-all duration-300 hover:scale-[1.02] hover:opacity-90 sm:w-auto"
+                  className="mt-7 inline-flex h-12 w-full items-center justify-center rounded-full border-2 border-[#1451b5] bg-[#1451b5] px-6 text-[15px] font-semibold text-white transition-all duration-300 hover:scale-[1.02] hover:opacity-90 sm:w-auto"
                 >
                   Get my offer
                 </Link>
@@ -76,7 +76,7 @@ const DeliveredByDriveway = () => {
           </Stagger>
 
           {/* Visual */}
-          <Reveal x={28} delay={0.12} className="relative min-h-[320px] overflow-hidden rounded-2xl bg-[#007aff] lg:min-h-full">
+          <Reveal x={28} delay={0.12} className="relative min-h-[320px] overflow-hidden rounded-2xl bg-[#1451b5] lg:min-h-full">
             <Image
               src="/sell-my-car-carma-offer-hd.png"
               alt="Get a cash offer for your car with Carma Credit"

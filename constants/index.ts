@@ -60,10 +60,16 @@ export const getConstants = (appConfig: AppConfig) => {
     working_hours: d.working_hours ?? defaultD.working_hours,
   };
 
+  const phone = safeD.sales_number_1 || safeD.toll_free_number_1;
+  const phoneDigits = phone.replace(/\D/g, "");
+  const phoneHref = phoneDigits
+    ? `tel:+${phoneDigits.length === 10 ? `1${phoneDigits}` : phoneDigits}`
+    : "";
+
   return {
     // Contact info
-    PHONE_NUMBER: safeD.sales_number_1 || safeD.toll_free_number_1,
-    PHONE_HREF: `tel:${safeD.sales_number_1 || safeD.toll_free_number_1}`,
+    PHONE_NUMBER: phone,
+    PHONE_HREF: phoneHref,
     PHONE_NUMBER_2: safeD.toll_free_number_2,
     PHONE_HREF_2: `tel:${safeD.toll_free_number_2}`,
     SALES_PHONE_NUMBER: safeD.sales_number_1,
@@ -146,13 +152,13 @@ export const getConstants = (appConfig: AppConfig) => {
         const saasBase = String(appConfig.site.saas_api || "").replace(/\/+$/, "");
         return {
           financeBaseUrl: `${saasBase}/api/templates/render/16`,
-          financeRenderApiUrl: `${saasBase}/api/templates/render/15`,
+          financeRenderApiUrl: "https://carma.zopsoftware.com/api/templates/render/9",
           assetBaseUrl: appConfig.site.cdn_api,
           googleMapsUrl: safeD.address_map_url_1 || safeD.address_1_bar,
           tradeFormByVehicle: `${saasBase}/api/templates/render/17`,
           tradeFormByVin: `${saasBase}/api/templates/render/18`,
           bookAppointment: `${saasBase}/api/templates/render/23`,
-          contactUsBaseUrl: `${saasBase}/api/templates/render/22`,
+          contactUsBaseUrl: "https://carma.zopsoftware.com/api/templates/render/2",
           vehiclePageContactUsBaseUrl: `${saasBase}/api/templates/render/7`,
           tradeInMyCarVehicle: `${saasBase}/api/templates/render/20?`,
           thankYouTradeIn: `${saasBase}/api/templates/render/25`,

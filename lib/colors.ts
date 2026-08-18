@@ -16,14 +16,14 @@ export const COLORS = {
   // ═══════════════════════════════════════════════════════════════════════════
   primary: {
     // Main brand accent - used for CTAs, buttons, and primary actions
-    green: '#007aff',
-    greenLight: '#007aff',
-    greenMedium: '#007aff',
-    greenDark: '#007aff',
-    green2: '#007aff',
-    green3: '#007aff',
-    greenAlt: '#007aff',
-    greenAlpha: 'rgba(0, 122, 255, 0.65)',
+    green: '#1451b5',
+    greenLight: '#1451b5',
+    greenMedium: '#1451b5',
+    greenDark: '#1451b5',
+    green2: '#1451b5',
+    green3: '#1451b5',
+    greenAlt: '#1451b5',
+    greenAlpha: 'rgba(20, 81, 181, 0.65)',
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -56,7 +56,7 @@ export const COLORS = {
     // Blue variants
     heroBlue: '#c4eafa',       // Hero section background
     lightBlue: '#eaf5ff',      // Vehicle info header, light backgrounds
-    prequalifyBlue: '#007aff26', // Pre-approve card backgrounds
+    prequalifyBlue: '#1451b526', // Pre-approve card backgrounds
     reviewBlue: '#eaeff5',     // Reviews section background
     
     // Brand-tint gradient backgrounds
@@ -91,8 +91,8 @@ export const COLORS = {
   // ═══════════════════════════════════════════════════════════════════════════
   semantic: {
     // Success
-    success: '#007aff',
-    successLight: '#007aff',
+    success: '#1451b5',
+    successLight: '#1451b5',
     
     // Error
     error: 'hsl(0 84.2% 60.2%)',
@@ -122,7 +122,7 @@ export const COLORS = {
   // ═══════════════════════════════════════════════════════════════════════════
   special: {
     // Price display
-    price: '#007aff',
+    price: '#1451b5',
     
     // Rating / Stars
     star: 'hsl(45 100% 51%)',  // Gold/yellow for star ratings
@@ -133,11 +133,11 @@ export const COLORS = {
     avatarPurple: '#512da8',   // Deep purple avatar background
     
     // Accents
-    accent: '#007aff',
-    accentAlt: '#007aff',
+    accent: '#1451b5',
+    accentAlt: '#1451b5',
     
     // Indicators
-    indicatorGreen: '#007aff', // Slider dot indicator
+    indicatorGreen: '#1451b5', // Slider dot indicator
     
     // Sold Overlay
     sold: '#5f5f5f',           // Sold ribbon background
@@ -159,7 +159,7 @@ export const COLORS = {
     header: {
       background: '#fffdfdff',
       navSeparator: 'rgba(181, 180, 180, 0.35)', // #b5b4b459
-      phoneText: '#007aff',
+      phoneText: '#1451b5',
     },
     
     // Footer
@@ -170,24 +170,24 @@ export const COLORS = {
     
     // Buttons
     button: {
-      primary: '#007aff',
-      primaryHover: '#007aff',
-      border: '#007aff',
+      primary: '#1451b5',
+      primaryHover: '#1451b5',
+      border: '#1451b5',
       secondary: '#ffffff',
-      secondaryBorder: 'rgba(0, 122, 255, 0.65)',
+      secondaryBorder: 'rgba(20, 81, 181, 0.65)',
     },
     
     // Cards
     card: {
       background: '#ffffff',
       border: '#ddd',
-      hover: 'rgba(0, 122, 255, 0.1)',
+      hover: 'rgba(20, 81, 181, 0.1)',
     },
     
     // Accordion / FAQ
     accordion: {
-      header: '#007aff',
-      checkmark: '#007aff',
+      header: '#1451b5',
+      checkmark: '#1451b5',
       text: '#ffffff',
     },
     
@@ -205,10 +205,10 @@ export const COLORS = {
       mediumHeavy: 'rgba(0, 0, 0, 0.12)',
       subtle: 'rgba(0, 0, 0, 0.01)',
       hover: 'rgba(0, 0, 0, 0.03)',
-      buttonPress: '0 4px 0 0 #007aff',
+      buttonPress: '0 4px 0 0 #1451b5',
       lightBlue: 'rgba(244, 249, 252, 1.3)',
-      brandGreen: 'rgba(0, 122, 255, 0.2)',
-      brandGreenDark: 'rgba(0, 122, 255, 0.1)',
+      brandGreen: 'rgba(20, 81, 181, 0.2)',
+      brandGreenDark: 'rgba(20, 81, 181, 0.1)',
     },
   },
 
@@ -217,10 +217,10 @@ export const COLORS = {
   // Use these when updating tailwind.config.ts
   // ═══════════════════════════════════════════════════════════════════════════
   tailwind: {
-    'brand-green': '#007aff',
-    'brand-green-light': '#007aff',
-    'brand-green-medium': '#007aff',
-    'brand-green-dark': '#007aff',
+    'brand-green': '#1451b5',
+    'brand-green-light': '#1451b5',
+    'brand-green-medium': '#1451b5',
+    'brand-green-dark': '#1451b5',
     'hero-bg': '#c4eafa',
     'light-blue': '#eaf5ff',
     'review-blue': '#eaeff5',

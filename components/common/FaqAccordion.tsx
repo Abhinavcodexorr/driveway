@@ -39,7 +39,7 @@ export default function FaqAccordion({
             key={`${questionText}-${index}`}
             className={`group overflow-hidden rounded-2xl border transition-all duration-300 ${
               isOpen
-                ? "border-[#007aff]/35 bg-white shadow-[0_8px_28px_rgba(0,122,255,0.08)]"
+                ? "border-[#1451b5]/35 bg-white shadow-[0_8px_28px_rgba(20,81,181,0.08)]"
                 : "border-zinc-200/90 bg-[#f7f8f8] hover:border-zinc-300 hover:bg-white"
             }`}
           >
@@ -62,8 +62,8 @@ export default function FaqAccordion({
               <span
                 className={`mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all duration-300 sm:mt-0 sm:h-9 sm:w-9 ${
                   isOpen
-                    ? "bg-[#007aff] text-white"
-                    : "bg-white text-zinc-500 ring-1 ring-zinc-200 group-hover:text-[#007aff] group-hover:ring-[#007aff]/30"
+                    ? "bg-[#1451b5] text-white"
+                    : "bg-white text-zinc-500 ring-1 ring-zinc-200 group-hover:text-[#1451b5] group-hover:ring-[#1451b5]/30"
                 }`}
               >
                 <ChevronDown
@@ -84,7 +84,7 @@ export default function FaqAccordion({
               }`}
             >
               <div className="overflow-hidden">
-                <div className="border-t border-[#007aff]/15 px-4 pb-5 pt-0 sm:px-5 md:px-6">
+                <div className="border-t border-[#1451b5]/15 px-4 pb-5 pt-0 sm:px-5 md:px-6">
                   <div className="pt-4 text-[15px] leading-relaxed text-zinc-600 sm:text-[16px] md:leading-[1.7]">
                     {answerText}
                   </div>

@@ -125,7 +125,7 @@ const GuidesTips = () => {
       <Reveal delay={0.15} className="mt-8 flex w-full justify-center md:mt-10 xl:mt-12">
         <Link
           href="/about-us"
-          className="inline-flex h-12 cursor-pointer items-center justify-center rounded-full border-2 border-[#007aff] bg-[#007aff] px-8 text-[16px] font-semibold leading-none text-white no-underline transition-transform duration-300 hover:scale-[1.03] hover:border-[#0066d6] hover:bg-[#0066d6]"
+          className="inline-flex h-12 cursor-pointer items-center justify-center rounded-full border-2 border-[#1451b5] bg-[#1451b5] px-8 text-[16px] font-semibold leading-none text-white no-underline transition-transform duration-300 hover:scale-[1.03] hover:border-[#0f4094] hover:bg-[#0f4094]"
         >
           Read More Articles
         </Link>

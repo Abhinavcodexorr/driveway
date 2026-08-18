@@ -12,10 +12,10 @@ export default function FaqPage() {
         <section className="relative overflow-hidden px-4 pb-8 pt-10 md:px-8 md:pb-10 md:pt-14">
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-x-0 top-0 h-56 bg-[radial-gradient(ellipse_at_top,_rgba(0,122,255,0.10),_transparent_65%)]"
+            className="pointer-events-none absolute inset-x-0 top-0 h-56 bg-[radial-gradient(ellipse_at_top,_rgba(20,81,181,0.10),_transparent_65%)]"
           />
           <Reveal className="relative mx-auto max-w-[900px] text-center">
-            <p className="mb-3 text-[13px] font-semibold uppercase tracking-[0.14em] text-[#007aff]">
+            <p className="mb-3 text-[13px] font-semibold uppercase tracking-[0.14em] text-[#1451b5]">
               Help center
             </p>
             <h1 className="mb-3 text-[clamp(1.75rem,6vw,3rem)] font-bold tracking-tight text-zinc-900">

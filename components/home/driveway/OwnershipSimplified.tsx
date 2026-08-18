@@ -79,7 +79,7 @@ const OwnershipSimplified = () => {
           <Reveal delay={0.15}>
             <Link
               href="/service"
-              className="inline-flex h-[52px] items-center justify-center rounded-full border-2 border-[#007aff] bg-[#007aff] px-10 text-[16px] font-semibold text-white transition-transform duration-300 hover:scale-[1.03] hover:opacity-90"
+              className="inline-flex h-[52px] items-center justify-center rounded-full border-2 border-[#1451b5] bg-[#1451b5] px-10 text-[16px] font-semibold text-white transition-transform duration-300 hover:scale-[1.03] hover:opacity-90"
             >
               Join Carma Credit
             </Link>
