@@ -13,7 +13,7 @@ const PILLARS = [
   {
     icon: ShieldCheck,
     title: "Trusted Service",
-    text: "Since 2010 we have provided over one million Canadians a simple and easy way to get approved for a car loan or sell their car.",
+    text: "We have provided over one million Canadians a simple and easy way to get approved for a car loan or sell their car.",
     href: "/financing",
     cta: "Get Pre-Approved",
   },

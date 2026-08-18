@@ -73,17 +73,17 @@ export default function UnderstandingAutoFinancingPage() {
         <section className="px-4 pt-6 md:px-8 md:pt-8">
           <Reveal
             y={20}
-            className="relative mx-auto flex min-h-[280px] max-w-[1350px] items-center justify-center overflow-hidden rounded-[20px] bg-cover bg-center px-4 py-10 sm:min-h-[360px] md:min-h-[480px] md:px-14 md:py-16 lg:min-h-[589px]"
+            className="relative mx-auto flex min-h-[280px] max-w-[1350px] items-center justify-start overflow-hidden rounded-[20px] bg-cover bg-center px-4 py-10 sm:min-h-[360px] md:min-h-[480px] md:px-14 md:py-16 lg:min-h-[589px]"
             style={{
               backgroundImage: "url('/understanding-auto-financing/banner.jpeg')",
             }}
           >
             <div className="absolute inset-0 bg-black/40" />
-            <div className="relative z-10 mx-auto max-w-[860px] text-center text-white">
+            <div className="relative z-10 w-full max-w-[860px] text-left text-white">
               <h1 className="mb-5 text-[clamp(1.85rem,5vw,3.75rem)] font-bold leading-[1.15] tracking-[-0.02em]">
                 Understanding auto financing
               </h1>
-              <p className="mx-auto max-w-[740px] text-[16px] leading-[1.7] text-white/95 sm:text-[17px] md:text-[18px]">
+              <p className="max-w-[740px] text-[16px] leading-[1.7] text-white/95 sm:text-[17px] md:text-[18px]">
                 When you are thinking about your auto loan, the following terms are good to know
                 about and understand. These terms often come up in the finance process and are used
                 in the monthly payment calculations, define different parties in the financial

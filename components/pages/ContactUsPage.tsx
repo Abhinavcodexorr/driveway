@@ -5,6 +5,7 @@ import { PageShell } from "@/components/layout";
 import { getConstants } from "@/constants";
 import { useAppConfig } from "@/app/providers";
 import Link from "next/link";
+import { Phone } from "lucide-react";
 
 /** Live carmacredit.ca contact embed: templates/render/2, ~650px */
 const LIVE_CONTACT_FORM_URL = "https://carma.zopsoftware.com/api/templates/render/2";
@@ -57,15 +58,13 @@ export default function ContactUs() {
             <h2 className="mb-2 mt-8 text-[22px] font-bold tracking-[-0.02em] text-[#121212] md:text-[24px]">
               Call Now
             </h2>
-            <p className="m-0 text-[15px] leading-relaxed text-[#353535] md:text-[16px]">
-              phone:{" "}
-              <Link
-                href="tel:1-855-979-3500"
-                className="font-semibold text-[#121212] hover:text-[#1451b5]"
-              >
-                1-855-979-3500
-              </Link>
-            </p>
+            <Link
+              href="tel:1-855-979-3500"
+              className="mt-1 inline-flex items-center gap-2 text-[15px] font-semibold text-[#121212] hover:text-[#1451b5] md:text-[16px]"
+            >
+              <Phone className="h-5 w-5 shrink-0" strokeWidth={2.25} />
+              1-855-979-3500
+            </Link>
 
             <h2 className="mb-3 mt-8 text-[22px] font-bold tracking-[-0.02em] text-[#121212] md:text-[24px]">
               Our Hours
@@ -79,7 +78,7 @@ export default function ContactUs() {
             </ul>
           </div>
 
-          <div className="w-full min-w-0 overflow-hidden">
+          <div className="w-full min-w-0 overflow-hidden rounded-2xl bg-white shadow-[0_16px_50px_rgba(18,18,18,0.14)] ring-1 ring-black/5">
             <iframe
               ref={iframeRef}
               id="contact_form"
