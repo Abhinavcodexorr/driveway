@@ -32,6 +32,15 @@ const Footer = () => {
 
   const columns = [
     {
+      title: "Company",
+      links: [
+        { label: "Get Pre-Approved", href: "/financing" },
+        { label: "Sell my Car", href: "/trade-in-my-car" },
+        { label: "About Us", href: "/about-us" },
+        { label: "Contact Us", href: "/contact-us" },
+      ],
+    },
+    {
       title: "Resources",
       links: [
         { label: "How It Works", href: "/how-it-works" },
@@ -39,15 +48,6 @@ const Footer = () => {
         { label: "Understanding Auto Financing", href: "/understanding-auto-financing" },
         { label: "FAQ", href: "/faq" },
         { label: "What do I need", href: "/what-do-i-need" },
-      ],
-    },
-    {
-      title: "Company",
-      links: [
-        { label: "Get Pre-Approved", href: "/financing" },
-        { label: "Sell my Car", href: "/trade-in-my-car" },
-        { label: "About Us", href: "/about-us" },
-        { label: "Contact Us", href: "/contact-us" },
       ],
     },
   ];
@@ -73,9 +73,6 @@ const Footer = () => {
             </Link>
             <p className="mt-4 text-[16px] leading-relaxed text-white">
               The convenient way to get pre-approved or sell your car, wherever you are.
-            </p>
-            <p className="mt-3 text-[18px] text-white">
-              Auto Done <span className="text-[#FF8D7D]">Easy</span>
             </p>
           </div>
 

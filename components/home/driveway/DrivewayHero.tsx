@@ -23,13 +23,13 @@ const DrivewayHero = () => {
         <div className="relative z-10 min-w-0 px-6 pt-12 pb-8 sm:px-8 sm:pt-14 sm:pb-10 md:pl-12 lg:self-center lg:px-0 lg:py-12 lg:pl-12 lg:pr-2 xl:py-14 xl:pl-24 xl:pr-8">
           <motion.h1
             {...enter(0.05, 28)}
-            className="m-0 mb-2 whitespace-nowrap text-left text-[clamp(2.25rem,10.5vw,2.5625rem)] font-bold leading-[1.1] tracking-[-0.035em] text-white sm:mb-2 lg:mb-2 lg:text-[clamp(1.2rem,3.7vw,3.5rem)] lg:leading-[1.08] lg:tracking-[-0.03em]"
+            className="m-0 mb-4 -translate-y-1 whitespace-nowrap text-left text-[clamp(2.15rem,9.6vw,2.5rem)] font-semibold leading-[1.05] tracking-[-0.035em] text-white sm:mb-4 lg:-translate-y-2 lg:mb-3 lg:text-[clamp(1.35rem,4.4vw,4.85rem)] lg:leading-[1.08] lg:tracking-[-0.03em]"
           >
-            Auto Done <span className="text-[#FF8D7D]">Easy</span>
+            Welcome to <span className="text-[#FF8D7D]">Carma</span>
           </motion.h1>
           <motion.p
             {...enter(0.16)}
-            className="mb-4 max-w-[520px] text-left text-[1.125rem] font-normal leading-[1.5] text-white sm:mb-5 sm:text-[1.1875rem] lg:mb-4 lg:text-[clamp(0.8rem,2.05vw,1.25rem)] lg:leading-snug xl:mb-7"
+            className="mb-6 max-w-[560px] text-left text-[1.25rem] font-normal leading-[1.5] text-white sm:mb-7 sm:text-[1.3125rem] lg:mb-6 lg:text-[clamp(1rem,2.2vw,1.4rem)] lg:leading-snug xl:mb-8"
           >
             Get pre-approved or sell your car — fast, simple, and stress-free.
           </motion.p>
@@ -39,13 +39,13 @@ const DrivewayHero = () => {
           >
             <Link
               href="/financing"
-              className="inline-flex h-[60px] w-full items-center justify-center whitespace-nowrap rounded-full border-2 border-white bg-white px-8 text-[18px] font-semibold text-[#1451b5] transition-transform duration-300 hover:scale-[1.03] hover:opacity-90 sm:h-12 sm:w-auto sm:px-7 sm:text-[16px] xl:h-[54px] xl:px-10 xl:text-[18px]"
+              className="inline-flex h-[64px] w-full items-center justify-center whitespace-nowrap rounded-full border-2 border-white bg-white px-8 text-[18px] font-semibold text-[#1451b5] transition-transform duration-300 hover:scale-[1.03] hover:opacity-90 sm:h-14 sm:w-auto sm:px-8 sm:text-[17px] xl:h-[58px] xl:px-10 xl:text-[20px]"
             >
               Get Pre-Approved
             </Link>
             <Link
               href="/trade-in-my-car"
-              className="inline-flex h-[60px] w-full items-center justify-center whitespace-nowrap rounded-full border-2 border-white bg-transparent px-8 text-[18px] font-semibold text-white transition-transform duration-300 hover:scale-[1.03] hover:opacity-90 sm:h-12 sm:w-auto sm:px-7 sm:text-[16px] xl:h-[54px] xl:px-10 xl:text-[18px]"
+              className="inline-flex h-[64px] w-full items-center justify-center whitespace-nowrap rounded-full border-2 border-white bg-transparent px-8 text-[18px] font-semibold text-white transition-transform duration-300 hover:scale-[1.03] hover:opacity-90 sm:h-14 sm:w-auto sm:px-8 sm:text-[17px] xl:h-[58px] xl:px-10 xl:text-[20px]"
             >
               Sell My Car
             </Link>
