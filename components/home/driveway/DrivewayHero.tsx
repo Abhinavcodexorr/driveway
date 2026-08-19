@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { HERO_IMAGES } from "./constants";
@@ -57,25 +56,23 @@ const DrivewayHero = () => {
           {...enter(0.2)}
           className="relative z-0 -mb-px flex min-w-0 items-end justify-center px-0 pb-0 pt-0 lg:mb-0 lg:items-end lg:justify-end lg:self-end lg:overflow-visible lg:px-0 lg:pb-0 lg:pr-3 lg:pt-0 xl:pr-8"
         >
-          <Image
+          <img
             src={HERO_IMAGES.mobile}
             alt="Smiling woman using her phone next to a white Lamborghini Urus"
             width={1318}
             height={1015}
-            priority
-            unoptimized
+            decoding="async"
+            fetchPriority="high"
             className="block h-auto w-full max-w-full object-contain object-bottom lg:hidden"
-            sizes="100vw"
           />
-          <Image
+          <img
             src={HERO_IMAGES.desktop}
             alt="Smiling woman using her phone next to a white Lamborghini Urus"
             width={1318}
             height={1015}
-            priority
-            unoptimized
+            decoding="async"
+            fetchPriority="high"
             className="hidden h-auto w-full max-w-none object-contain object-bottom lg:block"
-            sizes="(min-width: 1024px) 64vw, 100vw"
           />
         </motion.div>
       </div>
