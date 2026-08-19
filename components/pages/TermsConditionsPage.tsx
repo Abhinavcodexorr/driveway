@@ -14,29 +14,35 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function TermsOfService() {
   const config = await getAppConfig();
-  const { dealership_name, full_address_1, city_1, province_1, sales_number_1, email_1 } = config.dealership;
+  const { dealership_name, full_address_1, city_1, province_1, sales_number_1 } = config.dealership;
   
   return (
     <PageShell showGetInTouch>
-    <div className="dw-font min-h-screen bg-white text-gray-800 antialiased selection:bg-gray-200">
+    <div className="dw-font mb-5 min-h-screen bg-white text-gray-800 antialiased selection:bg-gray-200">
       {/* Terms of Service Main Content Wrapper */}
       <main className="mx-auto flex w-full justify-center px-6 py-8 sm:px-12 sm:py-10 lg:py-12">
         <div className="max-w-6xl">
           
-          {/* Main Section Header */}
-          <h2 className="text-2xl tracking-tight text-gray-900 mb-5">
-            OVERVIEW
-          </h2>
-          
-          <p className="text-[15px] leading-relaxed text-gray-600 mb-6">
-            This website is operated by {dealership_name}. Throughout the site, the terms "we", "us" and "our" refer to {dealership_name}. {dealership_name} offers this website, including all information, tools and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies and notices stated here.By visiting our site and/ or contacting us you engage in our "Service" and agree to be bound by the following terms and conditions ("Terms of Service", "Terms"), including those additional terms and conditions and policies referenced herein and/or available by hyperlink. These Terms of Service apply to all users of the site, including without limitation users who are browsers, vendors, customers, merchants, and/ or contributors of content.Please read these Terms of Service carefully before accessing or using our website. By accessing or using any part of the site, you agree to be bound by these Terms of Service. If you do not agree to all the terms and conditions of this agreement, then you may not access the website or use any services. If these Terms of Service are considered an offer, acceptance is expressly limited to these Terms of Service.Any new features or tools which are added to the current website shall also be subject to the Terms of Service. You can review the most current version of the Terms of Service at any time on this page. We reserve the right to update, change or replace any part of these Terms of Service by posting updates and/or changes to our website. It is your responsibility to check this page periodically for changes. Your continued use of or access to the website following the posting of any changes constitutes acceptance of those changes.Our website is hosted on {dealership_name}. They provide us with the website platform that lists our available vehicle inventory and services.
-          </p>
+          {/* Main Page Title */}
+          <h1 className="text-2xl font-bold tracking-tight text-gray-900 mb-6">
+            Terms and Conditions
+          </h1>
 
-          {/* Website Terms */}
+          {/* Section 1 */}
           <section className="mt-8">
-            <h3 className="text-2xl text-gray-900 mb-3 uppercase">
-              WEBSITE TERMS
-            </h3>
+            <h2 className="text-lg font-bold text-gray-900 mb-3">
+              1. Overview
+            </h2>
+            <p className="text-[15px] leading-relaxed text-gray-600 mb-6">
+              This website is operated by {dealership_name}. Throughout the site, the terms "we", "us" and "our" refer to {dealership_name}. {dealership_name} offers this website, including all information, tools and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies and notices stated here. By visiting our site and/ or contacting us you engage in our "Service" and agree to be bound by the following terms and conditions ("Terms of Service", "Terms"), including those additional terms and conditions and policies referenced herein and/or available by hyperlink. These Terms of Service apply to all users of the site, including without limitation users who are browsers, vendors, customers, merchants, and/ or contributors of content. Please read these Terms of Service carefully before accessing or using our website. By accessing or using any part of the site, you agree to be bound by these Terms of Service. If you do not agree to all the terms and conditions of this agreement, then you may not access the website or use any services. If these Terms of Service are considered an offer, acceptance is expressly limited to these Terms of Service. Any new features or tools which are added to the current website shall also be subject to the Terms of Service. You can review the most current version of the Terms of Service at any time on this page. We reserve the right to update, change or replace any part of these Terms of Service by posting updates and/or changes to our website. It is your responsibility to check this page periodically for changes. Your continued use of or access to the website following the posting of any changes constitutes acceptance of those changes. Our website is hosted on {dealership_name}. They provide us with the website platform that lists our available vehicle inventory and services.
+            </p>
+          </section>
+
+          {/* Section 2 */}
+          <section className="mt-8">
+            <h2 className="text-lg font-bold text-gray-900 mb-3">
+              2. Website Terms
+            </h2>
             <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
               By agreeing to these Terms of Service, you represent that you are at least the age of majority in your state or province of residence, or that you are the age of majority in your state or province of residence and you have given us your consent to allow any of your minor dependents to use this site.
             </p>
@@ -48,11 +54,11 @@ export default async function TermsOfService() {
             </p>
           </section>
 
-          {/* General Conditions */}
+          {/* Section 3 */}
           <section className="mt-8">
-            <h3 className="text-2xl text-gray-900 mb-3 uppercase">
-              GENERAL CONDITIONS
-            </h3>
+            <h2 className="text-lg font-bold text-gray-900 mb-3">
+              3. General Conditions
+            </h2>
             <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
               We reserve the right to refuse service to anyone for any reason at any time.
             </p>
@@ -64,11 +70,11 @@ export default async function TermsOfService() {
             </p>
           </section>
 
-          {/* Accuracy of Information */}
+          {/* Section 4 */}
           <section className="mt-8">
-            <h3 className="text-2xl text-gray-900 mb-3 uppercase">
-              ACCURACY, COMPLETENESS AND TIMELINESS OF INFORMATION
-            </h3>
+            <h2 className="text-lg font-bold text-gray-900 mb-3">
+              4. Accuracy, Completeness and Timeliness of Information
+            </h2>
             <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
               We are not responsible if information made available on this site is not accurate, complete or current. The material on this site is provided for general information only and should not be relied upon or used as the sole basis for making decisions without consulting primary, more accurate, more complete or more timely sources of information. Any reliance on the material on this site is at your own risk.
             </p>
@@ -77,11 +83,11 @@ export default async function TermsOfService() {
             </p>
           </section>
 
-          {/* Modifications */}
+          {/* Section 5 */}
           <section className="mt-8">
-            <h3 className="text-2xl text-gray-900 mb-3 uppercase">
-              MODIFICATIONS TO THE SERVICE AND PRICES
-            </h3>
+            <h2 className="text-lg font-bold text-gray-900 mb-3">
+              5. Modifications to the Service and Prices
+            </h2>
             <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
               Prices for our products are subject to change without notice.
             </p>
@@ -90,11 +96,11 @@ export default async function TermsOfService() {
             </p>
           </section>
 
-          {/* Products or Services */}
+          {/* Section 6 */}
           <section className="mt-8">
-            <h3 className="text-2xl text-gray-900 mb-3 uppercase">
-              PRODUCTS OR SERVICES
-            </h3>
+            <h2 className="text-lg font-bold text-gray-900 mb-3">
+              6. Products or Services
+            </h2>
             <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
               We have made every effort to display as accurately as possible the colours, images, and trim levels of vehicles available. We cannot guarantee that your computer monitor's display of any color will be accurate.
             </p>
@@ -106,11 +112,11 @@ export default async function TermsOfService() {
             </p>
           </section>
 
-          {/* Accuracy of Billing */}
+          {/* Section 7 */}
           <section className="mt-8">
-            <h3 className="text-2xl text-gray-900 mb-3 uppercase">
-              ACCURACY OF BILLING AND ACCOUNT INFORMATION
-            </h3>
+            <h2 className="text-lg font-bold text-gray-900 mb-3">
+              7. Accuracy of Billing and Account Information
+            </h2>
             <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
               If ordering parts or reserving a vehicle, we reserve the right to refuse any order you place with us. We may, in our sole discretion, limit or cancel quantities purchased per person, per household or per order. These restrictions may include orders placed by or under the same customer account, the same credit card, and/or orders that use the same billing and/or shipping address. In the event that we make a change to or cancel an order, we may attempt to notify you by contacting the e-mail and/or billing address/phone number provided at the time the order was made. We reserve the right to limit or prohibit orders that, in our sole judgment, appear to be placed by dealers, resellers or distributors.
             </p>
@@ -119,11 +125,11 @@ export default async function TermsOfService() {
             </p>
           </section>
 
-          {/* Optional Tools */}
+          {/* Section 8 */}
           <section className="mt-8">
-            <h3 className="text-2xl text-gray-900 mb-3 uppercase">
-              OPTIONAL TOOLS
-            </h3>
+            <h2 className="text-lg font-bold text-gray-900 mb-3">
+              8. Optional Tools
+            </h2>
             <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
               We may provide you with access to third-party tools over which we neither monitor nor have any control nor input.
             </p>
@@ -138,11 +144,11 @@ export default async function TermsOfService() {
             </p>
           </section>
 
-          {/* Third Party Links */}
+          {/* Section 9 */}
           <section className="mt-8">
-            <h3 className="text-2xl text-gray-900 mb-3 uppercase">
-              THIRD-PARTY LINKS
-            </h3>
+            <h2 className="text-lg font-bold text-gray-900 mb-3">
+              9. Third-Party Links
+            </h2>
             <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
               Certain content, products and services available via our Service may include materials from third-parties.
             </p>
@@ -154,11 +160,11 @@ export default async function TermsOfService() {
             </p>
           </section>
 
-          {/* User Comments */}
+          {/* Section 10 */}
           <section className="mt-8">
-            <h3 className="text-2xl text-gray-900 mb-3 uppercase">
-              USER COMMENTS, FEEDBACK AND OTHER SUBMISSIONS
-            </h3>
+            <h2 className="text-lg font-bold text-gray-900 mb-3">
+              10. User Comments, Feedback and Other Submissions
+            </h2>
             <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
               If, at our request, you send certain specific submissions (for example contest entries) or without a request from us you send creative ideas, suggestions, proposals, plans, or other materials, whether online, by email, by postal mail, or otherwise (collectively, &apos;comments&apos;), you agree that we may, at any time, without restriction, edit, copy, publish, distribute, translate and otherwise use in any medium any comments that you forward to us. We are and shall be under no obligation (1) to maintain any comments in confidence; (2) to pay compensation for any comments; or (3) to respond to any comments.
             </p>
@@ -170,21 +176,21 @@ export default async function TermsOfService() {
             </p>
           </section>
 
-          {/* Personal Info */}
+          {/* Section 11 */}
           <section className="mt-8">
-            <h3 className="text-2xl text-gray-900 mb-3 uppercase">
-              PERSONAL INFORMATION
-            </h3>
+            <h2 className="text-lg font-bold text-gray-900 mb-3">
+              11. Personal Information
+            </h2>
             <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
               Your submission of personal information through the website is governed by our Privacy Policy.
             </p>
           </section>
 
-          {/* Errors and Omissions */}
+          {/* Section 12 */}
           <section className="mt-8">
-            <h3 className="text-2xl text-gray-900 mb-3 uppercase">
-              ERRORS, INACCURACIES AND OMISSIONS
-            </h3>
+            <h2 className="text-lg font-bold text-gray-900 mb-3">
+              12. Errors, Inaccuracies and Omissions
+            </h2>
             <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
               Occasionally there may be information on our site or in the Service that contains typographical errors, inaccuracies or omissions that may relate to product descriptions, pricing, promotions, offers, product shipping charges, transit times and availability. We reserve the right to correct any errors, inaccuracies or omissions, and to change or update information or cancel orders if any information in the Service or on any related website is inaccurate at any time without prior notice (including after you have submitted your order).
             </p>
@@ -193,15 +199,15 @@ export default async function TermsOfService() {
             </p>
           </section>
 
-          {/* Prohibited Uses */}
+          {/* Section 13 */}
           <section className="mt-8">
-            <h3 className="text-2xl text-gray-900 mb-3 uppercase">
-              PROHIBITED USES
-            </h3>
+            <h2 className="text-lg font-bold text-gray-900 mb-3">
+              13. Prohibited Uses
+            </h2>
             <p className="text-[15px] leading-relaxed text-gray-600 mb-3">
               In addition to other prohibitions as set forth in the Terms of Service, you are prohibited from using the site or its content:
             </p>
-            <ul className="list-none pl-0 space-y-2 text-[15px] leading-relaxed text-gray-600 mb-4">
+            <ul className="list-disc pl-5 space-y-2 text-[15px] leading-relaxed text-gray-600 mb-4">
               <li>(a) for any unlawful purpose;</li>
               <li>(b) to solicit others to perform or participate in any unlawful acts;</li>
               <li>(c) to violate any international, federal, provincial or state regulations, rules, laws, or local ordinances;</li>
@@ -216,11 +222,11 @@ export default async function TermsOfService() {
             </ul>
           </section>
 
-          {/* Disclaimer */}
+          {/* Section 14 */}
           <section className="mt-8">
-            <h3 className="text-2xl text-gray-900 mb-3 uppercase">
-              DISCLAIMER OF WARRANTIES; LIMITATION OF LIABILITY
-            </h3>
+            <h2 className="text-lg font-bold text-gray-900 mb-3">
+              14. Disclaimer of Warranties; Limitation of Liability
+            </h2>
             <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
               We do not guarantee, represent or warrant that your use of our service will be uninterrupted, timely, secure or error-free.
             </p>
@@ -238,31 +244,31 @@ export default async function TermsOfService() {
             </p>
           </section>
 
-          {/* Indemnification */}
+          {/* Section 15 */}
           <section className="mt-8">
-            <h3 className="text-2xl text-gray-900 mb-3 uppercase">
-              INDEMNIFICATION
-            </h3>
+            <h2 className="text-lg font-bold text-gray-900 mb-3">
+              15. Indemnification
+            </h2>
             <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
               You agree to indemnify, defend and hold harmless {dealership_name} and our parent, subsidiaries, affiliates, partners, officers, directors, agents, contractors, licensors, service providers, subcontractors, suppliers, interns and employees, harmless from any claim or demand, including reasonable attorneys' fees, made by any third-party due to or arising out of your breach of these Terms of Service or the documents they incorporate by reference, or your violation of any law or the rights of a third-party.
             </p>
           </section>
 
-          {/* Severability */}
+          {/* Section 16 */}
           <section className="mt-8">
-            <h3 className="text-2xl text-gray-900 mb-3 uppercase">
-              SEVERABILITY
-            </h3>
+            <h2 className="text-lg font-bold text-gray-900 mb-3">
+              16. Severability
+            </h2>
             <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
               In the event that any provision of these Terms of Service is determined to be unlawful, void or unenforceable, such provision shall nonetheless be enforceable to the fullest extent permitted by applicable law, and the unenforceable portion shall be deemed to be severed from these Terms of Service, such determination shall not affect the validity and enforceability of any other remaining provisions.
             </p>
           </section>
 
-          {/* Termination */}
+          {/* Section 17 */}
           <section className="mt-8">
-            <h3 className="text-2xl text-gray-900 mb-3 uppercase">
-              TERMINATION
-            </h3>
+            <h2 className="text-lg font-bold text-gray-900 mb-3">
+              17. Termination
+            </h2>
             <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
               The obligations and liabilities of the parties incurred prior to the termination date shall survive the termination of this agreement for all purposes.
             </p>
@@ -274,11 +280,11 @@ export default async function TermsOfService() {
             </p>
           </section>
 
-          {/* Entire Agreement */}
+          {/* Section 18 */}
           <section className="mt-8">
-            <h3 className="text-2xl text-gray-900 mb-3 uppercase">
-              ENTIRE AGREEMENT
-            </h3>
+            <h2 className="text-lg font-bold text-gray-900 mb-3">
+              18. Entire Agreement
+            </h2>
             <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
               The failure of us to exercise or enforce any right or provision of these Terms of Service shall not constitute a waiver of such right or provision.
             </p>
@@ -290,21 +296,21 @@ export default async function TermsOfService() {
             </p>
           </section>
 
-          {/* Governing Law */}
+          {/* Section 19 */}
           <section className="mt-8">
-            <h3 className="text-2xl text-gray-900 mb-3 uppercase">
-              GOVERNING LAW
-            </h3>
+            <h2 className="text-lg font-bold text-gray-900 mb-3">
+              19. Governing Law
+            </h2>
             <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
               These Terms of Service and any separate agreements whereby we provide you Services shall be governed by and construed in accordance with the laws of {province_1}.
             </p>
           </section>
 
-          {/* Changes */}
+          {/* Section 20 */}
           <section className="mt-8">
-            <h3 className="text-2xl text-gray-900 mb-3 uppercase">
-              CHANGES TO TERMS OF SERVICE
-            </h3>
+            <h2 className="text-lg font-bold text-gray-900 mb-3">
+              20. Changes to Terms of Service
+            </h2>
             <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
               You can review the most current version of the Terms of Service at any time at this page.
             </p>
@@ -313,11 +319,11 @@ export default async function TermsOfService() {
             </p>
           </section>
 
-          {/* Contact Information Footer */}
+          {/* Section 21 */}
           <section className="mt-8 border-t border-gray-100 pt-6">
-            <h3 className="text-2xl text-gray-900 mb-3 uppercase">
-              CONTACT INFORMATION
-            </h3>
+            <h2 className="text-lg font-bold text-gray-900 mb-3">
+              21. Contact Information
+            </h2>
             <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
               Questions about the Terms of Service should be sent to us at
             </p>
