@@ -20,7 +20,7 @@ const DrivewayHero = () => {
   return (
     <section className="dw-font relative w-full overflow-x-clip bg-[#1451b5] pb-0">
       <div className="relative mx-auto flex w-full max-w-[1440px] min-w-0 flex-col lg:grid lg:min-h-[420px] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:items-end lg:pb-0 xl:min-h-[460px]">
-        <div className="relative z-10 min-w-0 px-6 pt-9 pb-8 sm:px-8 sm:pt-10 sm:pb-10 md:pl-12 lg:self-center lg:px-0 lg:py-12 lg:pl-12 lg:pr-2 xl:py-14 xl:pl-24 xl:pr-8">
+        <div className="relative z-10 min-w-0 px-6 pt-12 pb-8 sm:px-8 sm:pt-14 sm:pb-10 md:pl-12 lg:self-center lg:px-0 lg:py-12 lg:pl-12 lg:pr-2 xl:py-14 xl:pl-24 xl:pr-8">
           <motion.h1
             {...enter(0.05, 28)}
             className="m-0 mb-2 whitespace-nowrap text-left text-[clamp(2.25rem,10.5vw,2.5625rem)] font-bold leading-[1.1] tracking-[-0.035em] text-white sm:mb-2 lg:mb-2 lg:text-[clamp(1.2rem,3.7vw,3.5rem)] lg:leading-[1.08] lg:tracking-[-0.03em]"
