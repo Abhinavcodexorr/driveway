@@ -1,6 +1,6 @@
 export const HERO_IMAGES = {
-  desktop: "/driveway/hero-boy-phone-car.png?v=2",
-  mobile: "/driveway/hero-boy-phone-car.png?v=2",
+  desktop: "/driveway/hero-car-character.png?v=11",
+  mobile: "/driveway/hero-car-character.png?v=11",
 } as const;
 
 /** Carma Credit mega-nav structure */

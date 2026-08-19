@@ -19,34 +19,34 @@ const DrivewayHero = () => {
         };
 
   return (
-    <section className="dw-font relative w-full overflow-x-clip bg-[#1451b5]">
-      <div className="relative mx-auto flex w-full max-w-[1440px] min-w-0 flex-col lg:grid lg:min-h-[420px] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:items-center lg:pb-6 xl:min-h-[460px]">
-        <div className="relative z-10 min-w-0 py-8 pl-4 pr-4 sm:py-10 sm:pl-8 sm:pr-6 md:pl-12 lg:py-12 lg:pr-2 xl:py-14 xl:pl-24 xl:pr-8">
+    <section className="dw-font relative w-full overflow-x-clip bg-[#1451b5] pb-0">
+      <div className="relative mx-auto flex w-full max-w-[1440px] min-w-0 flex-col lg:grid lg:min-h-[420px] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:items-end lg:pb-0 xl:min-h-[460px]">
+        <div className="relative z-10 min-w-0 px-6 py-8 sm:px-8 sm:py-10 md:pl-12 lg:self-center lg:px-0 lg:py-12 lg:pl-12 lg:pr-2 xl:py-14 xl:pl-24 xl:pr-8">
           <motion.h1
             {...enter(0.05, 28)}
-            className="m-0 mb-2 text-left text-[clamp(1.2rem,3.7vw,3.5rem)] font-bold leading-[1.08] tracking-[-0.03em] text-white sm:mb-3 lg:whitespace-nowrap"
+            className="m-0 mb-2 whitespace-nowrap text-left text-[clamp(2.25rem,10.5vw,2.5625rem)] font-bold leading-[1.1] tracking-[-0.035em] text-white sm:mb-2 lg:mb-2 lg:text-[clamp(1.2rem,3.7vw,3.5rem)] lg:leading-[1.08] lg:tracking-[-0.03em]"
           >
             Auto Done <span className="text-[#FF8D7D]">Easy</span>
           </motion.h1>
           <motion.p
             {...enter(0.16)}
-            className="mb-4 max-w-[520px] text-left text-[clamp(0.8rem,2.05vw,1.25rem)] font-normal leading-snug text-white sm:mb-6 sm:leading-normal xl:mb-7"
+            className="mb-4 max-w-[520px] text-left text-[1.125rem] font-normal leading-[1.5] text-white sm:mb-5 sm:text-[1.1875rem] lg:mb-4 lg:text-[clamp(0.8rem,2.05vw,1.25rem)] lg:leading-snug xl:mb-7"
           >
             Get pre-approved or sell your car — fast, simple, and stress-free.
           </motion.p>
           <motion.div
             {...enter(0.28)}
-            className="flex flex-col items-stretch gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:gap-3 xl:gap-4"
+            className="flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-3 xl:gap-4"
           >
             <Link
               href="/financing"
-              className="inline-flex h-10 items-center justify-center whitespace-nowrap rounded-full border-2 border-white bg-white px-4 text-[13px] font-semibold text-[#1451b5] transition-transform duration-300 hover:scale-[1.03] hover:opacity-90 sm:h-12 sm:px-7 sm:text-[16px] xl:h-[54px] xl:px-10 xl:text-[18px]"
+              className="inline-flex h-[60px] w-full items-center justify-center whitespace-nowrap rounded-full border-2 border-white bg-white px-8 text-[18px] font-semibold text-[#1451b5] transition-transform duration-300 hover:scale-[1.03] hover:opacity-90 sm:h-12 sm:w-auto sm:px-7 sm:text-[16px] xl:h-[54px] xl:px-10 xl:text-[18px]"
             >
               Get Pre-Approved
             </Link>
             <Link
               href="/trade-in-my-car"
-              className="inline-flex h-10 items-center justify-center whitespace-nowrap rounded-full border-2 border-white bg-transparent px-4 text-[13px] font-semibold text-white transition-transform duration-300 hover:scale-[1.03] hover:opacity-90 sm:h-12 sm:px-7 sm:text-[16px] xl:h-[54px] xl:px-10 xl:text-[18px]"
+              className="inline-flex h-[60px] w-full items-center justify-center whitespace-nowrap rounded-full border-2 border-white bg-transparent px-8 text-[18px] font-semibold text-white transition-transform duration-300 hover:scale-[1.03] hover:opacity-90 sm:h-12 sm:w-auto sm:px-7 sm:text-[16px] xl:h-[54px] xl:px-10 xl:text-[18px]"
             >
               Sell My Car
             </Link>
@@ -55,26 +55,26 @@ const DrivewayHero = () => {
 
         <motion.div
           {...enter(0.2)}
-          className="relative z-0 flex min-w-0 items-center justify-center px-3 pb-4 pt-1 sm:px-5 sm:pb-5 lg:justify-end lg:pr-3 lg:pt-0 xl:pr-8"
+          className="relative z-0 -mb-px flex min-w-0 items-end justify-center px-0 pb-0 pt-0 lg:mb-0 lg:items-end lg:justify-end lg:self-end lg:overflow-visible lg:px-0 lg:pb-0 lg:pr-3 lg:pt-0 xl:pr-8"
         >
           <Image
             src={HERO_IMAGES.mobile}
-            alt="Young man sitting by the rear wheel of a white supercar using a phone"
-            width={1600}
-            height={780}
+            alt="Smiling woman using her phone next to a white Lamborghini Urus"
+            width={1318}
+            height={1015}
             priority
             unoptimized
-            className="h-auto w-full max-w-full object-contain object-bottom lg:hidden"
+            className="block h-auto w-full max-w-full object-contain object-bottom lg:hidden"
             sizes="100vw"
           />
           <Image
             src={HERO_IMAGES.desktop}
-            alt="Young man sitting by the rear wheel of a white supercar using a phone"
-            width={1600}
-            height={780}
+            alt="Smiling woman using her phone next to a white Lamborghini Urus"
+            width={1318}
+            height={1015}
             priority
             unoptimized
-            className="hidden h-auto w-full max-w-none object-contain object-center lg:block"
+            className="hidden h-auto w-full max-w-none object-contain object-bottom lg:block"
             sizes="(min-width: 1024px) 64vw, 100vw"
           />
         </motion.div>
