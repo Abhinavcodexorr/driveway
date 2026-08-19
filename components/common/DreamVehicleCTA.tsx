@@ -22,7 +22,7 @@ const DreamVehicleCTA = () => {
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           {/* Browse inventory CTA */}
           <a
-            href="/inventory"
+            href="/"
             className="inline-flex items-center gap-2 rounded-full border-2 border-brand-green bg-brand-green text-brand-green-foreground px-7 py-4 font-semibold text-[16px] hover:opacity-95 transition-opacity"
           >
             Browse all Cars

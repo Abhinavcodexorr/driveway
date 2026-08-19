@@ -27,7 +27,7 @@ const STEPS = [
     step: "Step 3",
     title: "Bank Account",
     text: "You will need to have a bank account. The lender will want to be able to take the payment out of your bank account each month. The easiest way to do this is to get a void cheque or stamped pre-authorized payment form.",
-    image: "/what-do-i-need/step-3.png",
+    image: "/what-do-i-need/step-3-bank.png",
     imageLeft: true,
   },
   {

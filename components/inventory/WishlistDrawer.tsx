@@ -117,7 +117,7 @@ export default function WishlistDrawer({ isOpen, onClose }: WishlistDrawerProps)
 
               {/* CTA Button */}
               <Link
-                href="/inventory"
+                href="/"
                 onClick={onClose}
                 className="inline-flex items-center justify-center bg-brand-green hover:bg-brand-green-alpha hover:text-white transition-all text-white px-6 py-3 rounded-full border-2 border-brand-green text-base transition-colors mb-6"
               >

@@ -25,7 +25,7 @@ export default function CarLoanLanding() {
 
             {/* Buttons Container */}
             <div className="flex flex-col sm:flex-row justify-between items-center mt-20 gap-4 sm:gap-12 md:gap-24 w-full px-4">
-              <Link href={"/inventory"} className="whitespace-nowrap cursor-pointer text-white text-base py-3 px-6 rounded-full border-2 border-brand transition duration-200 shadow-sm hover:opacity-90 bg-brand">
+              <Link href={"/"} className="whitespace-nowrap cursor-pointer text-white text-base py-3 px-6 rounded-full border-2 border-brand transition duration-200 shadow-sm hover:opacity-90 bg-brand">
                 View In-Stock Inventory
               </Link>
 
@@ -217,7 +217,7 @@ export default function CarLoanLanding() {
                   Category
                 </h4>
                 <Link
-                  href="/inventory"
+                  href="/"
                   className="font-semibold text-sm flex items-center gap-1 transition-colors hover:opacity-80 text-brand"
                 >
                   See all vehicles

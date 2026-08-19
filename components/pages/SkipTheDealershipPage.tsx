@@ -69,7 +69,7 @@ export default function SkipTheDealership() {
                             className="flex flex-col sm:flex-row justify-center gap-4 px-18 lg:px-0 mt-14 lg:mt-0"
                         >
                             <Link
-                                href="/inventory"
+                                href="/"
                                 className="bg-white px-8 py-3 rounded-full shadow-sm hover:shadow-md transition-all duration-200 border-2 border-brand2 text-brand2 hover:bg-brand-btn-gradient hover:text-white"
                             >
                                 Browse Inventory
