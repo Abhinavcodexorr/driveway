@@ -22,25 +22,27 @@ export default function ContactUs() {
   const appConfig = useAppConfig();
   const { SITE_CONFIG } = getConstants(appConfig);
   const contactFormUrl = SITE_CONFIG?.urls.contactUsBaseUrl || LIVE_CONTACT_FORM_URL;
-  const iframeRef = useRef<HTMLIFrameElement>(null);
-  const [height, setHeight] = useState(DEFAULT_HEIGHT);
-
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
-      const data = event.data;
+      if (event.origin !== "https://cardora.zopsoftware.com") {
+        return;
+      }
+      const { type, value, element_id } = event.data || {};
       if (
-        data &&
-        typeof data === "object" &&
-        data.type === "css" &&
-        (data.element_id === "contact_us" || data.element_id === "contact_form") &&
-        typeof data.value === "number"
+        type === "css" &&
+        element_id === "contact_us" &&
+        typeof value === "number"
       ) {
-        setHeight(Math.max(MIN_HEIGHT, Math.ceil(data.value) + 8));
+        const iframe = document.getElementById(element_id) as HTMLIFrameElement | null;
+        if (iframe) {
+          iframe.style.height = `${value}px`;
+        }
       }
     };
-
     window.addEventListener("message", handleMessage);
-    return () => window.removeEventListener("message", handleMessage);
+    return () => {
+      window.removeEventListener("message", handleMessage);
+    };
   }, []);
 
   return (
@@ -80,19 +82,12 @@ export default function ContactUs() {
 
           <div className="w-full min-w-0 overflow-hidden rounded-2xl bg-white shadow-[0_16px_50px_rgba(18,18,18,0.14)] ring-1 ring-black/5">
             <iframe
-              ref={iframeRef}
-              id="contact_form"
-              name="iframe_a"
+              id="contact_us"
               src={contactFormUrl}
+              className="w-full rounded-2xl"
+              style={{ minHeight: "650px", height: "650px" }}
               title="Contact Us"
-              scrolling="no"
-              className="contact-us block w-full border-0"
-              style={{
-                height: `${height}px`,
-                minHeight: MIN_HEIGHT,
-                border: "none",
-                width: "100%",
-              }}
+              allow="payment"
             />
           </div>
         </div>

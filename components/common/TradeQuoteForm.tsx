@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { getConstants } from "@/constants";
 import { useAppConfig } from "@/app/providers";
 
@@ -25,6 +25,32 @@ const TradeQuoteForm = ({ className = "" }: TradeQuoteFormProps) => {
       minHeight: 327,
     },
   };
+
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      if (event.origin !== "https://cardora.zopsoftware.com") {
+        return;
+      }
+      const data = event.data;
+      if (
+        !data ||
+        typeof data !== "object" ||
+        data.type !== "css" ||
+        typeof data.value !== "number" ||
+        typeof data.element_id !== "string"
+      ) {
+        return;
+      }
+      const iframe = document.getElementById(data.element_id) as HTMLIFrameElement | null;
+      if (iframe) {
+        iframe.style.height = `${Math.ceil(data.value)}px`;
+      }
+    };
+    window.addEventListener("message", handleMessage);
+    return () => {
+      window.removeEventListener("message", handleMessage);
+    };
+  }, []);
 
   return (
     <div
@@ -58,21 +84,18 @@ const TradeQuoteForm = ({ className = "" }: TradeQuoteFormProps) => {
         </button>
       </div>
 
-      <div
-        className="w-full overflow-hidden"
-        style={{ height: TRADE_FORMS[mode].minHeight }}
-      >
+      <div className="w-full overflow-hidden">
         <iframe
           key={mode}
+          id={mode === "vehicle" ? "trade_form_with_autodropdown" : "trade_form_with_vin"}
           src={TRADE_FORMS[mode].url}
           title={mode === "vehicle" ? "Trade Form By Vehicle" : "Trade Form By VIN"}
           width="100%"
-          height={TRADE_FORMS[mode].minHeight}
           scrolling="no"
-          className="block w-full border-0"
+          className="w-full border-0 block transition-[height] duration-300 ease-out"
           style={{
-            height: TRADE_FORMS[mode].minHeight,
-            overflow: "hidden",
+            height: mode === "vehicle" ? "447px" : "327px",
+            minHeight: mode === "vehicle" ? "447px" : "327px",
           }}
         />
       </div>

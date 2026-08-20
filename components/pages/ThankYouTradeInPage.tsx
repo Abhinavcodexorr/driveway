@@ -12,32 +12,36 @@ export default function ThankYouTradeIn() {
     const [iframeHeight, setIframeHeight] = useState<number>(550);
 
     useEffect(() => {
-        const handleMessage = (event: MessageEvent) => {
-            const data = event.data;
-            if (!data) return;
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+    }, []);
 
-            let newHeight: number | null = null;
-            if (typeof data === "number" && data > 100) {
-                newHeight = data;
-            } else if (typeof data === "object") {
-                if (typeof data.height === "number" && data.height > 0) {
-                    newHeight = data.height;
-                } else if (typeof data.value === "number" && data.value > 0) {
-                    newHeight = data.value;
-                } else if (typeof data.scrollHeight === "number" && data.scrollHeight > 0) {
-                    newHeight = data.scrollHeight;
-                } else if (data.payload && typeof data.payload.height === "number") {
-                    newHeight = data.payload.height;
-                }
+    useEffect(() => {
+        const handleMessage = (event: MessageEvent) => {
+            // Only accept messages from the Cardora iframe
+            if (event.origin !== "https://cardora.zopsoftware.com") {
+                return;
             }
 
-            if (newHeight && newHeight > 200) {
-                setIframeHeight(Math.max(550, Math.ceil(newHeight) + 10));
+            const data = event.data;
+
+            if (
+                data &&
+                typeof data === "object" &&
+                data.type === "css" &&
+                data.element_id === "document_upload_form" &&
+                typeof data.value === "number"
+            ) {
+                setIframeHeight(Math.ceil(data.value) + 24);
             }
         };
 
         window.addEventListener("message", handleMessage);
-        return () => window.removeEventListener("message", handleMessage);
+
+        return () => {
+            window.removeEventListener("message", handleMessage);
+        };
     }, []);
 
     return (
@@ -59,12 +63,15 @@ export default function ThankYouTradeIn() {
 
             <div className="w-full lg:px-80 px-4 pb-2 mb-2">
                 <iframe
+                    id="document_upload_form"
                     src={SITE_CONFIG?.urls.thankYouTradeIn}
-                    scrolling="no"
-                    style={{ minHeight: `${iframeHeight}px`, height: `${iframeHeight}px` }}
-                    className="w-full border-0 transition-[height] duration-300 ease-out overflow-hidden"
+                    className="w-full border-0 block transition-[height] duration-300 ease-out"
                     title="Express Checkout - Finance"
                     allow="payment"
+                    scrolling="no"
+                    style={{
+                        height: `${iframeHeight}px`,
+                    }}
                 />
             </div>
 
