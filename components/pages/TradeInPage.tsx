@@ -85,7 +85,7 @@ const faqs = [
 const TradeIn = () => {
   return (
     <div className="min-h-screen overflow-x-clip bg-background">
-      <PageShell showGetInTouch>
+      <PageShell>
 
       {/* Hero / Quote form */}
       <section className="relative w-full px-4 lg:mt-6 xl:px-24">
